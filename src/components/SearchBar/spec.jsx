@@ -43,6 +43,7 @@ describe('Components|SearchBar', () => {
     beforeEach(() => {
       wrapper = mountWithIntl(
         <SearchBar
+          mode="company"
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={yearRange}
           availableCategories={categories}
@@ -74,6 +75,7 @@ describe('Components|SearchBar', () => {
     beforeEach(() => {
       wrapper = mountWithIntl(
         <SearchBar
+          mode="company"
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={yearRange}
           availableCategories={categories}
@@ -94,37 +96,64 @@ describe('Components|SearchBar', () => {
     test('render find component on find click', () => {
       const updatedWrapper = wrapper.find(Tab).first();
       updatedWrapper.simulate('click', eventFuncs);
-      expect(wrapper.state().mode).toEqual('find');
+      expect(wrapper.state().activeTab).toEqual('find');
     });
 
     test('close find component on find click', () => {
-      wrapper.setState({ mode: 'find' });
+      wrapper.setState({ activeTab: 'find' });
       const updatedWrapper = wrapper.find(Tab).first();
       updatedWrapper.simulate('click', eventFuncs);
-      expect(wrapper.state().mode).toEqual('');
+      expect(wrapper.state().activeTab).toEqual('');
     });
 
     test('render filter component on filter click', () => {
       const updatedWrapper = wrapper.find(Tab).last();
       updatedWrapper.simulate('click', eventFuncs);
-      expect(wrapper.state().mode).toEqual('filter');
+      expect(wrapper.state().activeTab).toEqual('filter');
     });
 
     test('close filter component on filter click', () => {
-      wrapper.setState({ mode: 'filter' });
+      wrapper.setState({ activeTab: 'filter' });
       const updatedWrapper = wrapper.find(Tab).last();
       updatedWrapper.simulate('click', eventFuncs);
-      expect(wrapper.state().mode).toEqual('');
+      expect(wrapper.state().activeTab).toEqual('');
     });
   });
 
-  describe(' with mode set to find', () => {
+  describe('tabs in location mode', () => {
+    const wrapper = mountWithIntl(
+      <SearchBar
+        mode="location"
+        suggestedKeywords={sampleSuggestedKeywords}
+        availableYearRange={yearRange}
+        availableCategories={categories}
+        includeKeywords={includeKeywords}
+        excludeKeywords={excludeKeywords}
+        projectStatus={projectStatus}
+        yearRange={yearRange}
+        setIncluded={noop}
+        setExcluded={noop}
+        findAnyOnChange={noop}
+        updateYear={noop}
+        changeProjectStatus={noop}
+        scrollToMethodology={noop}
+        findAny
+      />,
+    );
+
+    test('should only render the search tab', () => {
+      expect(wrapper.find(Tab)).toHaveLength(1);
+    });
+  });
+
+  describe('with mode set to find', () => {
     let wrapper;
     let spy;
     beforeEach(() => {
       spy = jest.fn();
       wrapper = mountWithIntl(
         <SearchBar
+          mode="company"
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={yearRange}
           availableCategories={categories}
@@ -141,7 +170,7 @@ describe('Components|SearchBar', () => {
           findAny
         />,
       );
-      wrapper.setState({ mode: 'find', isActive: true, isExclude: false });
+      wrapper.setState({ activeTab: 'find', isActive: true, isExclude: false });
     });
 
     test('render SearchContent when mode is find', () => {
@@ -150,7 +179,7 @@ describe('Components|SearchBar', () => {
 
     test('closeTab function of SearchContent changes mode', () => {
       wrapper.find('SearchContent').props().closeTab();
-      expect(wrapper.state().mode).toBe('');
+      expect(wrapper.state().activeTab).toBe('');
     });
 
     test('changeIsExclude function changing the exclude state', () => {
@@ -182,6 +211,7 @@ describe('Components|SearchBar', () => {
     beforeEach(() => {
       wrapper = mountWithIntl(
         <SearchBar
+          mode="company"
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={yearRange}
           availableCategories={categories}
@@ -198,15 +228,15 @@ describe('Components|SearchBar', () => {
           findAny
         />,
       );
-      wrapper.setState({ mode: 'filter' });
+      wrapper.setState({ activeTab: 'filter' });
     });
     test('render filter content when mode is filter', () => {
-      wrapper.setState({ mode: 'filter' });
+      wrapper.setState({ activeTab: 'filter' });
       expect(wrapper.find('FilterContent')).toHaveLength(1);
     });
     test('onClick on closeTab change mode', () => {
       wrapper.find('FilterContent').props().closeTab();
-      expect(wrapper.state().mode).toBe('');
+      expect(wrapper.state().activeTab).toBe('');
     });
   });
 
@@ -215,6 +245,7 @@ describe('Components|SearchBar', () => {
     beforeEach(() => {
       wrapper = mountWithIntl(
         <SearchBar
+          mode="company"
           suggestedKeywords={sampleSuggestedKeywords}
           scrollToMethodology={noop}
           availableYearRange={yearRange}
@@ -231,8 +262,7 @@ describe('Components|SearchBar', () => {
           findAny
         />,
       );
-
-      wrapper.setState({ mode: 'find' });
+      wrapper.setState({ activeTab: 'find' });
     });
 
     test('prompt styles when selected on include', () => {

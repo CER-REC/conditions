@@ -9,17 +9,21 @@ const formatSummaryText = (arr, mapFunc) => joinJsxArray(arr.map(mapFunc), ', ')
 
 const HighlightSummary = props => (
   <div className="HighlightSummary">
-    <FormattedMessage
-      id="components.searchBar.highlightSummary.showing"
-      values={{
-        status: <FormattedMessage
-          id={`components.searchBar.highlightSummary.${props.includedStatuses[1] ? 'ALL' : props.includedStatuses[0]}`}
-        />,
-        start: props.selectedYear.start,
-        end: props.selectedYear.end,
-      }}
-    />
-    <br />
+    {!props.showFilterSummary ? null : (
+      <React.Fragment>
+        <FormattedMessage
+          id="components.searchBar.highlightSummary.showing"
+          values={{
+            status: <FormattedMessage
+              id={`components.searchBar.highlightSummary.${props.includedStatuses[1] ? 'ALL' : props.includedStatuses[0]}`}
+            />,
+            start: props.selectedYear.start,
+            end: props.selectedYear.end,
+          }}
+        />
+        <br />
+      </React.Fragment>
+    )}
     {props.includeKeywords.length === 0 ? null : (
       <React.Fragment>
         <FormattedMessage id="components.searchBar.highlightSummary.includes" tagName="p" />
@@ -46,6 +50,7 @@ const HighlightSummary = props => (
 );
 
 HighlightSummary.propTypes = {
+  showFilterSummary: PropTypes.bool.isRequired,
   selectedYear: yearRangeType.isRequired,
   includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
   excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,

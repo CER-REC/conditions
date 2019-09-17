@@ -17898,14 +17898,6 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
     <div
       className="HighlightSummary"
     >
-      <span>
-        Showing 
-        <span>
-          All
-        </span>
-         projects from 1970 - 1980
-      </span>
-      <br />
       <p>
         Highlighting conditions containing:
       </p>

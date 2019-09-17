@@ -34,33 +34,42 @@ class SearchBar extends React.PureComponent {
     updateYear: PropTypes.func.isRequired,
     changeProjectStatus: PropTypes.func.isRequired,
     scrollToMethodology: PropTypes.func.isRequired,
-    className: PropTypes.string,
+    mode: PropTypes.oneOf(['location', 'company']).isRequired,
   }
 
-  static defaultProps = {
-    className: '',
-  }
-
-  handleTabChange = memoize(toggleMode => () => this.setState(({ mode }) => ({
-    mode: (mode !== toggleMode) ? toggleMode : '',
+  handleTabChange = memoize(toggleMode => () => this.setState(({ activeTab }) => ({
+    activeTab: (activeTab !== toggleMode) ? toggleMode : '',
   })))
 
   constructor(props) {
     super(props);
     this.state = {
-      mode: '',
+      activeTab: '',
       isActive: false,
       isExclude: false,
     };
+  }
+
+  componentDidUpdate(prev) {
+    if (this.props.mode !== prev.mode) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ activeTab: '' });
+    }
   }
 
   changeIsExclude = bool => (this.setState({ isExclude: bool }));
 
   toggleIsActive = () => this.setState(({ isActive }) => ({ isActive: !isActive }));
 
+  filterIsActive = () => (
+    this.props.yearRange.start !== this.props.availableYearRange.start
+    || this.props.yearRange.end !== this.props.availableYearRange.end
+    || this.props.projectStatus.length < 2
+  )
+
   render() {
     const {
-      mode, isActive, isExclude,
+      activeTab: mode, isActive, isExclude,
     } = this.state;
     const {
       projectStatus, setIncluded, setExcluded,
@@ -114,7 +123,7 @@ class SearchBar extends React.PureComponent {
             projectStatus={projectStatus}
             selectedYear={yearRange}
             yearRange={availableYearRange}
-            closeTab={() => (this.setState({ mode: '' }))}
+            closeTab={this.handleTabChange('')}
             changeProjectStatus={changeProjectStatus}
             onYearSelect={updateYear}
           />
@@ -123,6 +132,7 @@ class SearchBar extends React.PureComponent {
       default:
         modeComponent = (
           <HighlightSummary
+            showFilterSummary={this.props.mode === 'company' && this.filterIsActive()}
             includeKeywords={includeKeywords}
             excludeKeywords={excludeKeywords}
             selectedYear={yearRange}
@@ -132,17 +142,22 @@ class SearchBar extends React.PureComponent {
     }
 
     return (
-      <div className={classNames('SearchBar', this.props.className)}>
+      <div className={classNames('SearchBar', { small: this.props.mode === 'location' })}>
         <div className="SelectionTab">
           <Tab
             onClick={this.handleTabChange('find')}
             isActive={(mode === 'find')}
           />
-          <Tab
-            onClick={this.handleTabChange('filter')}
-            isFilter
-            isActive={(mode === 'filter')}
-          />
+          {
+            (this.props.mode === 'location') ? null
+              : (
+                <Tab
+                  onClick={this.handleTabChange('filter')}
+                  isFilter
+                  isActive={(mode === 'filter')}
+                />
+              )
+          }
         </div>
         {modeComponent}
       </div>

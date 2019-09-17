@@ -115,7 +115,7 @@ class ViewTwo extends React.PureComponent {
       <section className={classNames('ViewTwo', { layoutOnly: this.props.layoutOnly })}>
         <section className="header">
           <SearchBar
-            className={this.props.browseBy === 'location' ? 'small' : ''}
+            mode={this.props.browseBy}
             availableYearRange={this.props.projectYears}
             availableCategories={this.props.availableCategories}
             setIncluded={this.setIncluded}
