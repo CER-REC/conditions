@@ -1273,7 +1273,7 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
     onClose={[Function]}
   >
     <div
-      className="Company"
+      className="Company pad-bottom"
     >
       <h2>
         Full Project Name:
@@ -1351,7 +1351,7 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
         </li>
       </ul>
       <button
-        className="PopupBtn"
+        className="PopupBtn large bottom-right"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -1403,7 +1403,7 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
     className="CompanyPopup"
   >
     <div
-      className="Company"
+      className="Company pad-bottom"
     >
       <h2>
         Full Project Name:
@@ -1481,7 +1481,7 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
         </li>
       </ul>
       <button
-        className="PopupBtn"
+        className="PopupBtn large bottom-right"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -1537,566 +1537,14 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
 <div
   className="visualization"
 >
-  <section
-    className="ConditionDetails"
-  >
-    <div
-      className="main"
-    >
-      <div
-        className="ProjectHeader"
-      >
-        <div
-          className="topBar"
-        >
-          <h1>
-            Selected Project:
-          </h1>
-          <button
-            className="openProject"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            <h2
-              title="Keystone XL"
-            >
-              <span
-                className="projectName"
-              >
-                Keystone XL
-              </span>
-              <span
-                className="asterisk"
-              >
-                *
-              </span>
-            </h2>
-          </button>
-        </div>
-      </div>
-      <div
-        className="listPane"
-      >
-        <div
-          className="ConditionList"
-        >
-          <div
-            className="List"
-          >
-            <ul>
-              <li
-                className="List-Item selected"
-              >
-                <div
-                  className="CircleContainer arrow arrowPrevious hiddenArrow"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="Arrow Up"
-                    >
-                      <svg
-                        height="22"
-                        width="22"
-                      >
-                        <polyline
-                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="0--1"
-                    title="XO-001-2018"
-                  >
-                    <div
-                      className="barMarker"
-                    />
-                    <h4>
-                      XO-001-2018
-                    </h4>
-                  </div>
-                </div>
-                <div
-                  className="CircleContainer arrow arrowNext"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="Arrow Down"
-                    >
-                      <svg
-                        height="22"
-                        width="22"
-                      >
-                        <polyline
-                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="0-0"
-                  >
-                    <div
-                      className="barMarker marked"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-3"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        fill="transparent"
-                        height="100%"
-                        width="100%"
-                        x={0}
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="pink"
-                        height="100%"
-                        width="50%"
-                        x="0%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                      <rect
-                        className="Bar"
-                        fill="green"
-                        height="100%"
-                        width="50%"
-                        x="50%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="0-1"
-                  >
-                    <div
-                      className="barMarker"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-2"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        fill="transparent"
-                        height="100%"
-                        width="100%"
-                        x={0}
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="blue"
-                        height="100%"
-                        width="50%"
-                        x="0%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                      <rect
-                        className="Bar"
-                        fill="red"
-                        height="100%"
-                        width="50%"
-                        x="50%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="1--1"
-                    title="XO-003-2018"
-                  >
-                    <div
-                      className="barMarker"
-                    />
-                    <h4>
-                      XO-003-2018
-                    </h4>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="1-0"
-                  >
-                    <div
-                      className="barMarker"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-1"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        fill="transparent"
-                        height="100%"
-                        width="100%"
-                        x={0}
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="red"
-                        height="100%"
-                        width="100%"
-                        x="0%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="1-1"
-                  >
-                    <div
-                      className="barMarker"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-2"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        fill="transparent"
-                        height="100%"
-                        width="100%"
-                        x={0}
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="red"
-                        height="100%"
-                        width="100%"
-                        x="0%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="2--1"
-                    title="XO-005-2018"
-                  >
-                    <div
-                      className="barMarker"
-                    />
-                    <h4>
-                      XO-005-2018
-                    </h4>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="2-0"
-                  >
-                    <div
-                      className="barMarker marked"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-3"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        fill="transparent"
-                        height="100%"
-                        width="100%"
-                        x={0}
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="orange"
-                        height="100%"
-                        width="33.33333333333333%"
-                        x="0%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                      <rect
-                        className="Bar"
-                        fill="yellow"
-                        height="100%"
-                        width="33.33333333333333%"
-                        x="33.33333333333333%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                      <rect
-                        className="Bar"
-                        fill="teal"
-                        height="100%"
-                        width="33.33333333333333%"
-                        x="66.66666666666666%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                    </svg>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div
-        className="contentPane"
-      >
-        <div
-          className="Content"
-        >
-          <div
-            className="half"
-          >
-            <div
-              className="ContentBlock"
-            >
-              <span
-                className="contentHeading"
-              >
-                Issuance Date:
-              </span>
-               
-              2014-10-24
-            </div>
-            <div
-              className="ContentBlock"
-            >
-              <span
-                className="contentHeading"
-              >
-                Effective Date:
-              </span>
-               
-              2014-10-24
-            </div>
-            <div
-              className="ContentBlock"
-            >
-              <span
-                className="contentHeading"
-              >
-                Sunset Date:
-              </span>
-               
-              2019-01-30
-            </div>
-          </div>
-          <div
-            className="half"
-          >
-            <div
-              className="ContentBlock"
-            >
-              <span
-                className="contentHeading"
-              >
-                Instrument #:
-              </span>
-               
-              <button
-                className="instrumentLink"
-                focusable={true}
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                XO-001-2018
-              </button>
-            </div>
-            <div
-              className="ContentBlock"
-            >
-              <span
-                className="contentHeading"
-              >
-                Instrument Status:
-              </span>
-               
-              <span>
-                In Progress
-              </span>
-            </div>
-            <div
-              className="ContentBlock"
-            >
-              <span
-                className="contentHeading"
-              >
-                Location:
-              </span>
-               
-              <span>
-                Albuquerque, NM
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="popout"
-    >
-      <div
-        className="Details"
-      >
-        <div
-          className="filler"
-        />
-        <div
-          className="content"
-        />
-      </div>
-    </div>
-  </section>
-</div>
-`;
-
-exports[`Storyshots Components|ConditionDetails expandable 1`] = `
-<div
-  className="visualization"
->
   <div
-    style={
-      Object {
-        "border": "1px dashed magenta",
-        "width": 800,
-      }
-    }
+    className="storyWrapper"
   >
     <section
-      className="ConditionDetails expanded"
+      className="ConditionDetails"
     >
       <div
-        className="main expandable"
+        className="main"
       >
         <div
           className="ProjectHeader"
@@ -2129,28 +1577,6 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   *
                 </span>
               </h2>
-            </button>
-            <button
-              className="toggleExpand"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <h1
-                className="upperCase"
-              >
-                Less
-              </h1>
-              <svg
-                className="arrow"
-                viewBox="0 0 16 24"
-              >
-                <polyline
-                  points="4,4 12,12.5 4,20 4,4"
-                />
-              </svg>
             </button>
           </div>
         </div>
@@ -2203,6 +1629,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     tabIndex={0}
                   >
                     <div
+                      className="instrumentNumber"
                       data-heading="0--1"
                       title="XO-001-2018"
                     >
@@ -2358,6 +1785,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     tabIndex={0}
                   >
                     <div
+                      className="instrumentNumber"
                       data-heading="1--1"
                       title="XO-003-2018"
                     >
@@ -2465,6 +1893,596 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     tabIndex={0}
                   >
                     <div
+                      className="instrumentNumber"
+                      data-heading="2--1"
+                      title="XO-005-2018"
+                    >
+                      <div
+                        className="barMarker"
+                      />
+                      <h4>
+                        XO-005-2018
+                      </h4>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      data-heading="2-0"
+                    >
+                      <div
+                        className="barMarker marked"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-3"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="orange"
+                          height="100%"
+                          width="33.33333333333333%"
+                          x="0%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                        <rect
+                          className="Bar"
+                          fill="yellow"
+                          height="100%"
+                          width="33.33333333333333%"
+                          x="33.33333333333333%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                        <rect
+                          className="Bar"
+                          fill="teal"
+                          height="100%"
+                          width="33.33333333333333%"
+                          x="66.66666666666666%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          className="contentPane"
+        >
+          <div
+            className="Content"
+          >
+            <div
+              className="half"
+            >
+              <div
+                className="ContentBlock"
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Issuance Date:
+                </span>
+                 
+                2014-10-24
+              </div>
+              <div
+                className="ContentBlock"
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Effective Date:
+                </span>
+                 
+                2014-10-24
+              </div>
+              <div
+                className="ContentBlock"
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Sunset Date:
+                </span>
+                 
+                2019-01-30
+              </div>
+            </div>
+            <div
+              className="half"
+            >
+              <div
+                className="ContentBlock"
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Instrument #:
+                </span>
+                 
+                <button
+                  className="instrumentLink"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  XO-001-2018
+                </button>
+              </div>
+              <div
+                className="ContentBlock"
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Instrument Status:
+                </span>
+                 
+                <span>
+                  In Progress
+                </span>
+              </div>
+              <div
+                className="ContentBlock"
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Location:
+                </span>
+                 
+                <span>
+                  Albuquerque, NM
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="popout"
+      >
+        <div
+          className="Details"
+        >
+          <div
+            className="filler"
+          />
+          <div
+            className="content"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "div.storyWrapper { position: relative; height: 200px; width: 600px; }",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|ConditionDetails expandable 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="storyWrapper"
+    style={
+      Object {
+        "border": "1px dashed magenta",
+        "width": 800,
+      }
+    }
+  >
+    <section
+      className="ConditionDetails expanded"
+    >
+      <div
+        className="main expandable"
+      >
+        <div
+          className="ProjectHeader"
+        >
+          <div
+            className="topBar"
+          >
+            <h1>
+              Selected Project:
+            </h1>
+            <button
+              className="openProject"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <h2
+                title="Keystone XL"
+              >
+                <span
+                  className="projectName"
+                >
+                  Keystone XL
+                </span>
+                <span
+                  className="asterisk"
+                >
+                  *
+                </span>
+              </h2>
+            </button>
+            <button
+              className="toggleExpand"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <h1
+                className="upperCase"
+              >
+                Less
+              </h1>
+              <svg
+                className="arrow"
+                viewBox="0 0 16 24"
+              >
+                <polyline
+                  points="4,4 12,12.5 4,20 4,4"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="listPane"
+        >
+          <div
+            className="ConditionList"
+          >
+            <div
+              className="List"
+            >
+              <ul>
+                <li
+                  className="List-Item selected"
+                >
+                  <div
+                    className="CircleContainer arrow arrowPrevious hiddenArrow"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="Arrow Up"
+                      >
+                        <svg
+                          height="22"
+                          width="22"
+                        >
+                          <polyline
+                            points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      className="instrumentNumber"
+                      data-heading="0--1"
+                      title="XO-001-2018"
+                    >
+                      <div
+                        className="barMarker"
+                      />
+                      <h4>
+                        XO-001-2018
+                      </h4>
+                    </div>
+                  </div>
+                  <div
+                    className="CircleContainer arrow arrowNext"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="Arrow Down"
+                      >
+                        <svg
+                          height="22"
+                          width="22"
+                        >
+                          <polyline
+                            points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      data-heading="0-0"
+                    >
+                      <div
+                        className="barMarker marked"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-3"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="pink"
+                          height="100%"
+                          width="50%"
+                          x="0%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                        <rect
+                          className="Bar"
+                          fill="green"
+                          height="100%"
+                          width="50%"
+                          x="50%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      data-heading="0-1"
+                    >
+                      <div
+                        className="barMarker"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-2"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="blue"
+                          height="100%"
+                          width="50%"
+                          x="0%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                        <rect
+                          className="Bar"
+                          fill="red"
+                          height="100%"
+                          width="50%"
+                          x="50%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      className="instrumentNumber"
+                      data-heading="1--1"
+                      title="XO-003-2018"
+                    >
+                      <div
+                        className="barMarker"
+                      />
+                      <h4>
+                        XO-003-2018
+                      </h4>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      data-heading="1-0"
+                    >
+                      <div
+                        className="barMarker"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-1"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="red"
+                          height="100%"
+                          width="100%"
+                          x="0%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      data-heading="1-1"
+                    >
+                      <div
+                        className="barMarker"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-2"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="red"
+                          height="100%"
+                          width="100%"
+                          x="0%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      className="instrumentNumber"
                       data-heading="2--1"
                       title="XO-005-2018"
                     >
@@ -2655,6 +2673,13 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
       </div>
     </section>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "div.storyWrapper { position: relative; height: 200px; width: 600px; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -2662,526 +2687,540 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
 <div
   className="visualization"
 >
-  <section
-    className="ConditionDetails"
+  <div
+    className="storyWrapper"
   >
-    <div
-      className="main"
+    <section
+      className="ConditionDetails"
     >
       <div
-        className="ProjectHeader"
+        className="main"
       >
         <div
-          className="topBar"
+          className="ProjectHeader"
         >
-          <h1>
-            Conditions in Selected Region:
-          </h1>
           <div
-            className="openProject"
+            className="topBar"
+          >
+            <h1>
+              Conditions in Selected Region:
+            </h1>
+            <div
+              className="openProject"
+            />
+          </div>
+        </div>
+        <div
+          className="listPane"
+        >
+          <div
+            className="ConditionList"
+          >
+            <div
+              className="List"
+            >
+              <ul>
+                <li
+                  className="List-Item selected"
+                >
+                  <div
+                    className="CircleContainer arrow arrowPrevious hiddenArrow"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="Arrow Up"
+                      >
+                        <svg
+                          height="22"
+                          width="22"
+                        >
+                          <polyline
+                            points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      className="instrumentNumber"
+                      data-heading="0--1"
+                      title="XO-001-2018"
+                    >
+                      <div
+                        className="barMarker"
+                      />
+                      <h4>
+                        XO-001-2018
+                      </h4>
+                    </div>
+                  </div>
+                  <div
+                    className="CircleContainer arrow arrowNext"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="Arrow Down"
+                      >
+                        <svg
+                          height="22"
+                          width="22"
+                        >
+                          <polyline
+                            points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      data-heading="0-0"
+                    >
+                      <div
+                        className="barMarker marked"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-3"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="pink"
+                          height="100%"
+                          width="50%"
+                          x="0%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                        <rect
+                          className="Bar"
+                          fill="green"
+                          height="100%"
+                          width="50%"
+                          x="50%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      data-heading="0-1"
+                    >
+                      <div
+                        className="barMarker"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-2"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="blue"
+                          height="100%"
+                          width="50%"
+                          x="0%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                        <rect
+                          className="Bar"
+                          fill="red"
+                          height="100%"
+                          width="50%"
+                          x="50%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      className="instrumentNumber"
+                      data-heading="1--1"
+                      title="XO-003-2018"
+                    >
+                      <div
+                        className="barMarker"
+                      />
+                      <h4>
+                        XO-003-2018
+                      </h4>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      data-heading="1-0"
+                    >
+                      <div
+                        className="barMarker"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-1"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="red"
+                          height="100%"
+                          width="100%"
+                          x="0%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      data-heading="1-1"
+                    >
+                      <div
+                        className="barMarker"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-2"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="red"
+                          height="100%"
+                          width="100%"
+                          x="0%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      className="instrumentNumber"
+                      data-heading="2--1"
+                      title="XO-005-2018"
+                    >
+                      <div
+                        className="barMarker"
+                      />
+                      <h4>
+                        XO-005-2018
+                      </h4>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      data-heading="2-0"
+                    >
+                      <div
+                        className="barMarker marked"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-3"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="orange"
+                          height="100%"
+                          width="33.33333333333333%"
+                          x="0%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                        <rect
+                          className="Bar"
+                          fill="yellow"
+                          height="100%"
+                          width="33.33333333333333%"
+                          x="33.33333333333333%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                        <rect
+                          className="Bar"
+                          fill="teal"
+                          height="100%"
+                          width="33.33333333333333%"
+                          x="66.66666666666666%"
+                          y={0}
+                        >
+                          
+                        </rect>
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          className="contentPane"
+        >
+          <div
+            className="Content"
+          >
+            <div
+              className="half"
+            >
+              <div
+                className="ContentBlock"
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Issuance Date:
+                </span>
+                 
+                2014-10-24
+              </div>
+              <div
+                className="ContentBlock"
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Effective Date:
+                </span>
+                 
+                2014-10-24
+              </div>
+              <div
+                className="ContentBlock"
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Sunset Date:
+                </span>
+                 
+                2019-01-30
+              </div>
+            </div>
+            <div
+              className="half"
+            >
+              <div
+                className="ContentBlock"
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Instrument #:
+                </span>
+                 
+                <button
+                  className="instrumentLink"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  XO-001-2018
+                </button>
+              </div>
+              <div
+                className="ContentBlock"
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Instrument Status:
+                </span>
+                 
+                <span>
+                  In Progress
+                </span>
+              </div>
+              <div
+                className="ContentBlock"
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Location:
+                </span>
+                 
+                <span>
+                  Albuquerque, NM
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="popout"
+      >
+        <div
+          className="Details"
+        >
+          <div
+            className="filler"
+          />
+          <div
+            className="content"
           />
         </div>
       </div>
-      <div
-        className="listPane"
-      >
-        <div
-          className="ConditionList"
-        >
-          <div
-            className="List"
-          >
-            <ul>
-              <li
-                className="List-Item selected"
-              >
-                <div
-                  className="CircleContainer arrow arrowPrevious hiddenArrow"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="Arrow Up"
-                    >
-                      <svg
-                        height="22"
-                        width="22"
-                      >
-                        <polyline
-                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="0--1"
-                    title="XO-001-2018"
-                  >
-                    <div
-                      className="barMarker"
-                    />
-                    <h4>
-                      XO-001-2018
-                    </h4>
-                  </div>
-                </div>
-                <div
-                  className="CircleContainer arrow arrowNext"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="Arrow Down"
-                    >
-                      <svg
-                        height="22"
-                        width="22"
-                      >
-                        <polyline
-                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="0-0"
-                  >
-                    <div
-                      className="barMarker marked"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-3"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        fill="transparent"
-                        height="100%"
-                        width="100%"
-                        x={0}
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="pink"
-                        height="100%"
-                        width="50%"
-                        x="0%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                      <rect
-                        className="Bar"
-                        fill="green"
-                        height="100%"
-                        width="50%"
-                        x="50%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="0-1"
-                  >
-                    <div
-                      className="barMarker"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-2"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        fill="transparent"
-                        height="100%"
-                        width="100%"
-                        x={0}
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="blue"
-                        height="100%"
-                        width="50%"
-                        x="0%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                      <rect
-                        className="Bar"
-                        fill="red"
-                        height="100%"
-                        width="50%"
-                        x="50%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="1--1"
-                    title="XO-003-2018"
-                  >
-                    <div
-                      className="barMarker"
-                    />
-                    <h4>
-                      XO-003-2018
-                    </h4>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="1-0"
-                  >
-                    <div
-                      className="barMarker"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-1"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        fill="transparent"
-                        height="100%"
-                        width="100%"
-                        x={0}
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="red"
-                        height="100%"
-                        width="100%"
-                        x="0%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="1-1"
-                  >
-                    <div
-                      className="barMarker"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-2"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        fill="transparent"
-                        height="100%"
-                        width="100%"
-                        x={0}
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="red"
-                        height="100%"
-                        width="100%"
-                        x="0%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="2--1"
-                    title="XO-005-2018"
-                  >
-                    <div
-                      className="barMarker"
-                    />
-                    <h4>
-                      XO-005-2018
-                    </h4>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-heading="2-0"
-                  >
-                    <div
-                      className="barMarker marked"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-3"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        fill="transparent"
-                        height="100%"
-                        width="100%"
-                        x={0}
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="orange"
-                        height="100%"
-                        width="33.33333333333333%"
-                        x="0%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                      <rect
-                        className="Bar"
-                        fill="yellow"
-                        height="100%"
-                        width="33.33333333333333%"
-                        x="33.33333333333333%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                      <rect
-                        className="Bar"
-                        fill="teal"
-                        height="100%"
-                        width="33.33333333333333%"
-                        x="66.66666666666666%"
-                        y={0}
-                      >
-                        
-                      </rect>
-                    </svg>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div
-        className="contentPane"
-      >
-        <div
-          className="Content"
-        >
-          <div
-            className="half"
-          >
-            <div
-              className="ContentBlock"
-            >
-              <span
-                className="contentHeading"
-              >
-                Issuance Date:
-              </span>
-               
-              2014-10-24
-            </div>
-            <div
-              className="ContentBlock"
-            >
-              <span
-                className="contentHeading"
-              >
-                Effective Date:
-              </span>
-               
-              2014-10-24
-            </div>
-            <div
-              className="ContentBlock"
-            >
-              <span
-                className="contentHeading"
-              >
-                Sunset Date:
-              </span>
-               
-              2019-01-30
-            </div>
-          </div>
-          <div
-            className="half"
-          >
-            <div
-              className="ContentBlock"
-            >
-              <span
-                className="contentHeading"
-              >
-                Instrument #:
-              </span>
-               
-              <button
-                className="instrumentLink"
-                focusable={true}
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                XO-001-2018
-              </button>
-            </div>
-            <div
-              className="ContentBlock"
-            >
-              <span
-                className="contentHeading"
-              >
-                Instrument Status:
-              </span>
-               
-              <span>
-                In Progress
-              </span>
-            </div>
-            <div
-              className="ContentBlock"
-            >
-              <span
-                className="contentHeading"
-              >
-                Location:
-              </span>
-               
-              <span>
-                Albuquerque, NM
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="popout"
-    >
-      <div
-        className="Details"
-      >
-        <div
-          className="filler"
-        />
-        <div
-          className="content"
-        />
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "div.storyWrapper { position: relative; height: 200px; width: 600px; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -3190,6 +3229,7 @@ exports[`Storyshots Components|ConditionDetails no data loaded 1`] = `
   className="visualization"
 >
   <div
+    className="storyWrapper"
     style={
       Object {
         "border": "1px dashed magenta",
@@ -3223,6 +3263,13 @@ exports[`Storyshots Components|ConditionDetails no data loaded 1`] = `
       />
     </section>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "div.storyWrapper { position: relative; height: 200px; width: 600px; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -3279,6 +3326,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
               tabIndex={0}
             >
               <div
+                className="instrumentNumber"
                 data-heading="0--1"
                 title="XO-001-2018"
               >
@@ -3434,6 +3482,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
               tabIndex={0}
             >
               <div
+                className="instrumentNumber"
                 data-heading="1--1"
                 title="XO-003-2018"
               >
@@ -3541,6 +3590,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
               tabIndex={0}
             >
               <div
+                className="instrumentNumber"
                 data-heading="2--1"
                 title="XO-005-2018"
               >
@@ -14806,7 +14856,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
   className="visualization"
 >
   <div
-    className="ProjectMenu paddingBefore3 paddingAfter1"
+    className="ProjectMenu paddingBefore2 paddingAfter2"
   >
     <div
       className="pipe"
@@ -14832,8 +14882,36 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
     >
       <ul>
         <li
-          className="List-Item"
+          className="List-Item selected"
         >
+          <div
+            className="CircleContainer arrow arrowPrevious hiddenArrow"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
           <div
             className="List-Item-Content"
             focusable={true}
@@ -15070,6 +15148,34 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                 <p>
                   Trans-Alta
                 </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext hiddenArrow"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -16452,7 +16558,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
     <div
       className="RegDocs"
     >
-      <h3>
+      <h2>
         Search for instrument 
         <strong>
           #
@@ -16462,7 +16568,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         <strong>
           RegDocs...
         </strong>
-      </h3>
+      </h2>
       <p
         className="iconContainer"
       >
@@ -16560,7 +16666,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         </svg>
       </a>
       <button
-        className="PopupBtn cancel"
+        className="PopupBtn large"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -16620,7 +16726,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
     <div
       className="RegDocs"
     >
-      <h3>
+      <h2>
         Search for instrument 
         <strong>
           #
@@ -16630,7 +16736,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         <strong>
           RegDocs...
         </strong>
-      </h3>
+      </h2>
       <p
         className="iconContainer"
       >
@@ -16728,7 +16834,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         </svg>
       </a>
       <button
-        className="PopupBtn cancel"
+        className="PopupBtn large"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -19018,7 +19124,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       <span>
         Showing 
         <span>
-          In Progress
+          All
         </span>
          projects from 2010 - 2018
       </span>
@@ -19227,16 +19333,16 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
       <p
         className="description"
       >
-        Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords 
+        Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about 
         <a
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
           tabIndex={0}
         >
-          here
+          how we extracted
         </a>
-        .
+         keywords.
       </p>
       <ul
         className="categories"
@@ -19253,7 +19359,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           all
         </li>
         <li
@@ -19263,7 +19368,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           wildlife & habitat
         </li>
         <li
@@ -19273,7 +19377,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           environment
         </li>
         <li
@@ -19283,7 +19386,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           oversight & safety
         </li>
         <li
@@ -19293,7 +19395,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           engineering & structures
         </li>
         <li
@@ -19303,7 +19404,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           administration & filings
         </li>
         <li
@@ -19313,7 +19413,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           people & communities
         </li>
       </ul>
@@ -23179,7 +23278,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Total Conditions By Theme Over Time
+      Number of Conditions by Theme Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -25063,7 +25162,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Total Conditions by Phase Over Time
+      Number of Conditions by Phase Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -28327,7 +28426,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Total Conditions By Theme Over Time
+      Number of Conditions by Theme Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -30281,35 +30380,19 @@ exports[`Storyshots Components|TotalConditionsPopup default 1`] = `
     onClose={[Function]}
   >
     <div
-      className="TotalConditions"
+      className="TotalConditions pad-bottom"
     >
-      <div
-        className="Header"
-      >
-        <span>
-          How is the Total Number of Conditions Determined?
-        </span>
-      </div>
-      <div
-        className="Description"
-      >
-        <div
-          className="Explanation"
-        >
-          <span>
-            The total number of conditions displayed in the visualization may not match the CER's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
-          </span>
-        </div>
-        <div
-          className="Example"
-        >
-          <span>
-            For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.
-          </span>
-        </div>
-      </div>
+      <h2>
+        How is the Total Number of Conditions Determined?
+      </h2>
+      <p>
+        The total number of conditions displayed in the visualization may not match the CER's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
+      </p>
+      <p>
+        For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.
+      </p>
       <button
-        className="PopupBtn"
+        className="PopupBtn large bottom-right"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -30361,35 +30444,19 @@ exports[`Storyshots Components|TotalConditionsPopup/TotalConditions default 1`] 
     className="TotalConditionsPopup"
   >
     <div
-      className="TotalConditions"
+      className="TotalConditions pad-bottom"
     >
-      <div
-        className="Header"
-      >
-        <span>
-          How is the Total Number of Conditions Determined?
-        </span>
-      </div>
-      <div
-        className="Description"
-      >
-        <div
-          className="Explanation"
-        >
-          <span>
-            The total number of conditions displayed in the visualization may not match the CER's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
-          </span>
-        </div>
-        <div
-          className="Example"
-        >
-          <span>
-            For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.
-          </span>
-        </div>
-      </div>
+      <h2>
+        How is the Total Number of Conditions Determined?
+      </h2>
+      <p>
+        The total number of conditions displayed in the visualization may not match the CER's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
+      </p>
+      <p>
+        For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.
+      </p>
       <button
-        className="PopupBtn"
+        className="PopupBtn large bottom-right"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}

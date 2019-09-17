@@ -40,9 +40,9 @@ describe('Components|CompanyWheel/WheelRay', () => {
       expect(wrapper.type()).toBe('svg');
     });
 
-    it('should render the same amount of items as the length of the array passed less 1', () => {
+    it('should render the same number of flags as the length of the array passed less 1', () => {
       const { wrapper } = wrapperSetup({});
-      expect(wrapper.children()).toHaveLength(wheelData.length - 1);
+      expect(wrapper.find('.companyRay')).toHaveLength(wheelData.length - 1);
     });
 
     it(
@@ -53,22 +53,5 @@ describe('Components|CompanyWheel/WheelRay', () => {
         expect(wrapper.children()).not.toHaveProperty('transform', `translate(371 209) rotate(${wrapper.rotation + (wrapper.reservedDegrees / 2)}, 0, 245)`);
       },
     );
-
-    it('should render an item before the gap', () => {
-      const positionBeforeGap = (
-        Math.abs(rotation - (reservedDegrees / 2) - degreesPerItem).toFixed(2) % 360
-      );
-      const transformValue = `rotate(${positionBeforeGap})`;
-      const { wrapper } = wrapperSetup({});
-      expect(wrapper.children().first().props().transform === transformValue).toBe(true);
-    });
-
-    it('should render an item after the gap', () => {
-      const positionAfterGap = (Math.abs(rotation + (reservedDegrees / 2) - 360));
-      const transformValue = `rotate(${positionAfterGap.toFixed(2)})`;
-      const { wrapper } = wrapperSetup({});
-      expect(wrapper.childAt(wheelData.length - 2)
-        .props().transform === transformValue).toBe(true);
-    });
   });
 });

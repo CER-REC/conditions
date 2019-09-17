@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import memoize from 'lodash.memoize';
 import './styles.scss';
@@ -30,6 +30,7 @@ const MethodologyLink = React.memo(({ children, scrollToMethodology }) => (
 
 class SuggestedKeywordsPopout extends React.PureComponent {
   static propTypes = {
+    intl: intlShape.isRequired,
     categories: PropTypes.arrayOf(PropTypes.string).isRequired,
     setIncluded: PropTypes.func.isRequired,
     setExcluded: PropTypes.func.isRequired,
@@ -65,21 +66,28 @@ class SuggestedKeywordsPopout extends React.PureComponent {
   }
 
   renderCategories = () => (
-    this.props.categories.map((i) => {
+    this.props.categories.map((category) => {
       const { selectedCategory } = this.state;
       return (
         <li
-          key={i}
-          {...handleInteraction(this.categoryOnClick, i)}
+          key={category}
+          {...handleInteraction(this.categoryOnClick, category)}
           className={classNames(
             'categoryList',
             'upperCase',
             {
-              selectedCategory: (selectedCategory.length === 0 && i === 'all')
-                ? true : selectedCategory.includes(i),
+              selectedCategory: (selectedCategory.length === 0 && category === 'all')
+                ? true : selectedCategory.includes(category),
             },
           )}
-        > { i }
+        >
+          {
+            (category !== 'all')
+              ? category
+              : this.props.intl.formatMessage({
+                id: 'components.searchBar.suggestedKeywordsPopout.all',
+              })
+          }
         </li>
       );
     })
@@ -196,4 +204,4 @@ class SuggestedKeywordsPopout extends React.PureComponent {
   }
 }
 
-export default SuggestedKeywordsPopout;
+export default injectIntl(SuggestedKeywordsPopout);

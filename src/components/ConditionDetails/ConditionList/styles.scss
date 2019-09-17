@@ -1,4 +1,6 @@
 @import '../../../styles/colors.scss';
+@import '../../../styles/legend.scss';
+
 .ConditionList {
   vertical-align: top;
   max-width: 160px;
@@ -36,6 +38,23 @@
       .CircleContainer {
         position: relative;
         left: 6px;
+      }
+
+      .List-Item {
+        position: relative;
+
+        .instrumentNumber {
+          display: inline-block;
+          width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+
+        }
+
+        &.selected .instrumentNumber {
+          width: calc(100% + #{$button-spacing});
+        }
       }
     }
   }
