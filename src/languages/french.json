@@ -107,7 +107,7 @@
     "conditionExplorer": {
       "guide": {
         "messages": {
-          "0": "Afficher la\ncondition\nmots-clés\nen glissant.",
+          "0": "Déplacer pour\nafficher des\nmots-clés.",
           "1": "Cliquer pour\nsavoir ce qu’est\nune condition.",
           "2": "Choisir un\nmot-clé et\ncliquer pour\npoursuivre.",
           "intro": "Ces lignes sont\nles conditions.",
@@ -142,8 +142,8 @@
       }
     },
     "conditionDetails": {
-      "selectedProject": "Projet sélectionnée :",
-      "selectedCondition": "Conditions dans la région sélectionnée :",
+      "selectedProject": "Projet sélectionné :",
+      "selectedCondition": "Conditions dans la region selectionnée",
       "instrumentNumber": "Instrument nᵒ :",
       "conditionNumber": "Condition nᵒ :",
       "location": "Lieu :",
@@ -152,16 +152,16 @@
       "sunsetDate": "Date de réexamen :",
       "status": "État de l’instrument :",
       "type": "Type d’instrument",
-      "keywords": "Correspondence de recherché :",
+      "keywords": "Correspondance de recherché :",
       "text": "Texte :",
-      "selectedConditionFeature": "Particularité de la condition sélectionnée",
+      "selectedConditionFeature": "Attribut sélectionné",
       "more": "Plus",
       "less": "Moins"
     },
     "featureDescription": {
       "theme": "Pour faciliter l’analyse et la compréhension du public, les conditions sont regroupées par thème, comme l’environnement, les finances, la sécurité, la sûreté, etc.",
       "phase": "En sa qualité d’organisme de réglementation présent tout au long du cycle de vie d’un projet, la Régie assure la sécurité et la protection de l’environnement à toutes les étapes. Des conditions peuvent viser une ou plusieurs étapes du cycle de vie ou toutes les étapes. {phaseLink}.",
-      "status": "Les conditions peuvent avoir deux états : En cours et conforme.",
+      "status": "Les conditions peuvent avoir deux états : en cours et conforme.",
       "type": "Il existe deux grands types de conditions : standard et non standard.",
       "filing": "Un document démontrant que les exigences relatives à une condition ont été respectées.",
       "instrument": "Ordonnances, certificats, licences ou permis délivrés par la Régie. Tous les instruments comportent un préfixe et un numéro (p. ex., GC-115).   Les préfixes des instruments réglementaires et les conditions y afférentes sont énoncés et définis dans le tableau de droite. La Régie publie un {instrumentLink} qui dresse la liste des instruments réglementaires délivrés depuis septembre 2014.",
@@ -242,16 +242,16 @@
       }
     },
     "featureMenu": {
-      "dropDownTitle": "Élément"
+      "dropDownTitle": "Attribut"
     },
     "greyPipe": {
       "countBubble": {
-        "instruments": "Instruments",
-        "projects": "Projets",
-        "conditions": "Conditions",
-        "instrument": "Instrument",
-        "project": "Projet",
-        "condition": "Condition"
+        "instruments": "instruments",
+        "projects": "projets",
+        "conditions": "conditions",
+        "instrument": "instrument",
+        "project": "projet",
+        "condition": "condition"
       }
     },
     "guide": {
@@ -260,11 +260,11 @@
         "0": "Cliquer pour poursuivre.",
         "1": "Cliquer pour poursuivre.",
         "2": "Texte juridique intégral de la condition sélectionnée.",
-        "3": "Conditions caractérisées par particularités (thème).",
+        "3": "Conditions codées par attribut (p. ex., thème)",
         "4": "Faire défiler pour voir d’autres conditions du projet.",
         "5": "Faire défiler pour voir d’autres projets de la société.",
-        "6": "Faire tourner la route pour parcourir les sociétés.",
-        "7": "Il y a davantage à découvrir au tour!"
+        "6": "Faire tourner la roue pour choisir une société.",
+        "7": "Explorer"
       }
     },
     "guideTransport": {
@@ -293,12 +293,12 @@
         "suggestedKeywords": "les suggestions"
       },
       "highlightSummary": {
-        "showing": "{status} de {start} à  {end} sont affichés.",
-        "includes": "Surlignage des conditions contenant :",
+        "showing": "{status} de {start} à  {end}",
+        "includes": "Indication des conditions contenant :",
         "excludes": "Exclure les conditions contenant :",
-        "IN_PROGRESS": "En cours",
-        "COMPLETED": "Terminé",
-        "ALL": "Tous"
+        "IN_PROGRESS": "Projets en cours",
+        "COMPLETED": "Projets terminé",
+        "ALL": "Tous projets"
       },
       "findWords": {
         "findWords": "Recherche de mots",
@@ -309,7 +309,7 @@
           "all": "tous"
         },
         "searchText": {
-          "basicInclude": "Rechercher l’un ou l’autre des",
+          "basicInclude": "Mots-clés :",
           "advancedInclude": "Inclure {dropdown} de",
           "exclude": "Mais {not} inclure",
           "not": "ne pas"
@@ -325,22 +325,24 @@
       },
       "suggestedKeywordsPopout": {
         "suggestedKeywords": "Mots-clés proposés",
-        "keywordsDescription": "Les mots-clés saisissent le sujet général d’une condition, p. ex. le type d’espèces réglementées. Découvrez de quelle façon nous extrayons les mots-clés {here}.",
-        "keywordsHere": "ici",
+        "keywordsDescription": "Les mots-clés saisissent le sujet général d’une condition; p. ex., le type d’espèces réglementées. Voir la {here} des mots-clés.",
+        "keywordsHere": "méthode d’extraction",
         "viewBy": "Afficher par :",
         "sortBy": "Tri",
         "frequency": "Fréquence",
         "alphabetical": "Ordre alphabétique",
+        "condition": "{conditions} condition",
         "conditions": "{conditions} conditions",
-        "inc": "croiss",
-        "dec": "décroiss"
+        "inc": "croiss.",
+        "dec": "décroiss.",
+        "all": "tous"
       }
     },
     "mainInfoBar": {
       "headings": {
-        "about": "La visualisation",
+        "about": "Visualisation",
         "contributors": "Collaborateurs",
-        "methodology": "La méthodologie",
+        "methodology": "Méthodologie",
         "download": "Téléchargement",
         "downloadData": "Télécharger des données",
         "keywords": "Mots-clés"
@@ -422,12 +424,12 @@
     },
     "streamGraph": {
       "title": {
-        "instrument": "Total des conditions par instrument au fil du temps",
-        "theme": "Total des conditions selon le thème au fil du temps",
-        "phase": "Total des conditions par étape au fil du temps",
-        "status": "Total des conditions selon l’état au fil du temps",
-        "type": "Total des conditions selon le type au fil du temps",
-        "filing": "Total des conditions selon le dépôt au fil du temps"
+        "instrument": "Nombre de conditions par instrument au fil du temps",
+        "theme": "Nombre de conditions selon le thème au fil du temps",
+        "phase": "Nombre de conditions par étape au fil du temps",
+        "status": "Nombre de conditions selon l’état au fil du temps",
+        "type": "Nombre de conditions selon le type au fil du temps",
+        "filing": "Nombre de conditions selon le dépôt au fil du temps"
       },
       "axis": {
         "yAxis": "Nombre de conditions",

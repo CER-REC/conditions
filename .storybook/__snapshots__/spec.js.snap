@@ -19247,16 +19247,16 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
       <p
         className="description"
       >
-        Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords 
+        Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about 
         <a
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
           tabIndex={0}
         >
-          here
+          how we extracted
         </a>
-        .
+         keywords.
       </p>
       <ul
         className="categories"
@@ -19273,7 +19273,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           all
         </li>
         <li
@@ -19283,7 +19282,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           wildlife & habitat
         </li>
         <li
@@ -19293,7 +19291,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           environment
         </li>
         <li
@@ -19303,7 +19300,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           oversight & safety
         </li>
         <li
@@ -19313,7 +19309,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           engineering & structures
         </li>
         <li
@@ -19323,7 +19318,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           administration & filings
         </li>
         <li
@@ -19333,7 +19327,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           people & communities
         </li>
       </ul>
@@ -23199,7 +23192,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Total Conditions By Theme Over Time
+      Number of Conditions by Theme Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -25083,7 +25076,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Total Conditions by Phase Over Time
+      Number of Conditions by Phase Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -28347,7 +28340,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Total Conditions By Theme Over Time
+      Number of Conditions by Theme Over Time
     </h1>
     <div
       className="VictoryContainer"

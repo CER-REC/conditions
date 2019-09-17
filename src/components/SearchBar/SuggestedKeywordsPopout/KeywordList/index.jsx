@@ -59,6 +59,9 @@ class KeywordList extends React.PureComponent {
 
               const conditions = (value.conditionCount / maxConditions);
               const remainingSpace = (1 - conditions);
+
+              const plural = (value.conditionCount === 1) ? '' : 's';
+              const conditionTextId = `components.searchBar.suggestedKeywordsPopout.condition${plural}`;
               return (
                 <li key={`${key} ${value.conditionCount}`}>
                   <div
@@ -75,7 +78,7 @@ class KeywordList extends React.PureComponent {
                   />
                   <div className="conditionsText">
                     <FormattedMessage
-                      id="components.searchBar.suggestedKeywordsPopout.conditions"
+                      id={conditionTextId}
                       values={{ conditions: value.conditionCount }}
                     />
                   </div>

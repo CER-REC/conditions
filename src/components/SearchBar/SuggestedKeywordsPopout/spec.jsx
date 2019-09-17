@@ -1,6 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
+import { shallowWithIntl, shouldBehaveLikeAComponent } from '../../../tests/utilities';
 import SuggestedKeywordsPopout from '.';
 
 const words = [
@@ -27,7 +26,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
     let spy;
     beforeEach(() => {
       spy = jest.fn();
-      wrapper = shallow(
+      wrapper = shallowWithIntl(
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
@@ -65,7 +64,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
   describe('with sortBy as alphabetical', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(
+      wrapper = shallowWithIntl(
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
@@ -99,7 +98,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
   describe('with sortBy as frequency', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(
+      wrapper = shallowWithIntl(
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
@@ -130,7 +129,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
   });
 
   describe('with sortHierarchy as inc', () => {
-    const wrapper = shallow(
+    const wrapper = shallowWithIntl(
       <SuggestedKeywordsPopout
         categories={categories}
         suggestedKeywords={words}
@@ -152,7 +151,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
   });
 
   describe('with sortHierarchy as dec', () => {
-    const wrapper = shallow(
+    const wrapper = shallowWithIntl(
       <SuggestedKeywordsPopout
         categories={categories}
         suggestedKeywords={words}
@@ -176,7 +175,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
   describe('onClick for category', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(
+      wrapper = shallowWithIntl(
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
@@ -216,7 +215,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
   describe('sorting keywords appropriately', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(
+      wrapper = shallowWithIntl(
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}

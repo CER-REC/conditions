@@ -16,7 +16,7 @@ import {
 } from '../../proptypes';
 import getFeatureColor from '../../utilities/getFeatureColor';
 import getStreamGraphData from '../../utilities/getStreamGraphData';
-import { features } from '../../constants';
+import { lang, features } from '../../constants';
 
 import './styles.scss';
 
@@ -57,7 +57,7 @@ class StreamGraph extends React.PureComponent {
     this.props.feature,
   );
 
-  formatTickValues = v => Math.round(v).toLocaleString();
+  formatTickValues = v => Math.round(v).toLocaleString(lang);
 
   handleOnChange = controlYear => this.setState({ controlYear });
 

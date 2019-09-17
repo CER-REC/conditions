@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
+import { lang } from '../../constants';
+
 const ChartIndicator = (props) => {
   const lineHeight = props.yBottom - props.yTop;
   const circle = (props.radius <= 0) ? null : (
@@ -15,7 +17,7 @@ const ChartIndicator = (props) => {
   );
   const label = typeof props.label === 'undefined' ? null : (
     <text x="0" y="-16" textAnchor="middle" alignmentBaseline="bottom">
-      {(typeof props.label === 'number') ? props.label.toLocaleString() : props.label}
+      {(typeof props.label === 'number') ? props.label.toLocaleString(lang) : props.label}
       {(props.allThemes) ? '*' : ''}
     </text>
   );
