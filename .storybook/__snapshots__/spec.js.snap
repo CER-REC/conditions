@@ -14856,7 +14856,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
   className="visualization"
 >
   <div
-    className="ProjectMenu paddingBefore3 paddingAfter1"
+    className="ProjectMenu paddingBefore2 paddingAfter2"
   >
     <div
       className="pipe"
@@ -14882,8 +14882,36 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
     >
       <ul>
         <li
-          className="List-Item"
+          className="List-Item selected"
         >
+          <div
+            className="CircleContainer arrow arrowPrevious hiddenArrow"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
           <div
             className="List-Item-Content"
             focusable={true}
@@ -15120,6 +15148,34 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                 <p>
                   Trans-Alta
                 </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext hiddenArrow"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
               </div>
             </div>
           </div>
