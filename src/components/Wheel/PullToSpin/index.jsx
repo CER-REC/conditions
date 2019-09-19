@@ -54,13 +54,13 @@ const PullToSpin = (props) => {
   const dragAnim = interpolate([x], interpolatePosition);
 
   const bind = useGesture({
-    onDrag: ({ down, delta }) => {
+    onDrag: ({ down, movement }) => {
       // Set the animation state to be false to have us on the drag animation
       setState(false);
-      set({ x: down ? delta[0] : 0, onRest: noop });
+      set({ x: down ? movement[0] : 0, onRest: noop });
     },
-    onDragEnd: ({ delta }) => {
-      if (delta[0] < 1 && delta[1] > -1) {
+    onDragEnd: ({ movement }) => {
+      if (movement[0] < 1 && movement[1] > -1) {
         onClickDoThis(true);
       } else {
         set({
