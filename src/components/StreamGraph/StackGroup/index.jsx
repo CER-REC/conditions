@@ -151,7 +151,7 @@ class StackGroup extends React.PureComponent {
     }
 
     return (
-      <React.Fragment>
+      <>
         <g
           ref={this.sizeRef}
           className="StackGroup"
@@ -176,7 +176,7 @@ class StackGroup extends React.PureComponent {
           {this.props.children}
         </g>
         {control}
-      </React.Fragment>
+      </>
     );
   }
 }

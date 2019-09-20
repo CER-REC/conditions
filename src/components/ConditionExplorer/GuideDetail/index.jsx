@@ -7,7 +7,7 @@ import './styles.scss';
 
 const steps = [
   (
-    <React.Fragment>
+    <>
       <AdvancedFormattedMessage
         id="components.conditionExplorer.guide.overview.title"
         tag="h1"
@@ -16,10 +16,10 @@ const steps = [
         id="components.conditionExplorer.guide.overview.overview"
         tag="p"
       />
-    </React.Fragment>
+    </>
   ),
   (
-    <React.Fragment>
+    <>
       <AdvancedFormattedMessage
         id="components.conditionExplorer.guide.reason.title"
         tag="h1"
@@ -28,10 +28,10 @@ const steps = [
         id="components.conditionExplorer.guide.reason.overview"
         tag="p"
       />
-    </React.Fragment>
+    </>
   ),
   (
-    <React.Fragment>
+    <>
       <AdvancedFormattedMessage
         id="components.conditionExplorer.guide.compliance.title"
         tag="h1"
@@ -40,7 +40,7 @@ const steps = [
         id="components.conditionExplorer.guide.compliance.overview"
         tag="p"
       />
-    </React.Fragment>
+    </>
   ),
 ];
 

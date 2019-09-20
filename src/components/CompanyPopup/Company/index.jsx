@@ -14,12 +14,12 @@ const BulletList = React.memo(({ children }) => {
   const items = arr.map(bullet => <li key={bullet}>{bullet.replace(/^.*(-|•) /, '')}</li>);
 
   return (
-    <React.Fragment>
+    <>
       <p>{first}</p>
       <ul className="bullets">
         {items}
       </ul>
-    </React.Fragment>
+    </>
   );
 });
 

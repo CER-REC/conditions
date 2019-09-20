@@ -28,10 +28,10 @@ export default class AppWrapper extends React.PureComponent {
     const content = (!this.state.supportedResolution && <UnsupportedWarning type="resolution" />)
       || (!this.state.supportedBrowser && <UnsupportedWarning type="browser" />)
       || (
-        <React.Fragment>
+        <>
           <React.Suspense fallback={null}><LazyApp /></React.Suspense>
           <LoadingGuide />
-        </React.Fragment>
+        </>
       );
 
     return (

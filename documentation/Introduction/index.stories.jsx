@@ -4,7 +4,7 @@ import README from './README.md';
 import ProgressMatrix from './ProgressMatrix';
 import CHANGELOG from '../../CHANGELOG.md';
 
-const noop = () => <React.Fragment />;
+const noop = () => <></>;
 storiesOf('Documentation|Introduction', module)
   .add('to the document', noop, { readme: { content: README } })
   .add('progress matrix', () => <ProgressMatrix />)

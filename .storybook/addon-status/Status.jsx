@@ -18,7 +18,7 @@ function capitalize(str) {
 }
 
 const Status = ({ name, note, children }) => (
-  <React.Fragment>
+  <>
     <div
       className="withStatus"
       style={{ borderLeftColor: `rgb(${statusColors[name]})` }}
@@ -32,7 +32,7 @@ const Status = ({ name, note, children }) => (
       {note ? <div className="note">{note}</div> : null}
     </div>
     {children}
-  </React.Fragment>
+  </>
 );
 
 Status.propTypes = {

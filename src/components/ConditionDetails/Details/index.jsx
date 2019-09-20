@@ -8,7 +8,7 @@ import './styles.scss';
 
 /* eslint-disable react/prop-types */
 const DetailBlocks = ({ data }) => (
-  <React.Fragment>
+  <>
     <ContentBlock
       id="common.features.phase"
       content={(<AdvancedFormattedMessage id={`common.${data.phase}`} />)}
@@ -25,7 +25,7 @@ const DetailBlocks = ({ data }) => (
       id="common.features.filing"
       content={(<AdvancedFormattedMessage id={`common.${data.filing}`} />)}
     />
-  </React.Fragment>
+  </>
 );
 /* eslint-enable react/prop-types */
 
@@ -35,7 +35,7 @@ const Details = ({ data, isInstrument }) => (
     <div className="content">
       {!isInstrument
         ? (
-          <React.Fragment>
+          <>
             <FormattedMessage
               id="components.conditionDetails.selectedConditionFeature"
               tagName="h3"
@@ -55,7 +55,7 @@ const Details = ({ data, isInstrument }) => (
               }
             />
             <DetailBlocks data={data} />
-          </React.Fragment>
+          </>
         )
         : null}
     </div>

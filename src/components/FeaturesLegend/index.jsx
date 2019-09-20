@@ -21,7 +21,7 @@ const FeaturesLegend = (props) => {
   if (!selectedAggregatedCount) { return null; }
 
   const footer = (
-    <React.Fragment>
+    <>
       <div className="featuresLegend">
         <h3 className="Title">
           <FormattedMessage id="components.projectLegend.numberOfConditions" />
@@ -56,7 +56,7 @@ const FeaturesLegend = (props) => {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 
   const aggregatedFeature = selectedAggregatedCount[selectedFeature];

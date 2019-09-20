@@ -102,7 +102,7 @@ class SearchContent extends React.PureComponent {
   }
 
   excludeSearchTextAndWords = () => (
-    <React.Fragment>
+    <>
       <div className="includeElements">
         <div className="includeText">
           <FormattedMessage
@@ -135,7 +135,7 @@ class SearchContent extends React.PureComponent {
       <ul className="searchWords">
         {this.searchWordsRender(this.props.excludeKeywords, 'exclude')}
       </ul>
-    </React.Fragment>
+    </>
   )
 
   highlightConditions = () => (
@@ -173,7 +173,7 @@ class SearchContent extends React.PureComponent {
       <div />
       {this.state.mode === 'basic' ? null
         : (
-          <React.Fragment>
+          <>
 
             <div className="anyText">
               <FormattedMessage
@@ -190,13 +190,13 @@ class SearchContent extends React.PureComponent {
               :
             </div>
             <div className="keywordsText">{this.keyWordsRender(this.props.excludeKeywords)}</div>
-          </React.Fragment>
+          </>
         )}
     </div>
   )
 
   includeSearchTextAndWords = () => (
-    <React.Fragment>
+    <>
       <div className="includeElements">
         <div className="includeText">
           {this.state.mode === 'basic'
@@ -241,7 +241,7 @@ class SearchContent extends React.PureComponent {
       <ul className="searchWords">
         {this.searchWordsRender(this.props.includeKeywords, 'include')}
       </ul>
-    </React.Fragment>
+    </>
   )
 
   changeSearchType = () => {

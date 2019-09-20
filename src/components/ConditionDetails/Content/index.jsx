@@ -95,7 +95,7 @@ class Content extends React.PureComponent {
       <div className="Content">{
         (this.props.itemIndex === -1)
           ? (
-            <React.Fragment>
+            <>
               <div className="half">
                 <ContentBlock
                   id="components.conditionDetails.issuanceDate"
@@ -128,10 +128,10 @@ class Content extends React.PureComponent {
                   content={<span>{data.location.join(', ')}</span>}
                 />
               </div>
-            </React.Fragment>
+            </>
           )
           : (
-            <React.Fragment>
+            <>
               <div className="half">
                 {!data.effectiveDate ? null : (
                   <ContentBlock
@@ -157,7 +157,7 @@ class Content extends React.PureComponent {
                 />
               )}
               {this.renderContentText('components.conditionDetails.text', highlightedText)}
-            </React.Fragment>
+            </>
           )
         }
       </div>

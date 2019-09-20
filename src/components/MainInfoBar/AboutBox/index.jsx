@@ -30,10 +30,10 @@ const FormattedContributorSection = ({ children }) => {
   const heading = lines.shift();
 
   return (
-    <React.Fragment>
+    <>
       <h2>{heading}</h2>
       { lines.map(line => <p key={line}>{line}</p>) }
-    </React.Fragment>
+    </>
   );
 };
 

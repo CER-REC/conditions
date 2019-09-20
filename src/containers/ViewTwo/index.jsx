@@ -184,7 +184,7 @@ class ViewTwo extends React.PureComponent {
               </div>
             )
             : (
-              <React.Fragment>
+              <>
                 <TotalConditionsLabel
                   openNumberDetails={this.props.openNumberDetails}
                 />
@@ -198,7 +198,7 @@ class ViewTwo extends React.PureComponent {
                   filteredProjectLookup={this.props.filteredProjectLookup}
                   displayOrder={this.props.displayOrder}
                 />
-              </React.Fragment>
+              </>
             )}
         </section>
 

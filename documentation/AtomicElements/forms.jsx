@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-  <React.Fragment>
+  <>
     <h1> Forms </h1>
 
     <h2>Text Field</h2>
@@ -40,5 +40,5 @@ export default () => (
       <input type="checkbox" onChange={() => {}} id="check2" name="checkbox" value="Checkbox 2" />
       Checkbox 2
     </label>
-  </React.Fragment>
+  </>
 );

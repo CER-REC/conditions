@@ -832,7 +832,7 @@ class App extends React.PureComponent {
                 }
 
                 return (
-                  <React.Fragment>
+                  <>
                     <ConditionDetails
                       selectedItem={{ instrumentIndex, itemIndex }}
                       selectedProjectId={selected.project}
@@ -866,7 +866,7 @@ class App extends React.PureComponent {
                         : emptyArray}
                       isOpen={this.state.isCompanyPopupOpen}
                     />
-                  </React.Fragment>
+                  </>
                 );
               }}
             </ComposedQuery>

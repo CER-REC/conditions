@@ -118,7 +118,7 @@ class ConditionDetails extends React.PureComponent {
             counts={this.props.counts}
           />
           {!shouldRenderData ? null : (
-            <React.Fragment>
+            <>
               <div className="listPane">
                 {items.length === 0 ? null : (
                   <ConditionList
@@ -137,7 +137,7 @@ class ConditionDetails extends React.PureComponent {
                   includedKeywords={this.props.searchKeywords.include}
                 />
               </div>
-            </React.Fragment>
+            </>
           )}
         </div>
         <div className={classNames('popout', { expanded })}>

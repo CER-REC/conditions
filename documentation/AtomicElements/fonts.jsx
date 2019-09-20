@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Fonts = props => (
-  <React.Fragment>
+  <>
     <h1> Fonts </h1>
     <div style={{ fontSize: props.fontSize }}>
       <span style={{ fontFamily: 'FiraSansCondensed' }}>Fira Sans Condensed regular</span>
@@ -14,7 +14,7 @@ const Fonts = props => (
       <span style={{ fontFamily: 'FiraSansCondensedBold' }}>Fira Sans Condensed bold</span>
       <br />
     </div>
-  </React.Fragment>
+  </>
 );
 
 Fonts.propTypes = {

@@ -9,7 +9,7 @@ import handleInteraction from '../../../utilities/handleInteraction';
 import './styles.scss';
 
 const lessButton = (
-  <React.Fragment>
+  <>
     <AdvancedFormattedMessage
       id="components.conditionDetails.less"
       className="upperCase"
@@ -18,11 +18,11 @@ const lessButton = (
     <svg className="arrow" viewBox="0 0 16 24">
       <polyline points="4,4 12,12.5 4,20 4,4" />
     </svg>
-  </React.Fragment>
+  </>
 );
 
 const moreButton = (
-  <React.Fragment>
+  <>
     <svg className="arrow" viewBox="0 0 16 24">
       <polyline points="12,4 4,12.5 12,20 12,4" />
     </svg>
@@ -31,7 +31,7 @@ const moreButton = (
       className="upperCase"
       tag="h1"
     />
-  </React.Fragment>
+  </>
 );
 
 const ProjectHeader = props => (
@@ -39,7 +39,7 @@ const ProjectHeader = props => (
     <div className="topBar">
       {(props.browseBy === 'company')
         ? (
-          <React.Fragment>
+          <>
             <AdvancedFormattedMessage
               id="components.conditionDetails.selectedProject"
               tag="h1"
@@ -58,16 +58,16 @@ const ProjectHeader = props => (
                 </button>
               )
               : <div className="openProject" />}
-          </React.Fragment>
+          </>
         )
         : (
-          <React.Fragment>
+          <>
             <AdvancedFormattedMessage
               id="components.conditionDetails.selectedCondition"
               tag="h1"
             />
             <div className="openProject" />
-          </React.Fragment>
+          </>
         )}
       {!props.isExpandable ? null : (
         <button
