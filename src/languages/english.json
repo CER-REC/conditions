@@ -143,7 +143,7 @@
     },
     "conditionDetails": {
       "selectedProject": "Selected Project:",
-      "selectedCondition": "Conditions in Selected Region:",
+      "selectedCondition": "Conditions In Selected Region:",
       "instrumentNumber": "Instrument #:",
       "conditionNumber": "Condition #:",
       "location": "Location:",
@@ -405,7 +405,7 @@
     },
     "regionSummary": {
       "regionCompanies": {
-        "title": "Companies in Selected Region:",
+        "title": "Companies In Selected Region:",
         "select": "Select a company and return to company wheel"
       },
       "regionConditions": {
