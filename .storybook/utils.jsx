@@ -71,11 +71,11 @@ export const withStyles = makeDecorator({
     if (!styles) { return getStory(context); }
 
     return (
-      <React.Fragment>
+      <>
         {getStory(context)}
         {/* eslint-disable-next-line react/no-danger */}
         <style dangerouslySetInnerHTML={{ __html: styles }} />
-      </React.Fragment>
+      </>
     );
   },
 });

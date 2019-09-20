@@ -10,7 +10,7 @@ const formatSummaryText = (arr, mapFunc) => joinJsxArray(arr.map(mapFunc), ', ')
 const HighlightSummary = props => (
   <div className="HighlightSummary">
     {!props.showFilterSummary ? null : (
-      <React.Fragment>
+      <>
         <FormattedMessage
           id="components.searchBar.highlightSummary.showing"
           values={{
@@ -22,10 +22,10 @@ const HighlightSummary = props => (
           }}
         />
         <br />
-      </React.Fragment>
+      </>
     )}
     {props.includeKeywords.length === 0 ? null : (
-      <React.Fragment>
+      <>
         <FormattedMessage id="components.searchBar.highlightSummary.includes" tagName="p" />
         <div className="keywordsText">
           {formatSummaryText(
@@ -33,10 +33,10 @@ const HighlightSummary = props => (
             keyword => <span key={keyword}>{keyword}</span>,
           )}
         </div>
-      </React.Fragment>
+      </>
     )}
     {props.excludeKeywords.length === 0 ? null : (
-      <React.Fragment>
+      <>
         <FormattedMessage id="components.searchBar.highlightSummary.excludes" tagName="p" />
         <div className="keywordsText">
           {formatSummaryText(
@@ -44,7 +44,7 @@ const HighlightSummary = props => (
             keyword => <span key={keyword}>{keyword}</span>,
           )}
         </div>
-      </React.Fragment>
+      </>
     )}
   </div>
 );

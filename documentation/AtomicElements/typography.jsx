@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-  <React.Fragment>
+  <>
     <h1>Typography</h1>
 
     <h2>Headings</h2>
@@ -60,5 +60,5 @@ export default () => (
     ` a b c d e f g h i j k l m n o
     p q r s t u v w x y z { '|' } ~
     </pre>
-  </React.Fragment>
+  </>
 );

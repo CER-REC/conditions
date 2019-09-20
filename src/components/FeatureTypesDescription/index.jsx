@@ -9,11 +9,11 @@ import './styles.scss';
 // eslint-disable-next-line react/prop-types
 const FeatureTypeHeading = ({ feature, type }) => ((feature === 'instrument' && type !== 'OTHER')
   ? (
-    <React.Fragment>
+    <>
       <h4 date-heading={type}>
         {type} - <FormattedMessage id={`common.${feature}.${type}`} />
       </h4>
-    </React.Fragment>
+    </>
   )
   : <AdvancedFormattedMessage id={`common.${feature}.${type}`} tag="h4" data-heading={type} />
 );

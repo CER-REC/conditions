@@ -20,7 +20,7 @@ storiesForView('Containers|App', module, ReadMe)
     /* eslint-disable react/no-unescaped-entities, react/self-closing-comp */
     /* eslint-disable jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for */
     /* eslint-disable max-len */
-    <React.Fragment>
+    <>
       <link
         rel="stylesheet"
         href="./themes-dist-4.0.20-theme-gcwu-fegc/theme-gcwu-fegc/css/theme.min.css"
@@ -177,7 +177,7 @@ storiesForView('Containers|App', module, ReadMe)
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
       <script src="./themes-dist-4.0.20-theme-gcwu-fegc/wet-boew/js/wet-boew.min.js"></script>
       <script src="./themes-dist-4.0.20-theme-gcwu-fegc/theme-gcwu-fegc/js/theme.min.js"></script>
-    </React.Fragment>
+    </>
     /* eslint-enable */
   ))
   .add('WithErrors', () => {

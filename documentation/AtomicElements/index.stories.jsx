@@ -15,7 +15,7 @@ const options = {
   step: 1,
 };
 
-const noop = () => <React.Fragment />;
+const noop = () => <></>;
 storiesOf('Atomic Design|HTML', module)
   .addDecorator(withKnobs)
   .add('Description', noop, { readme: { content: ReadMe } })

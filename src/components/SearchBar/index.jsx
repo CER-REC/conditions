@@ -82,7 +82,7 @@ class SearchBar extends React.PureComponent {
     switch (mode) {
       case 'find':
         modeComponent = (
-          <React.Fragment>
+          <>
             <SearchContent
               setIncluded={setIncluded}
               setExcluded={setExcluded}
@@ -114,7 +114,7 @@ class SearchBar extends React.PureComponent {
                   scrollToMethodology={scrollToMethodology}
                 />
               )}
-          </React.Fragment>
+          </>
         );
         break;
       case 'filter':

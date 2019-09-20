@@ -5,7 +5,7 @@ import Component from './components.md';
 import View from './views.md';
 import Translation from './translations.md';
 
-const noop = () => <React.Fragment />;
+const noop = () => <></>;
 storiesOf('Documentation|Architecture', module)
   .add('High Level', noop, { readme: { content: HighLevel } })
   .add('Components', noop, { readme: { content: Component } })
