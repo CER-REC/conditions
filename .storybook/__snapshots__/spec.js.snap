@@ -2703,7 +2703,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             className="topBar"
           >
             <h1>
-              Conditions in Selected Region:
+              Conditions In Selected Region:
             </h1>
             <div
               className="openProject"
@@ -3250,7 +3250,7 @@ exports[`Storyshots Components|ConditionDetails no data loaded 1`] = `
             className="topBar"
           >
             <h1>
-              Conditions in Selected Region:
+              Conditions In Selected Region:
             </h1>
             <div
               className="openProject"
@@ -4078,7 +4078,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
         className="topBar"
       >
         <h1>
-          Conditions in Selected Region:
+          Conditions In Selected Region:
         </h1>
         <div
           className="openProject"
@@ -17145,7 +17145,7 @@ exports[`Storyshots Components|RegionSummary default props 1`] = `
         <span
           className="companies"
         >
-          Companies in Selected Region:
+          Companies In Selected Region:
         </span>
         <span
           className="select"
@@ -17295,7 +17295,7 @@ exports[`Storyshots Components|RegionSummary/RegionCompanies default 1`] = `
           <span
             className="companies"
           >
-            Companies in Selected Region:
+            Companies In Selected Region:
           </span>
           <span
             className="select"
