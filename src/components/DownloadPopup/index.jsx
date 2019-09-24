@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { localDataURL, fileDownloadName } from '../../constants';
-import handleInteraction from '../../utilities/handleInteraction';
+import handleInteraction, { handleUnblockedInteraction } from '../../utilities/handleInteraction';
+import { reportAnalytics } from '../../utilities/analyticsReporting';
 
 import Modal from '../Modal';
 
 import './styles.scss';
+
+const reportDownload = e => reportAnalytics(e.type, 'download', 'dataset');
 
 // TODO: Split this into a testable component. See the RegDocsPopup for an example.
 const DownloadPopup = (props) => {
@@ -32,7 +35,12 @@ const DownloadPopup = (props) => {
         <FormattedMessage id="components.modal.data.description" />
       </div>
       <div className="Icons">
-        <a href={localDataURL} target="_blank" rel="noopener noreferrer">
+        <a
+          href={localDataURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          {...handleUnblockedInteraction(reportDownload)}
+        >
           <svg className="downloadIcon" viewBox="0 0 12 17" width="250" height="250">
             <g
               key="file-download"
