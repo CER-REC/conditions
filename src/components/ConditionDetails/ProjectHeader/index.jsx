@@ -5,6 +5,7 @@ import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import CountBubble from '../../CountBubble';
 
 import handleInteraction from '../../../utilities/handleInteraction';
+import { handleAnalyticsInteraction } from '../../../utilities/analyticsReporting';
 
 import './styles.scss';
 
@@ -49,7 +50,7 @@ const ProjectHeader = props => (
                 <button
                   type="button"
                   className="openProject"
-                  {...handleInteraction(props.openProjectDetails)}
+                  {...handleAnalyticsInteraction('project details', props.selectedProject, props.openProjectDetails)}
                 >
                   <h2 title={props.selectedProject}>
                     <span className="projectName">{props.selectedProject}</span>
