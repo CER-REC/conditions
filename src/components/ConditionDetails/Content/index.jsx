@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
-import handleInteraction from '../../../utilities/handleInteraction';
+import { handleAnalyticsInteraction } from '../../../utilities/analyticsReporting';
 import joinJsxArray from '../../../utilities/joinJsxArray';
 
 import './styles.scss';
@@ -49,7 +49,11 @@ class Content extends React.PureComponent {
       <button
         type="button"
         className="instrumentLink"
-        {...handleInteraction(this.props.openIntermediatePopup)}
+        {...handleAnalyticsInteraction(
+          'open RegDocs popup',
+          `instrument: ${data.documentNumber}`,
+          this.props.openIntermediatePopup,
+        )}
       >
         {data.instrumentNumber}
       </button>
