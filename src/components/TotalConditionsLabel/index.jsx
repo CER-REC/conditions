@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import { injectIntl, intlShape } from 'react-intl';
-import handleInteraction from '../../utilities/handleInteraction';
+import { handleAnalyticsInteraction } from '../../utilities/analyticsReporting';
 
 const TotalConditionsLabel = props => (
   <div className="TotalConditionsLabel">
     <button
       type="button"
       className="openDetails"
-      {...handleInteraction(props.openNumberDetails)}
+      {...handleAnalyticsInteraction('total conditions popup', '', props.openNumberDetails)}
     >
       <svg className="conditionLabel" height="60">
         <text x="0" y="12" className="small">

@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 import handleInteraction from '../../../utilities/handleInteraction';
+import { handleAnalyticsInteraction } from '../../../utilities/analyticsReporting';
 
 import './styles.scss';
 
@@ -13,10 +14,17 @@ const RegionCompanies = (props) => {
   const companyItems = companies
     .sort((a, b) => a.name.localeCompare(b.name))
     .map((company) => {
+      if (company.id === 0) { return null; }
+
       const companyButton = (
         <button
           type="button"
-          {...handleInteraction(selectCompany, company.id)}
+          {...handleAnalyticsInteraction(
+            'select company in region',
+            company.name,
+            selectCompany,
+            company.id,
+          )}
         >
           {company.name}
         </button>

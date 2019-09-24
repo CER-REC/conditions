@@ -13,7 +13,7 @@ import memoize from 'lodash.memoize';
 
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import * as allInstrumentsBy from '../../queries/allInstrumentsBy';
-import { lang } from '../../constants';
+import { lang, transitionStates } from '../../constants';
 
 import * as processQueryData from './processQueryData';
 
@@ -32,6 +32,8 @@ import * as selectedCreators from '../../actions/selected';
 import * as transitionStateCreators from '../../actions/transitionState';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 import createStore from '../../Store';
+import { addGeneralAnalytics, reportAnalytics, analyticsActions } from '../../utilities/analyticsReporting';
+import analyticsFromState from './analyticsFromState';
 
 import {
   browseByType,
@@ -79,6 +81,8 @@ if (!areScrollbarsVisible()) {
 }
 
 const store = createStore();
+addGeneralAnalytics(analyticsFromState(store));
+
 const cache = new InMemoryCache();
 const link = new HttpLink({
   uri: `/conditions/graphql?lang=${lang}`,
@@ -87,14 +91,6 @@ const link = new HttpLink({
 const client = new ApolloClient({ cache, link, fetch });
 
 const tutorialTiming = 5000;
-
-const transitionStates = {
-  view1: 0,
-  tutorialStart: 1,
-  view2: 8,
-  view1Reset: 9,
-  view3: 10,
-};
 
 // TODO: Remove this after the server has been updated
 const reformatYearRange = memoize(range => ({ start: range.min, end: range.max }));
@@ -479,6 +475,8 @@ class App extends React.PureComponent {
     this.incrementTransitionState();
     this.togglePlay(true);
 
+    reportAnalytics(analyticsActions.click, 'guide', 'begin tutorial');
+
     setTimeout(() => {
       this.incrementTransitionState();
     }, 50);
@@ -538,7 +536,7 @@ class App extends React.PureComponent {
     return keywordTranslation;
   };
 
-  setSelectedKeyword = (instance) => {
+  setSelectedKeyword = (e, instance) => {
     if (instance) {
       this.selectedKeywordInstance = instance;
 
@@ -547,6 +545,8 @@ class App extends React.PureComponent {
       const keywordId = parseInt(instance.body.id, 10);
       const keyword = instance.keyword.value;
       const newIncluded = [keyword];
+
+      reportAnalytics(e.type, 'keyword', keyword);
 
       batch(() => {
         this.props.setSelectedMultiple({ keywordId });

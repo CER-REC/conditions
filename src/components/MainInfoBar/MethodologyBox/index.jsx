@@ -1,6 +1,8 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
+import { handleUnblockedInteraction } from '../../../utilities/handleInteraction';
+import { reportAnalytics } from '../../../utilities/analyticsReporting';
 import { lang, nltkLink, pdfLink } from '../../../constants';
 import './styles.scss';
 
@@ -24,7 +26,13 @@ const images = imageContext.keys().reduce((acc, cur) => {
   return acc;
 }, []);
 
-images[3] = <a href={nltkLink} target="_blank" rel="noopener noreferrer" key="4">{images[3]}</a>;
+images[3] = (
+  <a href={nltkLink} target="_blank" rel="noopener noreferrer" key="4">
+    {images[3]}
+  </a>
+);
+
+const reportDownloadLink = e => reportAnalytics(e.type, 'download', 'methodology');
 
 const MethodologyBox = () => (
   <div className="MethodologyBox">
@@ -40,6 +48,7 @@ const MethodologyBox = () => (
             href={pdfLink}
             target="_blank"
             rel="noopener noreferrer"
+            {...handleUnblockedInteraction(reportDownloadLink)}
           />
         ),
       }}

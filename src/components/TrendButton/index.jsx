@@ -6,10 +6,10 @@ import StreamGraph from '../StreamGraph';
 import { allConditionsPerYearType, featureTypes, displayOrder } from '../../proptypes';
 
 import './styles.scss';
-import handleInteraction from '../../utilities/handleInteraction';
+import { handleAnalyticsInteraction } from '../../utilities/analyticsReporting';
 
 const TrendButton = props => (
-  <div className="TrendButton" {...handleInteraction(props.onClick)}>
+  <div className="TrendButton" {...handleAnalyticsInteraction('trends & conditions', '', props.onClick)}>
     <div className="buttonText">
       <StreamGraph
         allConditionsPerYear={props.allConditionsPerYear}

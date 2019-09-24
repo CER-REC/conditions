@@ -8,7 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 
-import handleInteraction from '../../utilities/handleInteraction';
+import { handleAnalyticsInteraction } from '../../utilities/analyticsReporting';
 
 import './styles.scss';
 
@@ -73,7 +73,7 @@ class MainInfoBar extends React.PureComponent {
         id={k}
         className={`textButton ${this.props.pane === k ? 'selected' : ''}`}
         type="button"
-        {...handleInteraction(this.props.setPane, k)}
+        {...handleAnalyticsInteraction('set main info bar', k, this.props.setPane, k)}
       >
         <FormattedMessage id={`components.mainInfoBar.headings.${k}`} />
       </button>

@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
-import handleInteraction from '../../utilities/handleInteraction';
+import { handleAnalyticsInteraction } from '../../utilities/analyticsReporting';
 import './styles.scss';
 
 const chevronValues = {
@@ -49,7 +49,7 @@ const GuideTransport = ({ playing, back, forward, togglePlay }) => (
     <svg
       className="back"
       viewBox="0 0 100 100"
-      {...handleInteraction(back)}
+      {...handleAnalyticsInteraction('tutorial', 'back', back)}
     >
       <circle cx="50" cy="50" r="48" />
       <path d={`M ${chevronValues.x1} ${chevronValues.y} ${chevronPath}`} />
@@ -58,7 +58,7 @@ const GuideTransport = ({ playing, back, forward, togglePlay }) => (
     <svg
       className="togglePlay"
       viewBox="0 0 100 100"
-      {...handleInteraction(togglePlay)}
+      {...handleAnalyticsInteraction('tutorial', (playing) ? 'pause' : 'play', togglePlay)}
     >
       <circle cx="50" cy="50" r="48" className={(!playing ? 'pink' : '')} />
       <path d={playing ? pausePath : playPath} />
@@ -67,7 +67,7 @@ const GuideTransport = ({ playing, back, forward, togglePlay }) => (
       className="forward"
       viewBox="0 0 100 100"
       style={{ transform: 'scaleX(-1' }}
-      {...handleInteraction(forward)}
+      {...handleAnalyticsInteraction('tutorial', 'forward', forward)}
     >
       <circle cx="50" cy="50" r="48" />
       <path d={`M ${chevronValues.x1} ${chevronValues.y} ${chevronPath}`} />

@@ -8,6 +8,8 @@ import { allConditionsPerYearType, displayOrder as displayOrderType } from '../.
 import getFeatureColor from '../../utilities/getFeatureColor';
 import getStreamGraphData from '../../utilities/getStreamGraphData';
 
+import { reportAnalytics } from '../../utilities/analyticsReporting';
+
 export default class SmallMultiplesLegend extends React.PureComponent {
   static propTypes = {
     /** The selected feature in the feature menu */
@@ -32,9 +34,17 @@ export default class SmallMultiplesLegend extends React.PureComponent {
     className: '',
   };
 
-  onItemChange = index => this.props.onChange(index === 0
-    ? ''
-    : this.props.displayOrder[this.props.feature][index - 1]);
+  onItemChange = (index, e) => {
+    const item = (index === 0)
+      ? ''
+      : this.props.displayOrder[this.props.feature][index - 1];
+    reportAnalytics(
+      e.type,
+      'select subfeature',
+      `${this.props.feature}: ${(item !== '') ? item.toLowerCase() : 'all'}`,
+    );
+    this.props.onChange(item);
+  }
 
   render() {
     const { feature, highlightName, selected, displayOrder } = this.props;

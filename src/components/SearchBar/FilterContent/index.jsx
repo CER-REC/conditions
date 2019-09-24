@@ -7,6 +7,7 @@ import handleInteraction from '../../../utilities/handleInteraction';
 import CircleContainer from '../../CircleContainer';
 import { yearRangeType } from '../../../proptypes';
 import './styles.scss';
+import { reportAnalytics, handleAnalyticsInteraction } from '../../../utilities/analyticsReporting';
 
 const allProjectStatuses = ['IN_PROGRESS', 'COMPLETED'];
 
@@ -85,9 +86,10 @@ class FilterContent extends React.PureComponent {
       : [this.state.selectedYears.end, this.state.selectedYears.start]
   )
 
-  onDragStop = () => {
+  onDragStop = (event) => {
     this.isDragging = false;
     const [start, end] = this.getSelectedYearRange();
+    reportAnalytics(event.type, 'year range', `${start} to ${end}`);
     this.props.onYearSelect({ start, end });
   }
 
@@ -110,6 +112,7 @@ class FilterContent extends React.PureComponent {
       end: selectedYears[selectedYears.length - 1],
     };
 
+    reportAnalytics(event.type, 'year range', `${newRange.start} to ${newRange.end}`);
     this.setState({ selectedYears: newRange });
     this.props.onYearSelect(newRange);
   }
@@ -144,7 +147,7 @@ class FilterContent extends React.PureComponent {
       return (
         // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
         <li
-          {...handleInteraction(this.props.onYearSelect, { start: i, end: i })}
+          {...handleAnalyticsInteraction('year range', `${i} to ${i}`, this.props.onYearSelect, { start: i, end: i })}
           key={i}
           value={i}
           onFocus={() => {}}
@@ -165,7 +168,7 @@ class FilterContent extends React.PureComponent {
     }));
   }
 
-  filterProjectStatus = (item) => {
+  filterProjectStatus = (item, e) => {
     const { projectStatus } = this.props;
     let updatedStatus;
     if ((projectStatus.length > 1) || (item === projectStatus[0])) {
@@ -173,10 +176,17 @@ class FilterContent extends React.PureComponent {
     } else {
       updatedStatus = [...allProjectStatuses];
     }
+
+    reportAnalytics(
+      e.type,
+      'filter status',
+      `show: ${updatedStatus.map(s => s.toLowerCase()).join(', ')}`,
+    );
     this.props.changeProjectStatus(updatedStatus);
   }
 
-  reset = () => {
+  reset = (event) => {
+    reportAnalytics(event.type, 'reset filters');
     this.props.changeProjectStatus(allProjectStatuses);
     this.props.onYearSelect(this.props.yearRange);
   }

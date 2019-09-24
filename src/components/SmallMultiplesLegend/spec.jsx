@@ -64,7 +64,7 @@ describe('Components|SmallMultiplesLegend', () => {
 
   test('should call the onChange function with empty string on List item change to the all item', () => {
     // All item is at the top
-    wrapper.find(List).prop('onChange')(0);
+    wrapper.find(List).prop('onChange')(0, {});
 
     expect(spy).toHaveBeenLastCalledWith('');
   });
@@ -72,7 +72,7 @@ describe('Components|SmallMultiplesLegend', () => {
   test('should call the onChange function with the data name on List item change', () => {
     for (let i = 0; i < themes.length; i += 1) {
       // Account for all item at the beginning
-      wrapper.find(List).prop('onChange')(i + 1);
+      wrapper.find(List).prop('onChange')(i + 1, {});
 
       expect(spy).toHaveBeenLastCalledWith(themes[i]);
     }

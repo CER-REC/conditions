@@ -6,9 +6,10 @@ import PropTypes from 'prop-types';
 import memoize from 'lodash.memoize';
 import { browseByType, displayOrder, featureTypes } from '../../../proptypes';
 import LocationRay from '../LocationRay';
-import handleInteraction from '../../../utilities/handleInteraction';
 import hashValuesDiffer from '../../../utilities/hashValuesDiffer';
 import memoizeReference from '../../../utilities/memoizeReference';
+
+import { handleAnalyticsInteraction } from '../../../utilities/analyticsReporting';
 
 import flagLayoutCalculation from '../CompanyFlag/flagLayoutCalculation';
 import CompanyFlag from '../CompanyFlag';
@@ -98,7 +99,7 @@ class WheelRay extends React.Component {
                   key="flag"
                   transform={transform}
                   className="companyRay"
-                  {...handleInteraction(props.onChangeDot, index)}
+                  {...handleAnalyticsInteraction('select project from wheel', `${item.name}: project id ${index}`, props.onChangeDot, index)}
                 >
                   <CompanyFlag
                     y={-65}
@@ -121,7 +122,7 @@ class WheelRay extends React.Component {
                   key="legend"
                   className="textLabels"
                   transform={`${transform} translate(28.75) rotate(90)`}
-                  {...handleInteraction(props.onChangeRay, index)}
+                  {...handleAnalyticsInteraction('select company from wheel', item.name, props.onChangeRay, index)}
                 >
                   {item.name.charAt(0)}
                 </text>
@@ -131,7 +132,12 @@ class WheelRay extends React.Component {
         )
         : (
           <React.Fragment key={`${item.id}LocationRay`}>
-            <g key="chart" transform={transform} className="locationRay" {...handleInteraction(props.onChangeRay, index)}>
+            <g
+              key="chart"
+              transform={transform}
+              className="locationRay"
+              {...handleAnalyticsInteraction('select region from wheel', `${item.name}, ${item.province}`, props.onChangeRay, index)}
+            >
               <LocationRay
                 regionId={item.id}
                 items={item.aggregatedCount}
@@ -155,7 +161,12 @@ class WheelRay extends React.Component {
                       x2="0"
                       y2="-2"
                     />
-                    <text className="textLabels" transform="rotate(94)" textAnchor="right" {...handleInteraction(props.onChangeRay, index)}>
+                    <text
+                      className="textLabels"
+                      transform="rotate(94)"
+                      textAnchor="right"
+                      {...handleAnalyticsInteraction('select province from wheel', item.province, props.onChangeRay, index)}
+                    >
                       &nbsp;{item.province}
                       <title>
                         {item.province}

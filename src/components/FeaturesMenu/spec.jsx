@@ -62,7 +62,8 @@ describe('Components|FeaturesMenu', () => {
     test('should call the onChange function with the feature on List item change', () => {
       const list = wrapper.find('List');
       const desired = i18nToFeature(list.prop('items')[3].props.id);
-      list.prop('onChange')(3);
+
+      list.prop('onChange')(3, {});
       expect(spy).toHaveBeenLastCalledWith(desired);
     });
 

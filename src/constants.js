@@ -110,3 +110,17 @@ export const provinces = {
   NB: 'New Brunswick',
   NS: 'Nova Scotia',
 };
+
+export const transitionStates = {
+  view1: 0,
+  tutorialStart: 1,
+  view2: 8,
+  view1Reset: 9,
+  view3: 10,
+};
+
+export const shareUrls = {
+  facebook: 'https://www.facebook.com/sharer/sharer.php?u=',
+  linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url=',
+  twitter: 'https://twitter.com/intent/tweet?url=',
+};

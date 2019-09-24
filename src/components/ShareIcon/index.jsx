@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { fetch as fetchPolyfill } from 'whatwg-fetch';
 import './styles.scss';
-import handleInteraction from '../../utilities/handleInteraction';
+import { handleAnalyticsInteraction } from '../../utilities/analyticsReporting';
 import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
 import RouteComputations from '../../RouteComputations';
-import { lang } from '../../constants';
+import { lang, shareUrls } from '../../constants';
 
 const noop = () => {};
 
@@ -37,33 +37,19 @@ class ShareIcon extends React.PureComponent {
       }).catch(() => document.location.href);
   };
 
-  handleOnClick = () => {
-    if (this.props.target === 'email') {
-      this.getBitlyURL().then((url) => {
+  openShareWindow = baseUrl => this.getBitlyURL().then((bitlyUrl) => {
+    window.open(`${baseUrl}${bitlyUrl}`, 'targetWindow', 'width=650,height=650');
+  }).catch(noop);
+
+  handleOnClick = () => (
+    (shareUrls[this.props.target])
+      ? this.openShareWindow(shareUrls[this.props.target])
+      : this.getBitlyURL().then((url) => {
         const emailBody = url;
         const emailUrl = `mailto:?subject=; &body= ${emailBody}`;
         window.location.href = emailUrl;
-      }).catch(noop);
-    }
-    if (this.props.target === 'facebook') {
-      this.getBitlyURL().then((bitlyUrl) => {
-        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${bitlyUrl}`;
-        window.open(facebookUrl, 'targetWindow', 'width=650,height=650');
-      }).catch(noop);
-    }
-    if (this.props.target === 'linkedin') {
-      this.getBitlyURL().then((bitlyUrl) => {
-        const locationUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${bitlyUrl}&summary=${bitlyUrl}`;
-        window.open(locationUrl, 'targetWindow', 'width=650,height=650');
-      }).catch(noop);
-    }
-    if (this.props.target === 'twitter') {
-      this.getBitlyURL().then((bitlyUrl) => {
-        const locationUrl = `https://twitter.com/intent/tweet?url=${bitlyUrl}`;
-        window.open(locationUrl, 'targetWindow', 'width=650,height=650');
-      }).catch(noop);
-    }
-  }
+      }).catch(noop)
+  )
 
   render() {
     const icon = this.props.target === 'email' ? 'envelope' : this.props.target;
@@ -73,7 +59,11 @@ class ShareIcon extends React.PureComponent {
           'ShareIcon',
           this.props.className,
         )}
-        {...handleInteraction(this.handleOnClick)}
+        {...handleAnalyticsInteraction(
+          'share on social media',
+          this.props.target,
+          this.handleOnClick,
+        )}
       >
         <CircleContainer size={20}>
           <Icon size="1x" icon={icon} prefix={this.props.prefix} />

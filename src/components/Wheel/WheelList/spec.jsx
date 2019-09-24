@@ -45,9 +45,20 @@ describe('Components|Wheel/WheelList', () => {
         .find('.list')
         .find('List')
         .props()
-        .onChange();
+        .onChange(2, {});
 
       expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    it('should convert from the given relative index to a proper list index', () => {
+      wrapper.find('.WheelList')
+        .find('.listContainer')
+        .find('.list')
+        .find('List')
+        .props()
+        .onChange(5, {});
+
+      expect(spy).toHaveBeenCalledWith(6);
     });
   });
 });
