@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 import './styles.scss';
-import handleInteraction from '../../utilities/handleInteraction';
+import { handleAnalyticsInteraction } from '../../utilities/analyticsReporting';
 
 const KeywordExplorerButton = props => (
-  <div className="KeywordExplorerButton" {...handleInteraction(props.onClick)}>
+  <div className="KeywordExplorerButton" {...handleAnalyticsInteraction('back to keywords', '', props.onClick)}>
     <div className="buttonText">
       <svg className="keywordExplorerCircle">
         <circle cx="13" cy="13" r="12" />

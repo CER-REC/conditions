@@ -35,7 +35,7 @@ export const addGeneralAnalytics = (generalAnalytics) => {
  * @return {{}}                 An object of analytics information
  */
 
-export const reportAnalytics = (action, category, label = '') => {
+export const reportAnalytics = (action, category, label) => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
     if (env !== 'test') { console.warn('Google Tag Manager not found.'); }
@@ -47,8 +47,9 @@ export const reportAnalytics = (action, category, label = '') => {
     ...getGeneralAnalytics(),
     action,
     category,
-    label,
   };
+
+  if (label) { dataObject.label = label; }
 
   // eslint-disable-next-line no-console
   if (env !== 'test') { console.log('Sending Google Analytics report:', dataObject); }
