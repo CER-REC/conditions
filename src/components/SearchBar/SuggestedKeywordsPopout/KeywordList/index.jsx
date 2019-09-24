@@ -6,6 +6,7 @@ import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
 import Icon from '../../../Icon';
 import handleInteraction from '../../../../utilities/handleInteraction';
+import { reportAnalytics } from '../../../../utilities/analyticsReporting';
 import BarContainer from '../../../BarContainer';
 import './styles.scss';
 
@@ -25,15 +26,19 @@ class KeywordList extends React.PureComponent {
     isExclude: PropTypes.bool.isRequired,
   }
 
-  keywordOnClick = (word) => {
+  keywordOnClick = (word, e) => {
     const { isExclude, includeKeywords, excludeKeywords } = this.props;
     if (excludeKeywords.includes(word)) {
+      reportAnalytics(e.type, 'remove suggested keyword', `exclude: ${word}`);
       this.props.setExcluded(excludeKeywords.filter(v => v !== word));
     } else if (includeKeywords.includes(word)) {
+      reportAnalytics(e.type, 'remove suggested keyword', `include: ${word}`);
       this.props.setIncluded(includeKeywords.filter(v => v !== word));
     } else if (isExclude) {
+      reportAnalytics(e.type, 'add suggested keyword', `exclude: ${word}`);
       this.props.setExcluded(excludeKeywords.concat(word));
     } else {
+      reportAnalytics(e.type, 'add suggested keyword', `include: ${word}`);
       this.props.setIncluded(includeKeywords.concat(word));
     }
   };
