@@ -118,3 +118,9 @@ export const transitionStates = {
   view1Reset: 9,
   view3: 10,
 };
+
+export const shareUrls = {
+  facebook: 'https://www.facebook.com/sharer/sharer.php?u=',
+  linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url=',
+  twitter: 'https://twitter.com/intent/tweet?url=',
+};
