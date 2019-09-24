@@ -4619,8 +4619,12 @@ exports[`Storyshots Components|DownloadPopup default 1`] = `
         className="Icons"
       >
         <a
+          focusable={true}
           href="http://www.cer-rec.gc.ca/open/conditions/conditions.csv"
+          onClick={[Function]}
+          onKeyPress={[Function]}
           rel="noopener noreferrer"
+          tabIndex={0}
           target="_blank"
         >
           <svg
