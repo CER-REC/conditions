@@ -1,3 +1,182 @@
+# [0.27.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.27.0) (2019-09-25)
+
+
+### Analytics
+
+* **Features:** replaces local strings with centralized action types (557889c)
+
+
+### App
+
+* **Features:** memoizes the analytics interaction wrapper (9c80d6a)
+* **Features:** updates French and English text (620dbc7)
+* **Features:** adds tests and documentation to the analytics reporter (75e57fd)
+* **Features:** updates text (5bfe9bd)
+* **Features:** updates text as per the CER (555b424)
+* **Features:** adds analytics interaction when a keyword is selected (7b98c66)
+* **Features:** adds analytics interaction for beginning the tutorial (c04c2ac)
+* **Features:** adds initial analytics reporter (a6bfd0a)
+* **Features:** adds event and state information to analytics (2fd1942)
+* **Features:** adds an analytics wrapper for handleInteraction (87e8c2c)
+* **Bug Fixes:** updates React.Fragment syntax to <> as per the updated config (aae55db)
+* **Bug Fixes:** passes openCompanyPopup to Region Summary to avoid prop errors (b55f332)
+* **Tests:** adds a basic mock store to keep tests with analytics interactions from breaking (e652eae)
+* **Tests:** simplifies mock events (38efd3b)
+* **Tests:** updates snapshots (1e6466d)
+* **Code Refactoring:** continues generalizing the analytics reporter, expands tests (abdfe9e)
+* **Code Refactoring:** extracts app-specific logic from analyticsReporting to allow reuse (2eac28b)
+
+
+### ConditionDetails
+
+* **Features:** adds an analytics interaction when opening the project details popup (fafac5e)
+* **Features:** adds an analytics interaction for opening the RegDocs popup (f97fe32)
+* **Features:** adds analytics interactions for selecting a condition or instrument (d8376c8)
+* **Bug Fixes:** fixes vertical alignment of project header across browsers (a35e6e6)
+* **Bug Fixes:** adds ellipses to instrument numbers in the ConditionList as needed (3917db1)
+
+
+### ConditionExplorer
+
+* **Features:** adds analytics interaction when dragging the Guide (065b71a)
+* **Features:** adds analytics interactions when changing GuideDetail pages (bbb19f4)
+* **Features:** adds analytics interactions for expanding and closing the Guide (914e9ed)
+* **Bug Fixes:** avoids sending both drag and click events when mousing down on the Guide (085ff5b)
+
+
+### Dependencies
+
+* **Project Maintenance:** update dependency @vizworx/eslint-config-react to v1.1.0 (84e5d3d)
+
+
+### DownloadPopup
+
+* **Features:** adds an analytics interaction for the dataset download (2db1285)
+
+
+### Dropdown
+
+* **Features:** exposes the initiating event to Dropdown event handlers (0814003)
+
+
+### FeaturesMenu
+
+* **Features:** adds analytics interactions for changing the selected feature (8ee09a2)
+
+
+### GuideTransport
+
+* **Features:** adds analytics interactions for the transport buttons (26ac382)
+
+
+### HighLightSummary
+
+* **Bug Fixes:** fixes highlight summary (344e7fd, NEBV-1763)
+
+
+### KeywordExplorerButton
+
+* **Features:** adds an analytics interaction for returning to view 1 (d3870e6)
+
+
+### List
+
+* **Features:** passes the event as a final argument to the List's event handler (a9e5e3e)
+
+
+### MainInfoBar
+
+* **Features:** adds analytics interactions for the info bar tabs and methodology download (be70f3a)
+
+
+### Modal
+
+* **Bug Fixes:** refactors popups to use consistent styles (53dbadc)
+
+
+### ProjectMenu
+
+* **Features:** adds analytics interactions for selecting a project (8471f36)
+* **Features:** only show sedimentation for projects off the screen (6318a35, NEBV-1767)
+* **Features:** hides sedimentation if there are no projects in that direction (e80c33e)
+* **Bug Fixes:** removes a fallback call to Redux from inside a render method (23f1fee)
+
+
+### Redux
+
+* **Bug Fixes:** overwrites arrays in the store rather than merge to avoid concatenating them (d3598c1)
+
+
+### RegionSummary
+
+* **Features:** adds an analytics interaction for selecting a company (335fe18)
+* **Features:** adds ellipses to company list items (487fbb9)
+
+
+### SearchBar
+
+* **Features:** adds analytics interactions to the suggested keywords (676f332)
+* **Features:** adds analytics interactions for changing filter statuses and years (9ff87d7)
+* **Features:** adds analytics interactions for adding/removing keywords and toggling advanced mode (c2af917)
+* **Features:** closes the active tab when the app's mode changes (d7f643c)
+* **Features:** hides the filter summary in Location mode or with default filter params (7221bb5)
+* **Features:** hides the filter tab in Location mode (ea08f24)
+* **Features:** updates text, adds plural and all-categories checks (8df3d95)
+* **Bug Fixes:** closes the active tab on any mode change, not just to location mode (6f4ad32)
+
+
+### ShareIcon
+
+* **Features:** refactors sharing logic and adds analytics interactions (ba92c6b)
+
+
+### SmallMultiplesLegend
+
+* **Features:** adds analytics interactions for selecting legend items (3127b2d)
+
+
+### SnapShots
+
+* **Bug Fixes:** updates snapshots (2914190)
+
+
+### StreamGraph
+
+* **Features:** uses detected locale for toLocaleString calls (4d6e192)
+
+
+### TotalConditionsLabel
+
+* **Features:** adds an analytics interaction for opening the popup (99ab284)
+
+
+### TrendButton
+
+* **Features:** adds an analytics interaction for clicking the button (c3776b2)
+
+
+### UnsupportedWarning
+
+* **Features:** adds French text (181256b)
+
+
+### Utilities
+
+* **Features:** adds an alternative handleInteraction that doesn't prevent default behaviours (9bdd22c)
+
+
+### Wheel
+
+* **Features:** adds analytics interactions for the wheel and wheel list (b805270)
+* **Features:** adds analytics interactions for the Pull To Spin button (6b12508)
+* **Features:** restructures ray wrappers to give letters separate hitboxes (1c41764)
+* **Bug Fixes:** split the Location rays and legend markers into separate focusable wrappers (d6e5782)
+
+
+### WheelList
+
+* **Bug Fixes:** adds border radius to avoid capturing mouse events for the ring (89583e6)
+
 # [0.26.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.26.0) (2019-09-11)
 
 
