@@ -1,4 +1,5 @@
 import React from 'react';
+import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { fetch as fetchPolyfill } from 'whatwg-fetch';
@@ -16,6 +17,7 @@ class ShareIcon extends React.PureComponent {
     className: PropTypes.string,
     prefix: PropTypes.string,
     target: PropTypes.oneOf(['facebook', 'email', 'twitter', 'linkedin']).isRequired,
+    intl: intlShape.isRequired,
   };
 
   static defaultProps = {
@@ -45,10 +47,11 @@ class ShareIcon extends React.PureComponent {
     (shareUrls[this.props.target])
       ? this.openShareWindow(shareUrls[this.props.target])
       : this.getBitlyURL().then((url) => {
-        const emailBody = url;
-        const emailUrl = `mailto:?subject=; &body= ${emailBody}`;
+        const subject = this.props.intl.formatMessage({ id: 'components.shareIcon.emailSubject' });
+        const bodyText = this.props.intl.formatMessage({ id: 'components.shareIcon.emailBody' });
+        const emailUrl = `mailto:?subject=${subject}&body=${url}%0A%0A${bodyText}`;
         window.location.href = emailUrl;
-      }).catch(noop)
+      }).catch(err => console.error(err))
   )
 
   render() {
@@ -73,4 +76,4 @@ class ShareIcon extends React.PureComponent {
   }
 }
 
-export default ShareIcon;
+export default injectIntl(ShareIcon);
