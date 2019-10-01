@@ -64,7 +64,7 @@
     "react-is": "^16.8.6",
     "react-redux": "^7.0.0",
     "react-spring": "^8.0.22",
-    "react-use-gesture": "^5.1.1",
+    "react-use-gesture": "^6.0.0",
     "react-with-gesture": "^4.0.8",
     "redux": "^4.0.1",
     "shallowequal": "^1.1.0",
