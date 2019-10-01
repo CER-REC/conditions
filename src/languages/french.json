@@ -472,6 +472,10 @@
       "resetLinkText": "Réinitialiser la session.",
       "resetMessage": "Veuillez cliquer sur le lien pour réinitialiser la session."
     },
+    "shareIcon": {
+      "emailSubject": "Visualisation des conditions relatives aux projets énergétiques",
+      "emailBody": "Cet outil interactif permet d’explorer les données sur les conditions au moyen de mots-clés et d’une représentation visuelle."
+    },
     "shortcutInfoBar": {
       "about": "La visualization",
       "share": "Partager :",

@@ -1,6 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shouldBehaveLikeAComponent } from '../../tests/utilities';
+import { shouldBehaveLikeAComponent, shallowWithIntl } from '../../tests/utilities';
 
 import ShareIcon from '.';
 import Icon from '../Icon';
@@ -12,7 +11,7 @@ const target = 'facebook';
 describe('Components|ShareIcon', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<ShareIcon target={target} />);
+    wrapper = shallowWithIntl(<ShareIcon target={target} />);
   });
 
   shouldBehaveLikeAComponent(ShareIcon, () => wrapper);

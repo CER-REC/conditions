@@ -473,6 +473,10 @@
       "resetLinkText": "Reset Session",
       "resetMessage": "Please click on the link to reset the session:"
     },
+    "shareIcon": {
+      "emailSubject": "Conditions on Energy Projects Visualization",
+      "emailBody": "This is an interactive tool for exploration of CER conditions data through keywords and visual representation."
+    },
     "shortcutInfoBar": {
       "about": "About this Visualization",
       "share": "Share:",
