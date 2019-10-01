@@ -1,3 +1,42 @@
+# [0.28.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.28.0) (2019-10-01)
+
+
+### Analytics
+
+* **Features:** adds checks for Google Tag Manager's .dataLayer (f8f91fc)
+* **Bug Fixes:** silences console messages in test environments (bfbc866)
+
+
+### App
+
+* **Features:** adds an additional name to the list of CER data experts (925593e)
+
+
+### Dependencies
+
+* **Bug Fixes:** update dependency react-use-gesture to v6 (ae807f0)
+* **Project Maintenance:** update babel monorepo to v7.6.2 (f6768ea)
+* **Project Maintenance:** update dependency @vizworx/babel-preset to v1.0.1 (73c32b2)
+* **Project Maintenance:** update dependency codecov to v3.6.1 (14e1ec9)
+* **Project Maintenance:** update dependency cross-env to v6 (ee58cce)
+* **Project Maintenance:** update dependency cross-env to v6.0.2 (d3f156c)
+* **Project Maintenance:** update dependency eslint to v6.5.1 (c92e59a)
+* **Project Maintenance:** update dependency webpack to v4.41.0 (f0008c1)
+* **Project Maintenance:** update dependency webpack-cli to v3.3.9 (97fd0c7)
+* **Project Maintenance:** update dependency webpack-dev-middleware to v3.7.2 (6eac2c1)
+* **Project Maintenance:** update storybook monorepo to v5.2.1 (4195507)
+
+
+### ShareIcon
+
+* **Features:** adds email content (26ad7b8)
+* **Bug Fixes:** Properly encodes text for mailto URLs (3bc9c3e)
+
+
+### Wheel
+
+* **Bug Fixes:** updates PullToSpin to fix breaking changes to react-use-gesture (2fb1e5e)
+
 # [0.27.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.27.0) (2019-09-25)
 
 
