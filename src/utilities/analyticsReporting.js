@@ -38,9 +38,8 @@ export const addGeneralAnalytics = (generalAnalytics) => {
 export const reportAnalytics = (action, category, label) => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
-    if (env !== 'test') { console.warn('Google Tag Manager not found.'); }
-    // TODO: Uncomment this when GTM is added
-    // return null;
+    if (env !== 'production') { console.warn('Google Tag Manager not found.'); }
+    return null;
   }
 
   const dataObject = {
@@ -52,8 +51,8 @@ export const reportAnalytics = (action, category, label) => {
   if (label) { dataObject.label = label; }
 
   // eslint-disable-next-line no-console
-  if (env !== 'test') { console.log('Sending Google Analytics report:', dataObject); }
-  // TODO: Remove redundant dataLayer check when GTM is added
+  if (env !== 'production') { console.log('Sending Google Analytics report:', dataObject); }
+
   return window.dataLayer && window.dataLayer.push(dataObject);
 };
 
