@@ -39,8 +39,7 @@ export const reportAnalytics = (action, category, label) => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
     if (env !== 'test') { console.warn('Google Tag Manager not found.'); }
-    // TODO: Uncomment this when GTM is added
-    // return null;
+    return null;
   }
 
   const dataObject = {
@@ -53,7 +52,7 @@ export const reportAnalytics = (action, category, label) => {
 
   // eslint-disable-next-line no-console
   if (env !== 'test') { console.log('Sending Google Analytics report:', dataObject); }
-  // TODO: Remove redundant dataLayer check when GTM is added
+
   return window.dataLayer && window.dataLayer.push(dataObject);
 };
 
