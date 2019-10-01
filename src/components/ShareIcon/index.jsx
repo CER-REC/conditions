@@ -49,7 +49,13 @@ class ShareIcon extends React.PureComponent {
       : this.getBitlyURL().then((url) => {
         const subject = this.props.intl.formatMessage({ id: 'components.shareIcon.emailSubject' });
         const bodyText = this.props.intl.formatMessage({ id: 'components.shareIcon.emailBody' });
-        const emailUrl = `mailto:?subject=${subject}&body=${url}%0A%0A${bodyText}`;
+        const emailUrl = `mailto:?subject=${
+          encodeURIComponent(subject)
+        }&body=${
+          encodeURIComponent(url)
+        }%0A%0A${
+          encodeURIComponent(bodyText)
+        }`;
         window.location.href = emailUrl;
       }).catch(err => console.error(err))
   )
