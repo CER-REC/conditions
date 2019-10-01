@@ -38,7 +38,7 @@ export const addGeneralAnalytics = (generalAnalytics) => {
 export const reportAnalytics = (action, category, label) => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
-    if (env !== 'production') { console.warn('Google Tag Manager not found.'); }
+    if (env !== 'test') { console.warn('Google Tag Manager not found.'); }
     return null;
   }
 
@@ -51,7 +51,7 @@ export const reportAnalytics = (action, category, label) => {
   if (label) { dataObject.label = label; }
 
   // eslint-disable-next-line no-console
-  if (env !== 'production') { console.log('Sending Google Analytics report:', dataObject); }
+  if (env !== 'test') { console.log('Sending Google Analytics report:', dataObject); }
 
   return window.dataLayer && window.dataLayer.push(dataObject);
 };
