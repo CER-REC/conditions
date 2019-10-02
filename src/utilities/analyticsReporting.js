@@ -46,12 +46,13 @@ export const reportAnalytics = (action, category, label) => {
     ...getGeneralAnalytics(),
     action,
     category,
+    event: 'visualization interaction',
   };
 
   if (label) { dataObject.label = label; }
 
   // eslint-disable-next-line no-console
-  if (env !== 'test') { console.log('Sending Google Analytics report:', dataObject); }
+  if (env !== 'test' && env !== 'production') { console.log('Sending Google Analytics report:', dataObject); }
 
   return window.dataLayer && window.dataLayer.push(dataObject);
 };
