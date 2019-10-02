@@ -1,3 +1,10 @@
+## [0.28.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.28.1) (2019-10-02)
+
+
+### Analytics
+
+* **Bug Fixes:** fix reporting of analytics events (efdc0b5)
+
 # [0.28.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.28.0) (2019-10-01)
 
 
