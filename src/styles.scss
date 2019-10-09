@@ -26,6 +26,11 @@
 }
 
 .visualization {
+  // Create a new stacking context so our z-indices don't conflict with
+  // what the WET template is doing
+  position: relative;
+  z-index: 0;
+
   font-family: $fira-sans-condensed;
   font-size: 13px;
   color: #808080;
