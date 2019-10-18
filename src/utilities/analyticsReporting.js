@@ -1,4 +1,5 @@
 import memoize from 'lodash.memoize';
+import uuid from 'uuid/v1';
 import handleInteraction from './handleInteraction';
 import memoizeReference from './memoizeReference';
 
@@ -11,6 +12,12 @@ export const analyticsActions = {
 };
 
 let getGeneralAnalytics = noop;
+let userId;
+
+const readUserIdCookie = () => {
+  const match = document.cookie.match(/userId=([^;]+)/);
+  return match && match[1];
+};
 
 /**
  * Allows the analytics reporter to pull any static or generally-relevant information
@@ -23,6 +30,14 @@ let getGeneralAnalytics = noop;
  */
 export const addGeneralAnalytics = (generalAnalytics) => {
   getGeneralAnalytics = () => generalAnalytics();
+  const foundId = readUserIdCookie();
+
+  if (foundId) {
+    userId = foundId;
+  } else {
+    userId = uuid();
+    document.cookie = `userId=${userId};max-age=86400`;
+  }
 };
 
 /**
@@ -35,21 +50,23 @@ export const addGeneralAnalytics = (generalAnalytics) => {
  * @return {{}}                 An object of analytics information
  */
 
-export const reportAnalytics = (action, category, label) => {
+export const reportAnalytics = (action, category, label, value) => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
     if (env !== 'test') { console.warn('Google Tag Manager not found.'); }
-    return null;
+    // return null;
   }
 
   const dataObject = {
     ...getGeneralAnalytics(),
     action,
     category,
-    event: 'visualization interaction',
+    event: 'condition interaction',
+    userId: readUserIdCookie(),
   };
 
   if (label) { dataObject.label = label; }
+  if (value) { dataObject.value = value; }
 
   // eslint-disable-next-line no-console
   if (env !== 'test' && env !== 'production') { console.log('Sending Google Analytics report:', dataObject); }
