@@ -47,6 +47,7 @@ export const addGeneralAnalytics = (generalAnalytics) => {
  * @param  {string} action      Event type ('click')
  * @param  {string} category    What the user did ('select company')
  * @param  {string} label       Any identifying information ('Trans-Mountain LLC')
+ * @param  {any}    value       Objects will be destructured onto the report object
  * @return {{}}                 An object of analytics information
  */
 

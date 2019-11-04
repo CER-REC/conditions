@@ -5,7 +5,7 @@ import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import CountBubble from '../../CountBubble';
 
 import handleInteraction from '../../../utilities/handleInteraction';
-import { handleAnalyticsInteraction } from '../../../utilities/analyticsReporting';
+import { reportAnalytics } from '../../../utilities/analyticsReporting';
 
 import './styles.scss';
 
@@ -35,83 +35,98 @@ const moreButton = (
   </>
 );
 
-const ProjectHeader = props => (
-  <div className="ProjectHeader">
-    <div className="topBar">
-      {(props.browseBy === 'company')
-        ? (
-          <>
-            <AdvancedFormattedMessage
-              id="components.conditionDetails.selectedProject"
-              tag="h1"
-            />
-            {(props.selectedProject !== '')
-              ? (
-                <button
-                  type="button"
-                  className="openProject"
-                  {...handleAnalyticsInteraction('project details', props.selectedProject, props.openProjectDetails)}
-                >
-                  <h2 title={props.selectedProject}>
-                    <span className="projectName">{props.selectedProject}</span>
-                    <span className="asterisk">*</span>
-                  </h2>
-                </button>
-              )
-              : <div className="openProject" />}
-          </>
-        )
-        : (
-          <>
-            <AdvancedFormattedMessage
-              id="components.conditionDetails.selectedCondition"
-              tag="h1"
-            />
-            <div className="openProject" />
-          </>
-        )}
-      {!props.isExpandable ? null : (
-        <button
-          type="button"
-          className="toggleExpand"
-          {...handleInteraction(props.toggleExpanded, !props.expanded)}
-        >
-          {props.expanded ? lessButton : moreButton}
-        </button>
-      )}
-    </div>
-    {(props.counts.instruments)
-      ? (
-        <div className="counts">
-          <CountBubble count={props.counts.instruments} textId="instruments" />
-          <CountBubble count={props.counts.conditions} textId="conditions" />
+class ProjectHeader extends React.PureComponent {
+  static propTypes = {
+    isExpandable: PropTypes.bool,
+    expanded: PropTypes.bool,
+    selectedProject: PropTypes.string.isRequired,
+    toggleExpanded: PropTypes.func.isRequired,
+    browseBy: PropTypes.oneOf(['company', 'location']),
+    openProjectDetails: PropTypes.func.isRequired,
+    counts: PropTypes.shape({
+      instruments: PropTypes.number,
+      conditions: PropTypes.number,
+    }),
+  }
+
+  static defaultProps = {
+    isExpandable: false,
+    expanded: false,
+    browseBy: 'company',
+    counts: {
+      instruments: 0,
+      conditions: 0,
+    },
+  }
+
+  handleOpenProjectDetails = (e) => {
+    const valueObj = {
+      conditionCount: this.props.counts.conditions,
+      instrumentCount: this.props.counts.instruments,
+      value: this.props.selectedProject,
+    };
+
+    reportAnalytics(e.type, 'projects', 'project', valueObj);
+    this.props.openProjectDetails();
+  }
+
+  render() {
+    return (
+      <div className="ProjectHeader">
+        <div className="topBar">
+          {(this.props.browseBy === 'company')
+            ? (
+              <>
+                <AdvancedFormattedMessage
+                  id="components.conditionDetails.selectedProject"
+                  tag="h1"
+                />
+                {(this.props.selectedProject !== '')
+                  ? (
+                    <button
+                      type="button"
+                      className="openProject"
+                      {...handleInteraction(this.handleOpenProjectDetails)}
+                    >
+                      <h2 title={this.props.selectedProject}>
+                        <span className="projectName">{this.props.selectedProject}</span>
+                        <span className="asterisk">*</span>
+                      </h2>
+                    </button>
+                  )
+                  : <div className="openProject" />}
+              </>
+            )
+            : (
+              <>
+                <AdvancedFormattedMessage
+                  id="components.conditionDetails.selectedCondition"
+                  tag="h1"
+                />
+                <div className="openProject" />
+              </>
+            )}
+          {!this.props.isExpandable ? null : (
+            <button
+              type="button"
+              className="toggleExpand"
+              {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
+            >
+              {this.props.expanded ? lessButton : moreButton}
+            </button>
+          )}
         </div>
-      )
-      : null}
-  </div>
-);
+        {(this.props.counts.instruments)
+          ? (
+            <div className="counts">
+              <CountBubble count={this.props.counts.instruments} textId="instruments" />
+              <CountBubble count={this.props.counts.conditions} textId="conditions" />
+            </div>
+          )
+          : null}
+      </div>
+    );
+  }
+}
 
-ProjectHeader.propTypes = {
-  isExpandable: PropTypes.bool,
-  expanded: PropTypes.bool,
-  selectedProject: PropTypes.string.isRequired,
-  toggleExpanded: PropTypes.func.isRequired,
-  browseBy: PropTypes.oneOf(['company', 'location']),
-  openProjectDetails: PropTypes.func.isRequired,
-  counts: PropTypes.shape({
-    instruments: PropTypes.number,
-    conditions: PropTypes.number,
-  }),
-};
-
-ProjectHeader.defaultProps = {
-  isExpandable: false,
-  expanded: false,
-  browseBy: 'company',
-  counts: {
-    instruments: 0,
-    conditions: 0,
-  },
-};
-
-export default React.memo(ProjectHeader);
+export default ProjectHeader;
