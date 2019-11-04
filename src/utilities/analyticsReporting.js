@@ -66,7 +66,13 @@ export const reportAnalytics = (action, category, label, value) => {
     userId: readUserIdCookie(),
   };
 
-  if (value) { dataObject.value = value; }
+  if (value) {
+    if (typeof value === 'object' && value.constructor === Object) {
+      Object.entries(value).forEach(([k, v]) => { dataObject[k] = v; });
+    } else {
+      dataObject.value = value;
+    }
+  }
 
   // eslint-disable-next-line no-console
   if (env !== 'test' && env !== 'production') { console.log('Sending Google Analytics report:', dataObject); }

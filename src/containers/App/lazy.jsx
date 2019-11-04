@@ -595,7 +595,8 @@ class App extends React.PureComponent {
     this.setState({ isDownloadPopupOpen: false });
   }
 
-  openTotalConditionNumberPopup = () => {
+  openTotalConditionNumberPopup = (counts) => {
+    reportAnalytics('learn more', 'projects', 'project', counts);
     this.setState({ isTotalConditionNumberPopupOpen: true });
   }
 
