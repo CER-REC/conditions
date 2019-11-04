@@ -61,11 +61,11 @@ export const reportAnalytics = (action, category, label, value) => {
     ...getGeneralAnalytics(),
     action,
     category,
-    event: 'condition interaction',
+    label,
+    event: 'visualization interaction',
     userId: readUserIdCookie(),
   };
 
-  if (label) { dataObject.label = label; }
   if (value) { dataObject.value = value; }
 
   // eslint-disable-next-line no-console
