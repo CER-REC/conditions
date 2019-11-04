@@ -82,7 +82,7 @@
     "@storybook/addon-viewport": "5.2.1",
     "@storybook/addons": "5.2.1",
     "@storybook/react": "5.2.1",
-    "@vizworx/babel-preset": "1.0.1",
+    "@vizworx/babel-preset": "1.1.0",
     "@vizworx/eslint-config-react": "1.1.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
