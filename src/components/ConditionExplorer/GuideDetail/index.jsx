@@ -5,44 +5,20 @@ import CircleContainer from '../../CircleContainer';
 import List from '../../List';
 import './styles.scss';
 
-const steps = [
-  (
-    <>
-      <AdvancedFormattedMessage
-        id="components.conditionExplorer.guide.overview.title"
-        tag="h1"
-      />
-      <AdvancedFormattedMessage
-        id="components.conditionExplorer.guide.overview.overview"
-        tag="p"
-      />
-    </>
-  ),
-  (
-    <>
-      <AdvancedFormattedMessage
-        id="components.conditionExplorer.guide.reason.title"
-        tag="h1"
-      />
-      <AdvancedFormattedMessage
-        id="components.conditionExplorer.guide.reason.overview"
-        tag="p"
-      />
-    </>
-  ),
-  (
-    <>
-      <AdvancedFormattedMessage
-        id="components.conditionExplorer.guide.compliance.title"
-        tag="h1"
-      />
-      <AdvancedFormattedMessage
-        id="components.conditionExplorer.guide.compliance.overview"
-        tag="p"
-      />
-    </>
-  ),
-];
+import english from '../../../languages/english';
+
+const stepContent = step => (
+  <>
+    <AdvancedFormattedMessage
+      id={`components.conditionExplorer.guide.pages.${step}.title`}
+      tag="h1"
+    />
+    <AdvancedFormattedMessage
+      id={`components.conditionExplorer.guide.pages.${step}.overview`}
+      tag="p"
+    />
+  </>
+);
 
 // eslint-disable-next-line react/prop-types
 const GuideDetailOutsideText = React.memo(({ children, radius, textRadius }) => (
@@ -76,7 +52,7 @@ const GuideDetailOutsideText = React.memo(({ children, radius, textRadius }) => 
 const GuideDetail = (props) => {
   const { changeStep, selected, radius } = props;
 
-  const circles = steps.map((element, index) => (
+  const circles = english.components.conditionExplorer.guide.pages.map((_, index) => (
     <CircleContainer
       key={index /* eslint-disable-line react/no-array-index-key */}
       size={8}
@@ -89,7 +65,7 @@ const GuideDetail = (props) => {
 
   return (
     <section className="GuideDetail" style={{ width: radius * 2, height: radius * 2 }}>
-      <div className="step-text">{steps[selected]}</div>
+      <div className="step-text">{stepContent(selected)}</div>
       <div className="step-controls">
         <List
           selected={selected}

@@ -8,6 +8,7 @@ import GuideDetail from './GuideDetail';
 import './styles.scss';
 
 import { reportAnalytics } from '../../utilities/analyticsReporting';
+import english from '../../languages/english';
 
 // This function memoizes based on the keyword, but doesn't use it in the result
 // function. It is only used in the (default) key generation function (2nd arg)
@@ -75,7 +76,8 @@ export default class ConditionExplorer extends React.PureComponent {
   });
 
   setGuideStep = (guideStep, e) => {
-    reportAnalytics(e.type, 'guide detail', `page ${this.state.guideStep} to ${guideStep}`);
+    const { title } = english.components.conditionExplorer.guide.pages[this.state.guideStep];
+    reportAnalytics(e.type, 'guide', 'detail page', title);
     this.setState({ guideStep });
   };
 

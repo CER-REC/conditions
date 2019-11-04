@@ -475,7 +475,7 @@ class App extends React.PureComponent {
     this.incrementTransitionState();
     this.togglePlay(true);
 
-    reportAnalytics(analyticsActions.click, 'guide', 'begin tutorial');
+    reportAnalytics(analyticsActions.click, 'guide', 'play');
 
     setTimeout(() => {
       this.incrementTransitionState();

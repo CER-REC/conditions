@@ -209,7 +209,11 @@ export default class PhysicsVariant extends React.PureComponent {
       || Math.abs(mouse.absolute.y - this.guideDragOrigin.y) > dragThreshold
     ) {
       if (!this.sentDragAnalytics) {
-        reportAnalytics(analyticsActions.drag, 'guide');
+        const keyword = (
+          this.keywords.find(instance => (instance.body.id === this.props.selectedKeywordId))
+        )?.keyword.value || 'none';
+        reportAnalytics(analyticsActions.drag, 'keyword', 'drag', keyword);
+
         this.sentDragAnalytics = true;
       }
 
@@ -243,7 +247,7 @@ export default class PhysicsVariant extends React.PureComponent {
   };
 
   openGuide = () => {
-    reportAnalytics(analyticsActions.click, 'guide', 'expand');
+    reportAnalytics(analyticsActions.click, 'guide', 'open');
 
     this.guideShouldOpen = true;
     this.guide.open(this.getCenterCoordinates())
