@@ -4,7 +4,8 @@ import classNames from 'classnames';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import './styles.scss';
 
-import { handleAnalyticsInteraction } from '../../../utilities/analyticsReporting';
+import handleInteraction from '../../../utilities/handleInteraction';
+import { reportAnalytics } from '../../../utilities/analyticsReporting';
 
 // Predefine the messages to prevent wasted renders
 const messages = [['company', 'projectsBy'], ['location', 'conditionsBy']]
@@ -27,6 +28,17 @@ const messages = [['company', 'projectsBy'], ['location', 'conditionsBy']]
     return acc;
   }, {});
 
+const handleOnClick = (cb, mode, e) => {
+  reportAnalytics(
+    e.type,
+    'menu',
+    'mode',
+    (mode === 'company') ? 'projects by company' : 'conditions by location',
+  );
+
+  cb(mode);
+};
+
 const BrowseByBtn = (props) => {
   // Appending the mode so multiple buttons aren't sharing/overriding the same clip paths
   const clipOutside = `BrowseByBtn-clipOutside-${props.mode}`;
@@ -48,7 +60,7 @@ const BrowseByBtn = (props) => {
     <button
       type="button"
       className={classNames('BrowseByBtn', props.mode, props.classNames)}
-      {...handleAnalyticsInteraction('browseBy', `to ${props.mode}`, props.onClick, props.mode)}
+      {...handleInteraction(handleOnClick, props.onClick, props.mode)}
     >
       {messages[props.mode]}
       {background}
