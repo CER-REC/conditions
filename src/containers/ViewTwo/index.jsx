@@ -32,14 +32,9 @@ class ViewTwo extends React.PureComponent {
     filteredProjectLookup: {},
   };
 
-  miniMapData = null;
-
   constructor(props) {
     super(props);
-    if (props.selected.region) {
-      this.miniMapData = props.wheelData
-        .find(region => region.id === props.selected.region);
-    }
+    this.updateMinimapData();
 
     // Make sure we grab results if the user came from a shared URL with search params set up
     this.updateSearch();
@@ -48,15 +43,19 @@ class ViewTwo extends React.PureComponent {
   componentDidUpdate(prevProps) {
     if (prevProps.selected.region !== this.props.selected.region
       || prevProps.wheelData !== this.props.wheelData) {
-      this.miniMapData = this.props.selected.region
-        ? this.props.wheelData.find(region => region.id === this.props.selected.region)
-        : null;
+      this.updateMinimapData();
     }
 
     if (this.shouldSearch) {
       this.shouldSearch = false;
       this.updateSearch();
     }
+  }
+
+  updateMinimapData = () => {
+    this.miniMapData = this.props.selected.region
+      ? this.props.wheelData.find(region => region.id === this.props.selected.region)
+      : null;
   }
 
   updateSearch = () => {
