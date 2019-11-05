@@ -73,9 +73,9 @@
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.6.2",
-    "@babel/core": "7.6.2",
-    "@babel/node": "7.6.2",
+    "@babel/cli": "7.7.0",
+    "@babel/core": "7.7.0",
+    "@babel/node": "7.7.0",
     "@storybook/addon-info": "5.2.1",
     "@storybook/addon-knobs": "5.2.1",
     "@storybook/addon-storyshots": "5.2.1",
