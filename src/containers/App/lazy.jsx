@@ -324,6 +324,8 @@ class App extends React.PureComponent {
     this.jumpToView2();
     this.setMainInfoBarPane('about');
 
+    reportAnalytics('info', 'about');
+
     // This timer needs to be long enough for React to do its thing and for the
     // CSS transitions to finish so the Footer content is there to scroll to.
     this.scrollSelectorIntoView('.Footer', 1000);
