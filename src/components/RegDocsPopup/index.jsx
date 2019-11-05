@@ -4,11 +4,11 @@ import memoize from 'lodash.memoize';
 import RegDocs from './RegDocs';
 import Modal from '../Modal';
 
-const getComponentProps = memoize(document => ({ document }));
-const RegDocsPopup = ({ document, isOpen, closeModal }) => (
+const getComponentProps = memoize((document, counts) => ({ document, counts }));
+const RegDocsPopup = ({ document, counts, isOpen, closeModal }) => (
   <Modal
     component={RegDocs}
-    componentProps={getComponentProps(document)}
+    componentProps={getComponentProps(document, counts)}
     isOpen={isOpen}
     closeModal={closeModal}
     className="RegDocsPopup"
@@ -22,6 +22,11 @@ RegDocsPopup.propTypes = {
   closeModal: PropTypes.func.isRequired,
   /** Document number ('XO-001-2018') */
   document: PropTypes.string.isRequired,
+  /** Count data for the current project (used by analytics) */
+  counts: PropTypes.shape({
+    conditionCount: PropTypes.number,
+    instrumentCount: PropTypes.number,
+  }).isRequired,
 };
 
 RegDocsPopup.defaultProps = {

@@ -856,6 +856,7 @@ class App extends React.PureComponent {
                         <RegDocsPopup
                           isOpen={this.state.isIntermediatePopupOpen}
                           closeModal={this.closeRegDocPopup}
+                          counts={counts}
                           document={documentNumber}
                         />
                       )}

@@ -19,6 +19,7 @@ describe('Components|RegDocs', () => {
     beforeEach(() => {
       wrapper = mountWithIntl(<RegDocs
         document="MO-025-2011"
+        counts={{ conditions: 8, instruments: 2 }}
         {...spy}
       />);
     });

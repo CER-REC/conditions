@@ -23,11 +23,16 @@ const linkAttributes = {
   rel: 'noopener noreferrer',
 };
 
-const handleLinkAnalytics = memoize((document, action) => () => (
-  reportAnalytics(action, 'projects', 'instrument', document)
+const handleLinkAnalytics = memoize((document, action, counts) => () => (
+  reportAnalytics(
+    action,
+    'projects',
+    'instrument',
+    { value: document, conditionCount: counts.conditions, instrumentCount: counts.instruments },
+  )
 ), (document, action) => `${document}${action}`);
 
-const RegDocs = ({ document, closeModal }) => {
+const RegDocs = ({ document, closeModal, counts }) => {
   const linkUrl = `${regDocsUrl}${document}`;
 
   return (
@@ -49,14 +54,14 @@ const RegDocs = ({ document, closeModal }) => {
         tag={PopupBtn}
         icon="plus"
         url={linkUrl}
-        action={handleLinkAnalytics(document, 'current tab')}
+        action={handleLinkAnalytics(document, 'current tab', counts)}
       />
       <AdvancedFormattedMessage
         id="components.modal.regdocs.newTab"
         tag={PopupBtn}
         icon="plus"
         url={linkUrl}
-        action={handleLinkAnalytics(document, 'new tab')}
+        action={handleLinkAnalytics(document, 'new tab', counts)}
         attributes={linkAttributes}
       />
       <AdvancedFormattedMessage
@@ -75,6 +80,10 @@ const RegDocs = ({ document, closeModal }) => {
 RegDocs.propTypes = {
   document: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
+  counts: PropTypes.shape({
+    conditions: PropTypes.number,
+    instruments: PropTypes.number,
+  }).isRequired,
 };
 
 export default React.memo(RegDocs);
