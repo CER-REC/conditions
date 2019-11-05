@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import memoize from 'lodash.memoize';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
+import { reportAnalytics } from '../../../utilities/analyticsReporting';
 
 import PopupBtn from '../../PopupBtn';
 
@@ -20,6 +22,10 @@ const linkAttributes = {
   target: '_blank',
   rel: 'noopener noreferrer',
 };
+
+const handleLinkAnalytics = memoize((document, action) => () => (
+  reportAnalytics(action, 'projects', 'instrument', document)
+), (document, action) => `${document}${action}`);
 
 const RegDocs = ({ document, closeModal }) => {
   const linkUrl = `${regDocsUrl}${document}`;
@@ -43,12 +49,14 @@ const RegDocs = ({ document, closeModal }) => {
         tag={PopupBtn}
         icon="plus"
         url={linkUrl}
+        action={handleLinkAnalytics(document, 'current tab')}
       />
       <AdvancedFormattedMessage
         id="components.modal.regdocs.newTab"
         tag={PopupBtn}
         icon="plus"
         url={linkUrl}
+        action={handleLinkAnalytics(document, 'new tab')}
         attributes={linkAttributes}
       />
       <AdvancedFormattedMessage
