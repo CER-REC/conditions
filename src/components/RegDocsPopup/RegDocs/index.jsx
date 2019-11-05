@@ -42,13 +42,13 @@ const RegDocs = ({ document, closeModal }) => {
         id="components.modal.regdocs.currentTab"
         tag={PopupBtn}
         icon="plus"
-        action={linkUrl}
+        url={linkUrl}
       />
       <AdvancedFormattedMessage
         id="components.modal.regdocs.newTab"
         tag={PopupBtn}
         icon="plus"
-        action={linkUrl}
+        url={linkUrl}
         attributes={linkAttributes}
       />
       <AdvancedFormattedMessage

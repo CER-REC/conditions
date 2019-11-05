@@ -7,7 +7,7 @@ import ReadMe from './README.md';
 storiesForComponent('Components|PopupBtn', module, ReadMe)
   .add('default', () => (
     <PopupBtn
-      action="https://www.example.com"
+      url="https://www.example.com"
       icon="plus"
     >
       Example
@@ -15,9 +15,19 @@ storiesForComponent('Components|PopupBtn', module, ReadMe)
   ))
   .add('link attributes', () => (
     <PopupBtn
-      action="https://www.example.com"
+      url="https://www.example.com"
       icon="plus"
       attributes={{ target: '_blank', rel: 'noopener noreferrer' }}
+    >
+      Example
+    </PopupBtn>
+  ))
+  .add('link with onClick', () => (
+    <PopupBtn
+      url="https://www.example.com"
+      icon="plus"
+      attributes={{ target: '_blank', rel: 'noopener noreferrer' }}
+      action={() => alert("This shouldn't block the link.")}
     >
       Example
     </PopupBtn>
