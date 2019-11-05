@@ -99,7 +99,7 @@ class WheelRay extends React.Component {
                   key="flag"
                   transform={transform}
                   className="companyRay"
-                  {...handleAnalyticsInteraction('select project from wheel', `${item.name}: project id ${index}`, props.onChangeDot, index)}
+                  {...handleAnalyticsInteraction('wheel', item.name, props.onChangeDot, index)}
                 >
                   <CompanyFlag
                     y={-65}
@@ -122,7 +122,7 @@ class WheelRay extends React.Component {
                   key="legend"
                   className="textLabels"
                   transform={`${transform} translate(28.75) rotate(90)`}
-                  {...handleAnalyticsInteraction('select company from wheel', item.name, props.onChangeRay, index)}
+                  {...handleAnalyticsInteraction('wheel', item.name, props.onChangeRay, index)}
                 >
                   {item.name.charAt(0)}
                 </text>
@@ -136,7 +136,7 @@ class WheelRay extends React.Component {
               key="chart"
               transform={transform}
               className="locationRay"
-              {...handleAnalyticsInteraction('select region from wheel', `${item.name}, ${item.province}`, props.onChangeRay, index)}
+              {...handleAnalyticsInteraction('wheel', `${item.name}, ${item.province}`, props.onChangeRay, index)}
             >
               <LocationRay
                 regionId={item.id}
@@ -165,7 +165,7 @@ class WheelRay extends React.Component {
                       className="textLabels"
                       transform="rotate(94)"
                       textAnchor="right"
-                      {...handleAnalyticsInteraction('select province from wheel', item.province, props.onChangeRay, index)}
+                      {...handleAnalyticsInteraction('wheel', item.province, props.onChangeRay, index)}
                     >
                       &nbsp;{item.province}
                       <title>

@@ -59,18 +59,18 @@ class WheelList extends React.PureComponent {
     return { listElements: memoizedListElements(props.listContent, props.selected) };
   }
 
-  reportAnalytics = (item, e) => {
-    const [type, name] = (this.props.wheelType === 'company')
-      ? ['company', item.name]
-      : ['region', `${item.name}, ${item.province}`];
+  handleAnalytics = (item, e) => {
+    const name = (this.props.wheelType === 'company')
+      ? item.name
+      : `${item.name}, ${item.province}`;
 
-    reportAnalytics(e.type, `select ${type} from wheel list`, name);
+    reportAnalytics(e.type, 'wheel', name);
   }
 
   handleOnChange = (i, e) => {
     const wrappedIndex = wrapIndex(i - 3, this.props.selected, this.props.listContent.length);
 
-    this.reportAnalytics(this.props.listContent[wrappedIndex], e);
+    this.handleAnalytics(this.props.listContent[wrappedIndex], e);
     this.props.onChange(wrappedIndex);
   }
 
