@@ -33,7 +33,7 @@ class FeaturesMenu extends React.PureComponent {
   };
 
   onChange = (feature, e) => {
-    reportAnalytics(e.type, 'select feature', feature);
+    reportAnalytics(e.type, 'projects', 'feature', feature);
     this.props.onChange(feature);
   }
 
