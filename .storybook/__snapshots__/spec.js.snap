@@ -9552,6 +9552,56 @@ exports[`Storyshots Components|PopupBtn link attributes 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|PopupBtn link with onClick 1`] = `
+<div
+  className="visualization"
+>
+  <a
+    className="PopupBtn"
+    focusable={true}
+    href="https://www.example.com"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    rel="noopener noreferrer"
+    tabIndex={0}
+    target="_blank"
+  >
+    <div>
+      Example
+    </div>
+    <svg
+      className="buttonIcon"
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+      />
+      <path
+        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+        fill="white"
+      />
+    </svg>
+  </a>
+</div>
+`;
+
 exports[`Storyshots Components|ProjectDot default 1`] = `
 <div
   className="visualization"
@@ -16595,7 +16645,11 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
       </p>
       <a
         className="PopupBtn"
+        focusable={true}
         href="https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
       >
         <div>
           Open in current tab
@@ -16632,8 +16686,12 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
       </a>
       <a
         className="PopupBtn"
+        focusable={true}
         href="https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
+        onClick={[Function]}
+        onKeyPress={[Function]}
         rel="noopener noreferrer"
+        tabIndex={0}
         target="_blank"
       >
         <div>
@@ -16763,7 +16821,11 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
       </p>
       <a
         className="PopupBtn"
+        focusable={true}
         href="https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
       >
         <div>
           Open in current tab
@@ -16800,8 +16862,12 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
       </a>
       <a
         className="PopupBtn"
+        focusable={true}
         href="https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
+        onClick={[Function]}
+        onKeyPress={[Function]}
         rel="noopener noreferrer"
+        tabIndex={0}
         target="_blank"
       >
         <div>

@@ -24,6 +24,7 @@ import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
 import allKeywordsQuery from '../../queries/allKeywords';
 import companyNameById from '../../queries/companyNameById';
+import regionNameById from '../../queries/regionNameById';
 import { allCompaniesQuery, allRegionsQuery } from '../../queries/wheel';
 
 import * as browseByCreators from '../../actions/browseBy';
@@ -165,7 +166,11 @@ class App extends React.PureComponent {
         from,
         variables,
         ((eager) ? null : staticSelection),
-      );
+      ).then((newSelection) => {
+        const id = (this.props.browseBy === 'company') ? newSelection.company : newSelection.region;
+
+        this.handleLoadAnalytics(id, this.props.browseBy);
+      });
 
       // Set the known values without having to wait for queries to return
       if (eager) {
@@ -205,6 +210,18 @@ class App extends React.PureComponent {
     searchVariables,
     filterVariables,
   );
+
+  // Just for analytics
+  handleLoadAnalytics = (id, type) => {
+    const [query, nameCb] = (type === 'company')
+      ? [companyNameById, ({ data }) => data.getCompanyById.name]
+      : [regionNameById, ({ data }) => `${data.getRegionById.name}, ${data.getRegionById.province}`];
+
+    client.query({
+      query,
+      variables: { id },
+    }).then(result => reportAnalytics('load', 'wheel', nameCb(result)));
+  };
 
   setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
 
