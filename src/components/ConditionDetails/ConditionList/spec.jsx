@@ -76,6 +76,10 @@ const data = [
 const defaultProps = {
   items: data,
   selectedItem: 3,
+  counts: {
+    conditions: 20,
+    instruments: 3,
+  },
 };
 
 const noop = () => {};

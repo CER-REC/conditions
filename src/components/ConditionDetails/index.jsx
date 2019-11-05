@@ -126,6 +126,7 @@ class ConditionDetails extends React.PureComponent {
                     selectedItem={this.findSelectedItem()}
                     updateSelectedInstrument={this.props.updateSelectedInstrument}
                     updateSelectedCondition={this.props.updateSelectedCondition}
+                    counts={this.props.counts}
                   />
                 )}
               </div>
