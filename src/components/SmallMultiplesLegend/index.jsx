@@ -40,7 +40,8 @@ export default class SmallMultiplesLegend extends React.PureComponent {
       : this.props.displayOrder[this.props.feature][index - 1];
     reportAnalytics(
       e.type,
-      'select subfeature',
+      'projects',
+      'subfeature',
       `${this.props.feature}: ${(item !== '') ? item.toLowerCase() : 'all'}`,
     );
     this.props.onChange(item);
