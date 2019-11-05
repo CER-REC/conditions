@@ -32,7 +32,7 @@ import * as selectedCreators from '../../actions/selected';
 import * as transitionStateCreators from '../../actions/transitionState';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 import createStore from '../../Store';
-import { addGeneralAnalytics, reportAnalytics, analyticsActions } from '../../utilities/analyticsReporting';
+import { addGeneralAnalytics, reportAnalytics } from '../../utilities/analyticsReporting';
 import analyticsFromState from './analyticsFromState';
 
 import {
@@ -477,7 +477,7 @@ class App extends React.PureComponent {
     this.incrementTransitionState();
     this.togglePlay(true);
 
-    reportAnalytics(analyticsActions.click, 'guide', 'play');
+    reportAnalytics('click', 'guide', 'play');
 
     setTimeout(() => {
       this.incrementTransitionState();
