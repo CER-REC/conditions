@@ -29,6 +29,7 @@ export const project = PropTypes.shape({
   name: PropTypes.string.isRequired,
   shortName: PropTypes.string.isRequired,
   numberOfConditions: PropTypes.number.isRequired,
+  numberOfInstruments: PropTypes.number.isRequired,
   aggregatedCount: aggregatedFeatureData.isRequired,
 });
 

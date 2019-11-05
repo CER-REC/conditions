@@ -57,8 +57,13 @@ class ProjectMenu extends React.PureComponent {
 
     reportAnalytics(
       e.type,
-      'select project',
-      `${item.name}, ${item.numberOfConditions} conditions`,
+      'projects',
+      'project',
+      {
+        value: item.shortName,
+        conditionCount: item.numberOfConditions,
+        instrumentCount: item.numberOfInstruments,
+      },
     );
     this.props.onChange(item.id);
   }
