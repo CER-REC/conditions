@@ -783,6 +783,7 @@ class App extends React.PureComponent {
             >
               {({ data, loading, error }) => {
                 let shortName = '';
+                let fullName = '';
                 // TODO: This causes wasted renders. Don't reformat the instruments
                 let instruments = [];
                 let documentNumber;
@@ -827,7 +828,7 @@ class App extends React.PureComponent {
                   }
 
                   if (projectDetails) {
-                    ({ shortName } = projectDetails);
+                    ({ shortName, name: fullName } = projectDetails);
                   }
                 }
 
@@ -859,7 +860,7 @@ class App extends React.PureComponent {
                         />
                       )}
                     <CompanyPopup
-                      projectName={shortName}
+                      projectName={fullName}
                       closeModal={this.closeCompanyPopup}
                       companies={data.projectDetails
                         ? data.projectDetails.companies
