@@ -26,6 +26,13 @@ const setTimeoutChain = (callback, timeout, times) => {
 };
 
 export default class ConditionExplorer extends React.PureComponent {
+  calculateTextSize = memoize((text) => {
+    const el = this.textSizeRef.current;
+    el.textContent = text;
+    const { width, height, x, y } = el.getBBox();
+    return { width, height, xOffset: x, yOffset: height + y };
+  });
+
   static propTypes = {
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     selectedKeywordId: PropTypes.number,
@@ -40,15 +47,6 @@ export default class ConditionExplorer extends React.PureComponent {
     physics: true,
     physicsPaused: false,
   };
-
-  calculateTextSize = memoize((text) => {
-    const el = this.textSizeRef.current;
-    el.textContent = text;
-    /* eslint-disable object-curly-newline */
-    const { width, height, x, y } = el.getBBox();
-    return { width, height, xOffset: x, yOffset: height + y };
-    /* eslint-enable object-curly-newline */
-  });
 
   constructor(props) {
     super(props);

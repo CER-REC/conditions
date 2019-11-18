@@ -15,6 +15,10 @@ import { yearRangeType } from '../../proptypes';
 import './styles.scss';
 
 class SearchBar extends React.PureComponent {
+  handleTabChange = memoize(toggleMode => () => this.setState(({ activeTab }) => ({
+    activeTab: (activeTab !== toggleMode) ? toggleMode : '',
+  })))
+
   static propTypes = {
     yearRange: yearRangeType.isRequired,
     availableYearRange: yearRangeType.isRequired,
@@ -36,10 +40,6 @@ class SearchBar extends React.PureComponent {
     scrollToMethodology: PropTypes.func.isRequired,
     mode: PropTypes.oneOf(['location', 'company']).isRequired,
   }
-
-  handleTabChange = memoize(toggleMode => () => this.setState(({ activeTab }) => ({
-    activeTab: (activeTab !== toggleMode) ? toggleMode : '',
-  })))
 
   constructor(props) {
     super(props);
