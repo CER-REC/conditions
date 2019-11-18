@@ -565,7 +565,7 @@ class App extends React.PureComponent {
       const keyword = instance.keyword.value;
       const newIncluded = [keyword];
 
-      reportAnalytics(e.type, 'keyword', keyword);
+      reportAnalytics('select', 'condition - keyword', keyword);
 
       batch(() => {
         this.props.setSelectedMultiple({ keywordId });
