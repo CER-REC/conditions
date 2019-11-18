@@ -29,6 +29,16 @@ const MethodologyLink = React.memo(({ children, scrollToMethodology }) => (
 ));
 
 class SuggestedKeywordsPopout extends React.PureComponent {
+  keywordDescriptionValues = memoize(scrollToMethodology => ({
+    here: (
+      <AdvancedFormattedMessage
+        id="components.searchBar.suggestedKeywordsPopout.keywordsHere"
+        tag={MethodologyLink}
+        scrollToMethodology={scrollToMethodology}
+      />
+    ),
+  }));
+
   static propTypes = {
     intl: intlShape.isRequired,
     categories: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -45,16 +55,6 @@ class SuggestedKeywordsPopout extends React.PureComponent {
     includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
   }
-
-  keywordDescriptionValues = memoize(scrollToMethodology => ({
-    here: (
-      <AdvancedFormattedMessage
-        id="components.searchBar.suggestedKeywordsPopout.keywordsHere"
-        tag={MethodologyLink}
-        scrollToMethodology={scrollToMethodology}
-      />
-    ),
-  }));
 
   constructor(props) {
     super(props);

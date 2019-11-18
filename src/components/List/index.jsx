@@ -66,8 +66,6 @@ class List extends React.PureComponent {
     arrowsAtEdges: false,
   };
 
-  componentRef = null;
-
   componentDidMount() {
     if (this.componentRef) {
       this.componentRef.addEventListener('wheel', this.throttleScrollEvents, { passive: false });
