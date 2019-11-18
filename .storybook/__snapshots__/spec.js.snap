@@ -3288,36 +3288,8 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
       >
         <ul>
           <li
-            className="List-Item selected"
+            className="List-Item"
           >
-            <div
-              className="CircleContainer arrow arrowPrevious hiddenArrow"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              style={
-                Object {
-                  "height": 24,
-                  "width": 24,
-                }
-              }
-              tabIndex={0}
-            >
-              <div>
-                <div
-                  className="Arrow Up"
-                >
-                  <svg
-                    height="22"
-                    width="22"
-                  >
-                    <polyline
-                      points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
             <div
               className="List-Item-Content"
               focusable={true}
@@ -3336,34 +3308,6 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                 <h4>
                   XO-001-2018
                 </h4>
-              </div>
-            </div>
-            <div
-              className="CircleContainer arrow arrowNext"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              style={
-                Object {
-                  "height": 24,
-                  "width": 24,
-                }
-              }
-              tabIndex={0}
-            >
-              <div>
-                <div
-                  className="Arrow Down"
-                >
-                  <svg
-                    height="22"
-                    width="22"
-                  >
-                    <polyline
-                      points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                    />
-                  </svg>
-                </div>
               </div>
             </div>
           </li>
@@ -3472,8 +3416,36 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             </div>
           </li>
           <li
-            className="List-Item"
+            className="List-Item selected"
           >
+            <div
+              className="CircleContainer arrow arrowPrevious"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              style={
+                Object {
+                  "height": 24,
+                  "width": 24,
+                }
+              }
+              tabIndex={0}
+            >
+              <div>
+                <div
+                  className="Arrow Up"
+                >
+                  <svg
+                    height="22"
+                    width="22"
+                  >
+                    <polyline
+                      points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
             <div
               className="List-Item-Content"
               focusable={true}
@@ -3492,6 +3464,34 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                 <h4>
                   XO-003-2018
                 </h4>
+              </div>
+            </div>
+            <div
+              className="CircleContainer arrow arrowNext"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              style={
+                Object {
+                  "height": 24,
+                  "width": 24,
+                }
+              }
+              tabIndex={0}
+            >
+              <div>
+                <div
+                  className="Arrow Down"
+                >
+                  <svg
+                    height="22"
+                    width="22"
+                  >
+                    <polyline
+                      points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
           </li>

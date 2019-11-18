@@ -14,5 +14,9 @@ storiesForComponent('Components|RegDocsPopup', module, ReadMe)
       isOpen={boolean('Visible', true)}
       closeModal={closeModal}
       document="MO-025-2011"
+      counts={{
+        conditionCount: 10,
+        instrumentCount: 3,
+      }}
     />
   ));
