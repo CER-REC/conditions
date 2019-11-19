@@ -131,7 +131,7 @@
     "topojson-simplify": "3.0.3",
     "url-loader": "2.2.0",
     "webpack": "4.41.2",
-    "webpack-cli": "3.3.9",
+    "webpack-cli": "3.3.10",
     "webpack-dev-middleware": "3.7.2"
   },
   "config": {
