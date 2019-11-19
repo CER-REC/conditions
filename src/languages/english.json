@@ -113,18 +113,20 @@
           "intro": "These lines\nare conditions",
           "click": "Click here to\ncontinue"
         },
-        "overview": {
-          "title": "What is a condition?",
-          "overview": "Conditions are requirements that a company must complete to be allowed to construct, operate or abandon a project. Conditions are one tool within the CER's regulatory framework, which is made of laws, regulations, requirements and guidance."
-        },
-        "reason": {
-          "title": "Why are conditions made?",
-          "overview": "Conditions are project-specific. The CER sets them during the application assessment process to prevent harm, promote safety and environmental protection in the public interest."
-        },
-        "compliance": {
-          "title": "How does the CER verify condition compliance?",
-          "overview": "The CER verifies company compliance with project condition requirements through compliance verification activities (i.e. inspections, audits, etc.) and assessing condition filings."
-        },
+        "pages": [
+          {
+            "title": "What is a condition?",
+            "overview": "Conditions are requirements that a company must complete to be allowed to construct, operate or abandon a project. Conditions are one tool within the CER's regulatory framework, which is made of laws, regulations, requirements and guidance."
+          },
+          {
+            "title": "Why are conditions made?",
+            "overview": "Conditions are project-specific. The CER sets them during the application assessment process to prevent harm, promote safety and environmental protection in the public interest."
+          },
+          {
+            "title": "How does the CER verify condition compliance?",
+            "overview": "The CER verifies company compliance with project condition requirements through compliance verification activities (i.e. inspections, audits, etc.) and assessing condition filings."
+          }
+        ],
         "clickOutside": "Click outside circle to go back"
       }
     },

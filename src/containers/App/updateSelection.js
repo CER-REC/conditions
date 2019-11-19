@@ -145,8 +145,11 @@ const execute = (prevSelection, setSelected, client, from, variables, staticSele
       const data = Object.values(result.data)[0];
       return Promise.resolve(selection(data, prevSelection, variables, executeWrapped))
         .then((nextSelection) => {
-          if (!nextSelection) { return; }
-          setSelected({ ...defaultSelection, ...nextSelection, ...staticSelection });
+          if (!nextSelection) { return null; }
+          const newSelection = { ...defaultSelection, ...nextSelection, ...staticSelection };
+          setSelected(newSelection);
+
+          return newSelection;
         });
     });
 };

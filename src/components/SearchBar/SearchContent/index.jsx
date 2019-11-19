@@ -9,7 +9,7 @@ import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import Icon from '../../Icon/index';
 import Dropdown from '../../Dropdown';
 import handleInteraction from '../../../utilities/handleInteraction';
-import { handleAnalyticsInteraction, reportAnalytics } from '../../../utilities/analyticsReporting';
+import { reportAnalytics } from '../../../utilities/analyticsReporting';
 
 library.add(
   faTimes,
@@ -44,7 +44,7 @@ class SearchContent extends React.PureComponent {
         <li className="deleteButton">
           <button
             type="button"
-            {...handleAnalyticsInteraction('delete search term', `${type}: ${word}`, this.deleteWord, word, type)}
+            {...handleInteraction(this.deleteWord, word, type)}
           >
             <Icon className="iconInline timesIcon" icon="times" />
           </button>
@@ -64,6 +64,7 @@ class SearchContent extends React.PureComponent {
   }
 
   deleteWord = (word, type) => {
+    reportAnalytics('delete', 'search', type, word);
     const updatedKeywords = this.props[`${type}Keywords`].filter(v => v !== word);
     this.updateKeywords(type, updatedKeywords);
   }
@@ -74,6 +75,8 @@ class SearchContent extends React.PureComponent {
     if (includeKeywords.includes(word) || excludeKeywords.includes(word)) { return; }
     const currentKeywords = this.props[`${type}Keywords`];
     if (currentKeywords.length >= 6) { return; }
+
+    reportAnalytics('add', 'search', type, word);
     this.updateKeywords(type, currentKeywords.concat(word));
   }
 
@@ -81,8 +84,7 @@ class SearchContent extends React.PureComponent {
 
   updateInputExclude = e => this.setState({ inputExclude: e.target.value });
 
-  addIncludeWord = (e) => {
-    reportAnalytics(e.type, 'add search term', `include: ${this.state.inputInclude}`);
+  addIncludeWord = () => {
     this.addWord(this.state.inputInclude, 'include');
     this.setState({ inputInclude: '' });
   }
@@ -94,8 +96,7 @@ class SearchContent extends React.PureComponent {
     }
   }
 
-  addExcludeWord = (e) => {
-    reportAnalytics(e.type, 'add search term', `exclude: ${this.state.inputExclude}`);
+  addExcludeWord = () => {
     this.addWord(this.state.inputExclude, 'exclude');
     this.setState({ inputExclude: '' });
   }
@@ -250,8 +251,13 @@ class SearchContent extends React.PureComponent {
     </>
   )
 
-  changeSearchType = () => {
-    this.setState(prevState => ({ mode: (prevState.mode === 'basic' ? 'advanced' : 'basic') }));
+  changeSearchType = (e) => {
+    // eslint-disable-next-line react/no-access-state-in-setstate
+    const newMode = (this.state.mode === 'basic') ? 'advanced' : 'basic';
+    reportAnalytics(e.type, 'search', 'mode', newMode);
+
+    this.setState({ mode: newMode });
+
     this.props.findAnyOnChange(true);
     this.props.changeIsExclude(false);
     this.updateKeywords('include', this.props.includeKeywords);
@@ -291,11 +297,7 @@ class SearchContent extends React.PureComponent {
         <div className="advancedSearchText">
           <button
             type="button"
-            {...handleAnalyticsInteraction(
-              'toggle search mode',
-              `to ${(this.state.mode === 'basic') ? 'advanced' : 'basic'}`,
-              this.changeSearchType,
-            )}
+            {...handleInteraction(this.changeSearchType)}
           >
             {(this.state.mode === 'basic'
               ? <FormattedMessage id="components.searchBar.findWords.advancedSearch" />

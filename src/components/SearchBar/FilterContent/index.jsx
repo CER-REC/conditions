@@ -7,7 +7,7 @@ import handleInteraction from '../../../utilities/handleInteraction';
 import CircleContainer from '../../CircleContainer';
 import { yearRangeType } from '../../../proptypes';
 import './styles.scss';
-import { reportAnalytics, handleAnalyticsInteraction } from '../../../utilities/analyticsReporting';
+import { reportAnalytics } from '../../../utilities/analyticsReporting';
 
 const allProjectStatuses = ['IN_PROGRESS', 'COMPLETED'];
 
@@ -19,6 +19,14 @@ const findListItemValue = (target, depth = 0) => {
 const createYearArray = yearObject => Array(yearObject.end - yearObject.start + 1)
   .fill()
   .map((_, index) => yearObject.start + index);
+
+const reportYearAnalytics = (start, end) => {
+  reportAnalytics('filter', 'search', 'year', `${start}-${end}`);
+};
+
+const reportStatusAnalytics = (statuses) => {
+  reportAnalytics('filter', 'search', 'status', statuses.map(s => s.toLowerCase()).join(', '));
+};
 
 class FilterContent extends React.PureComponent {
   static propTypes = {
@@ -86,10 +94,10 @@ class FilterContent extends React.PureComponent {
       : [this.state.selectedYears.end, this.state.selectedYears.start]
   )
 
-  onDragStop = (event) => {
+  onDragStop = () => {
     this.isDragging = false;
     const [start, end] = this.getSelectedYearRange();
-    reportAnalytics(event.type, 'year range', `${start} to ${end}`);
+    reportYearAnalytics(start, end);
     this.props.onYearSelect({ start, end });
   }
 
@@ -112,7 +120,7 @@ class FilterContent extends React.PureComponent {
       end: selectedYears[selectedYears.length - 1],
     };
 
-    reportAnalytics(event.type, 'year range', `${newRange.start} to ${newRange.end}`);
+    reportYearAnalytics(newRange.start, newRange.end);
     this.setState({ selectedYears: newRange });
     this.props.onYearSelect(newRange);
   }
@@ -121,6 +129,11 @@ class FilterContent extends React.PureComponent {
     const [start, end] = this.getSelectedYearRange();
 
     return createYearArray({ start, end });
+  }
+
+  onYearSelect = (year) => {
+    reportYearAnalytics(year, year);
+    this.props.onYearSelect({ start: year, end: year });
   }
 
   yearRangeRender = () => {
@@ -147,7 +160,7 @@ class FilterContent extends React.PureComponent {
       return (
         // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
         <li
-          {...handleAnalyticsInteraction('year range', `${i} to ${i}`, this.props.onYearSelect, { start: i, end: i })}
+          {...handleInteraction(this.onYearSelect, { start: i, end: i })}
           key={i}
           value={i}
           onFocus={() => {}}
@@ -168,7 +181,7 @@ class FilterContent extends React.PureComponent {
     }));
   }
 
-  filterProjectStatus = (item, e) => {
+  filterProjectStatus = (item) => {
     const { projectStatus } = this.props;
     let updatedStatus;
     if ((projectStatus.length > 1) || (item === projectStatus[0])) {
@@ -177,16 +190,13 @@ class FilterContent extends React.PureComponent {
       updatedStatus = [...allProjectStatuses];
     }
 
-    reportAnalytics(
-      e.type,
-      'filter status',
-      `show: ${updatedStatus.map(s => s.toLowerCase()).join(', ')}`,
-    );
+    reportStatusAnalytics(updatedStatus);
     this.props.changeProjectStatus(updatedStatus);
   }
 
-  reset = (event) => {
-    reportAnalytics(event.type, 'reset filters');
+  reset = () => {
+    reportYearAnalytics(this.props.yearRange.start, this.props.yearRange.end);
+    reportStatusAnalytics(allProjectStatuses);
     this.props.changeProjectStatus(allProjectStatuses);
     this.props.onYearSelect(this.props.yearRange);
   }

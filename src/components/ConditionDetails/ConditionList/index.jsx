@@ -24,6 +24,10 @@ class ConditionList extends React.PureComponent {
       marked: PropTypes.bool,
     })).isRequired,
     selectedItem: PropTypes.number,
+    counts: PropTypes.shape({
+      instruments: PropTypes.number,
+      conditions: PropTypes.number,
+    }).isRequired,
     updateSelectedInstrument: PropTypes.func.isRequired,
     updateSelectedCondition: PropTypes.func.isRequired,
   };
@@ -75,12 +79,21 @@ class ConditionList extends React.PureComponent {
   }
 
   onChange = (i, e) => {
-    const { conditionId, instrumentId } = this.props.items[i];
+    const { conditionId, instrumentId, instrumentNumber } = this.props.items[i];
     if (conditionId) {
-      reportAnalytics(e.type, 'select condition', `id: ${conditionId}`);
       this.props.updateSelectedCondition(conditionId);
     } else {
-      reportAnalytics(e.type, 'select instrument', `id: ${instrumentId}`);
+      reportAnalytics(
+        e.type,
+        'projects',
+        'instrument',
+        {
+          value: instrumentNumber,
+          conditionCount: this.props.counts.conditions,
+          instrumentCount: this.props.counts.instruments,
+        },
+      );
+
       this.props.updateSelectedInstrument(instrumentId);
     }
   }

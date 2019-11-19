@@ -3,6 +3,7 @@ export default {
   name: '',
   shortName: '',
   numberOfConditions: -1,
+  numberOfInstruments: -1,
   aggregatedCount: {
     instrument: [
       { name: '0', count: 0 },

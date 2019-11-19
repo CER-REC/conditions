@@ -9,7 +9,7 @@ import './styles.scss';
 import { handleAnalyticsInteraction } from '../../utilities/analyticsReporting';
 
 const TrendButton = props => (
-  <div className="TrendButton" {...handleAnalyticsInteraction('trends & conditions', '', props.onClick)}>
+  <div className="TrendButton" {...handleAnalyticsInteraction('menu', 'trends & conditions', props.onClick)}>
     <div className="buttonText">
       <StreamGraph
         allConditionsPerYear={props.allConditionsPerYear}

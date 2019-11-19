@@ -1,16 +1,18 @@
 import memoize from 'lodash.memoize';
+import uuid from 'uuid/v1';
 import handleInteraction from './handleInteraction';
 import memoizeReference from './memoizeReference';
 
 const env = process.env.NODE_ENV;
 const noop = () => {};
 
-export const analyticsActions = {
-  click: 'click',
-  drag: 'drag',
-};
-
 let getGeneralAnalytics = noop;
+let userId;
+
+const readUserIdCookie = () => {
+  const match = document.cookie.match(/userId=([^;]+)/);
+  return match && match[1];
+};
 
 /**
  * Allows the analytics reporter to pull any static or generally-relevant information
@@ -23,6 +25,14 @@ let getGeneralAnalytics = noop;
  */
 export const addGeneralAnalytics = (generalAnalytics) => {
   getGeneralAnalytics = () => generalAnalytics();
+  const foundId = readUserIdCookie();
+
+  if (foundId) {
+    userId = foundId;
+  } else {
+    userId = uuid();
+    document.cookie = `userId=${userId};max-age=86400`;
+  }
 };
 
 /**
@@ -32,24 +42,33 @@ export const addGeneralAnalytics = (generalAnalytics) => {
  * @param  {string} action      Event type ('click')
  * @param  {string} category    What the user did ('select company')
  * @param  {string} label       Any identifying information ('Trans-Mountain LLC')
+ * @param  {any}    value       Objects will be destructured onto the report object
  * @return {{}}                 An object of analytics information
  */
 
-export const reportAnalytics = (action, category, label) => {
+export const reportAnalytics = (action, category, label, value) => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
     if (env !== 'test') { console.warn('Google Tag Manager not found.'); }
-    return null;
+    // return null;
   }
 
   const dataObject = {
     ...getGeneralAnalytics(),
     action,
     category,
+    label,
     event: 'visualization interaction',
+    userId: readUserIdCookie(),
   };
 
-  if (label) { dataObject.label = label; }
+  if (value) {
+    if (typeof value === 'object' && value.constructor === Object) {
+      Object.entries(value).forEach(([k, v]) => { dataObject[k] = v; });
+    } else {
+      dataObject.value = value;
+    }
+  }
 
   // eslint-disable-next-line no-console
   if (env !== 'test' && env !== 'production') { console.log('Sending Google Analytics report:', dataObject); }

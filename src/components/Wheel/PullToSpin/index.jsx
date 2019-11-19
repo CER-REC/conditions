@@ -4,7 +4,7 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 import { useSpring, animated, interpolate } from 'react-spring';
 import { useGesture } from 'react-use-gesture';
-import { reportAnalytics, analyticsActions } from '../../../utilities/analyticsReporting';
+import { reportAnalytics } from '../../../utilities/analyticsReporting';
 
 const rectValues = {
   width: '13.52px',
@@ -48,7 +48,7 @@ const PullToSpin = (props) => {
       transform: 'translate(56, -56) rotate(15)',
       onRest: () => {
         if (shouldTriggerSpin) {
-          reportAnalytics(analyticsActions.click, 'pull to spin');
+          reportAnalytics('spin', 'wheel');
           props.onClickSpin();
         }
         setZeroRest();
@@ -70,7 +70,7 @@ const PullToSpin = (props) => {
         set({
           onRest: setZeroRest,
         });
-        reportAnalytics(analyticsActions.drag, 'pull to spin');
+        reportAnalytics('spin', 'wheel');
         props.onClickSpin();
       }
     },

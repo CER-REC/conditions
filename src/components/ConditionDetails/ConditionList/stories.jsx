@@ -84,6 +84,11 @@ storiesForComponent('Components|ConditionDetails/ConditionList', module, ReadMe)
   .add('default', () => (
     <ConditionList
       items={data}
+      selectedItem={3}
+      counts={{
+        conditions: 20,
+        instruments: 3,
+      }}
       {...getInteractionProps()}
     />
   ));

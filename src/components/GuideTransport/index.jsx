@@ -49,7 +49,7 @@ const GuideTransport = ({ playing, back, forward, togglePlay }) => (
     <svg
       className="back"
       viewBox="0 0 100 100"
-      {...handleAnalyticsInteraction('tutorial', 'back', back)}
+      {...handleAnalyticsInteraction('guide', 'back', back)}
     >
       <circle cx="50" cy="50" r="48" />
       <path d={`M ${chevronValues.x1} ${chevronValues.y} ${chevronPath}`} />
@@ -58,7 +58,7 @@ const GuideTransport = ({ playing, back, forward, togglePlay }) => (
     <svg
       className="togglePlay"
       viewBox="0 0 100 100"
-      {...handleAnalyticsInteraction('tutorial', (playing) ? 'pause' : 'play', togglePlay)}
+      {...handleAnalyticsInteraction('guide', (playing) ? 'pause' : 'play', togglePlay)}
     >
       <circle cx="50" cy="50" r="48" className={(!playing ? 'pink' : '')} />
       <path d={playing ? pausePath : playPath} />
@@ -67,7 +67,7 @@ const GuideTransport = ({ playing, back, forward, togglePlay }) => (
       className="forward"
       viewBox="0 0 100 100"
       style={{ transform: 'scaleX(-1' }}
-      {...handleAnalyticsInteraction('tutorial', 'forward', forward)}
+      {...handleAnalyticsInteraction('guide', 'forward', forward)}
     >
       <circle cx="50" cy="50" r="48" />
       <path d={`M ${chevronValues.x1} ${chevronValues.y} ${chevronPath}`} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import handleInteraction from '../../utilities/handleInteraction';
+import handleInteraction, { handleUnblockedInteraction } from '../../utilities/handleInteraction';
 
 import './styles.scss';
 
@@ -37,18 +37,27 @@ const icons = {
   ),
 };
 
-const PopupBtn = ({ action, children, icon, attributes, className }) => {
+const dummyObj = {};
+
+const PopupBtn = ({ url, action, children, icon, attributes, className }) => {
   const classes = classNames('PopupBtn', className);
+  let interaction = dummyObj;
+  if (action) {
+    interaction = (url)
+      ? handleUnblockedInteraction(action)
+      : handleInteraction(action);
+  }
+
   return (
-    (typeof action === 'string')
+    (url)
       ? (
-        <a className={classes} href={action} {...attributes}>
+        <a className={classes} href={url} {...attributes} {...(interaction)}>
           {<div>{children}</div>}
           {icons[icon]}
         </a>
       )
       : (
-        <button className={classes} type="button" {...handleInteraction(action)}>
+        <button className={classes} type="button" {...interaction}>
           {children}
           {icons[icon]}
         </button>
@@ -57,9 +66,11 @@ const PopupBtn = ({ action, children, icon, attributes, className }) => {
 };
 
 PopupBtn.propTypes = {
-  /** If given a string, will render an <a> and pass this as the URL. If given a function, will
-   * render a <button> and pass this as onClick */
-  action: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
+  /** Link URL */
+  url: PropTypes.string,
+  /** onClick handler. If passed along with a URL, the action will **not** add
+   * preventDefault or stopPropagation */
+  action: PropTypes.func,
   /** Attributes (i.e. target="_blank") to pass to the element */
   attributes: PropTypes.shape({}),
   /** Label */
@@ -73,6 +84,8 @@ PopupBtn.propTypes = {
 PopupBtn.defaultProps = {
   attributes: {},
   className: '',
+  action: null,
+  url: '',
 };
 
 export default React.memo(PopupBtn);

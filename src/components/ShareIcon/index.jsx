@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { fetch as fetchPolyfill } from 'whatwg-fetch';
 import './styles.scss';
-import { handleAnalyticsInteraction } from '../../utilities/analyticsReporting';
+import handleInteraction from '../../utilities/handleInteraction';
+import { reportAnalytics } from '../../utilities/analyticsReporting';
 import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
 import RouteComputations from '../../RouteComputations';
@@ -43,10 +44,13 @@ class ShareIcon extends React.PureComponent {
     window.open(`${baseUrl}${bitlyUrl}`, 'targetWindow', 'width=650,height=650');
   }).catch(noop);
 
-  handleOnClick = () => (
-    (shareUrls[this.props.target])
-      ? this.openShareWindow(shareUrls[this.props.target])
-      : this.getBitlyURL().then((url) => {
+  handleOnClick = () => {
+    reportAnalytics('share', 'menu', this.props.target);
+
+    if (shareUrls[this.props.target]) {
+      this.openShareWindow(shareUrls[this.props.target]);
+    } else {
+      this.getBitlyURL().then((url) => {
         const subject = this.props.intl.formatMessage({ id: 'components.shareIcon.emailSubject' });
         const bodyText = this.props.intl.formatMessage({ id: 'components.shareIcon.emailBody' });
         const emailUrl = `mailto:?subject=${
@@ -57,8 +61,9 @@ class ShareIcon extends React.PureComponent {
           encodeURIComponent(bodyText)
         }`;
         window.location.href = emailUrl;
-      }).catch(err => console.error(err))
-  )
+      }).catch(err => console.error(err));
+    }
+  }
 
   render() {
     const icon = this.props.target === 'email' ? 'envelope' : this.props.target;
@@ -68,11 +73,7 @@ class ShareIcon extends React.PureComponent {
           'ShareIcon',
           this.props.className,
         )}
-        {...handleAnalyticsInteraction(
-          'share on social media',
-          this.props.target,
-          this.handleOnClick,
-        )}
+        {...handleInteraction(this.handleOnClick)}
       >
         <CircleContainer size={20}>
           <Icon size="1x" icon={icon} prefix={this.props.prefix} />

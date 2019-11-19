@@ -11,6 +11,7 @@ const testData = [
     name: 'name-100',
     shortName: 'shortName-100',
     numberOfConditions: 10,
+    numberOfInstruments: 3,
     aggregatedCount: {
       theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
       instrument: [],
@@ -25,6 +26,7 @@ const testData = [
     name: 'name-101',
     shortName: 'shortName-101',
     numberOfConditions: 10,
+    numberOfInstruments: 3,
     aggregatedCount: {
       theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
       instrument: [],
@@ -39,6 +41,7 @@ const testData = [
     name: 'name-102',
     shortName: 'shortName-102',
     numberOfConditions: 10,
+    numberOfInstruments: 3,
     aggregatedCount: {
       theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
       instrument: [],
@@ -53,6 +56,7 @@ const testData = [
     name: 'name-103',
     shortName: 'shortName-103',
     numberOfConditions: 10,
+    numberOfInstruments: 3,
     aggregatedCount: {
       theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
       instrument: [],
@@ -67,6 +71,7 @@ const testData = [
     name: 'name-104',
     shortName: 'shortName-104',
     numberOfConditions: 10,
+    numberOfInstruments: 3,
     aggregatedCount: {
       theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
       instrument: [],
@@ -81,6 +86,7 @@ const testData = [
     name: 'name-105',
     shortName: 'shortName-105',
     numberOfConditions: 10,
+    numberOfInstruments: 3,
     aggregatedCount: {
       theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
       instrument: [],
@@ -95,6 +101,7 @@ const testData = [
     name: 'name-106',
     shortName: 'shortName-106',
     numberOfConditions: 10,
+    numberOfInstruments: 3,
     aggregatedCount: {
       theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
       instrument: [],

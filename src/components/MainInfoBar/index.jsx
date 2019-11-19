@@ -73,7 +73,7 @@ class MainInfoBar extends React.PureComponent {
         id={k}
         className={`textButton ${this.props.pane === k ? 'selected' : ''}`}
         type="button"
-        {...handleAnalyticsInteraction('set main info bar', k, this.props.setPane, k)}
+        {...handleAnalyticsInteraction('info', k, this.props.setPane, k)}
       >
         <FormattedMessage id={`components.mainInfoBar.headings.${k}`} />
       </button>

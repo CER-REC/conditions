@@ -5,23 +5,19 @@ const staticDetails = {
   language: lang,
 };
 
-const getView = (transitionState) => {
-  if (transitionState === transitionStates.view3) { return 'view 3'; }
-  if (transitionState === transitionStates.view2) { return 'view 2'; }
-  return 'view 1';
+const getVisualizationMode = (state) => {
+  if (state.transitionState < transitionStates.tutorialStart) { return 'none'; }
+
+  return (state.browseBy === 'company')
+    ? 'projects by company'
+    : 'conditions by location';
 };
 
 export default store => () => {
   const state = store.getState();
 
-  const search = { ...state.search };
-  delete search.searchResults;
-  delete search.filteredProjects;
-
   return {
     ...staticDetails,
-    subVisualization: getView(state.transitionState),
-    filter: JSON.stringify(search),
-    mode: state.browseBy,
+    visualizationMode: getVisualizationMode(state),
   };
 };

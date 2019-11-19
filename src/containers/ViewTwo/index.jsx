@@ -96,6 +96,21 @@ class ViewTwo extends React.PureComponent {
     this.shouldSearch = true;
   };
 
+  getProjectCounts = (id) => {
+    const project = this.props.projectsData.find(proj => (
+      proj.id === id
+    ));
+
+    return {
+      conditionCount: project.numberOfConditions,
+      instrumentCount: project.numberOfInstruments,
+    };
+  }
+
+  openNumberDetails = () => {
+    this.props.openNumberDetails(this.getProjectCounts(this.props.selected.project));
+  };
+
   render() {
     // TODO: Evil hack. Ideally we would refactor the App's Redux connection to
     // be outside the initial queries so we could update the store when they return.
@@ -185,7 +200,7 @@ class ViewTwo extends React.PureComponent {
             : (
               <>
                 <TotalConditionsLabel
-                  openNumberDetails={this.props.openNumberDetails}
+                  openNumberDetails={this.openNumberDetails}
                 />
                 <ProjectMenu
                   loading={this.props.wheelMoving || this.props.projectMenuLoading}

@@ -3288,36 +3288,8 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
       >
         <ul>
           <li
-            className="List-Item selected"
+            className="List-Item"
           >
-            <div
-              className="CircleContainer arrow arrowPrevious hiddenArrow"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              style={
-                Object {
-                  "height": 24,
-                  "width": 24,
-                }
-              }
-              tabIndex={0}
-            >
-              <div>
-                <div
-                  className="Arrow Up"
-                >
-                  <svg
-                    height="22"
-                    width="22"
-                  >
-                    <polyline
-                      points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
             <div
               className="List-Item-Content"
               focusable={true}
@@ -3336,34 +3308,6 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                 <h4>
                   XO-001-2018
                 </h4>
-              </div>
-            </div>
-            <div
-              className="CircleContainer arrow arrowNext"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              style={
-                Object {
-                  "height": 24,
-                  "width": 24,
-                }
-              }
-              tabIndex={0}
-            >
-              <div>
-                <div
-                  className="Arrow Down"
-                >
-                  <svg
-                    height="22"
-                    width="22"
-                  >
-                    <polyline
-                      points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                    />
-                  </svg>
-                </div>
               </div>
             </div>
           </li>
@@ -3472,8 +3416,36 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             </div>
           </li>
           <li
-            className="List-Item"
+            className="List-Item selected"
           >
+            <div
+              className="CircleContainer arrow arrowPrevious"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              style={
+                Object {
+                  "height": 24,
+                  "width": 24,
+                }
+              }
+              tabIndex={0}
+            >
+              <div>
+                <div
+                  className="Arrow Up"
+                >
+                  <svg
+                    height="22"
+                    width="22"
+                  >
+                    <polyline
+                      points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
             <div
               className="List-Item-Content"
               focusable={true}
@@ -3492,6 +3464,34 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                 <h4>
                   XO-003-2018
                 </h4>
+              </div>
+            </div>
+            <div
+              className="CircleContainer arrow arrowNext"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              style={
+                Object {
+                  "height": 24,
+                  "width": 24,
+                }
+              }
+              tabIndex={0}
+            >
+              <div>
+                <div
+                  className="Arrow Down"
+                >
+                  <svg
+                    height="22"
+                    width="22"
+                  >
+                    <polyline
+                      points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
           </li>
@@ -9514,6 +9514,56 @@ exports[`Storyshots Components|PopupBtn link attributes 1`] = `
     className="PopupBtn"
     href="https://www.example.com"
     rel="noopener noreferrer"
+    target="_blank"
+  >
+    <div>
+      Example
+    </div>
+    <svg
+      className="buttonIcon"
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+      />
+      <path
+        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+        fill="white"
+      />
+    </svg>
+  </a>
+</div>
+`;
+
+exports[`Storyshots Components|PopupBtn link with onClick 1`] = `
+<div
+  className="visualization"
+>
+  <a
+    className="PopupBtn"
+    focusable={true}
+    href="https://www.example.com"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    rel="noopener noreferrer"
+    tabIndex={0}
     target="_blank"
   >
     <div>
@@ -16595,7 +16645,11 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
       </p>
       <a
         className="PopupBtn"
+        focusable={true}
         href="https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
       >
         <div>
           Open in current tab
@@ -16632,8 +16686,12 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
       </a>
       <a
         className="PopupBtn"
+        focusable={true}
         href="https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
+        onClick={[Function]}
+        onKeyPress={[Function]}
         rel="noopener noreferrer"
+        tabIndex={0}
         target="_blank"
       >
         <div>
@@ -16763,7 +16821,11 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
       </p>
       <a
         className="PopupBtn"
+        focusable={true}
         href="https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
       >
         <div>
           Open in current tab
@@ -16800,8 +16862,12 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
       </a>
       <a
         className="PopupBtn"
+        focusable={true}
         href="https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
+        onClick={[Function]}
+        onKeyPress={[Function]}
         rel="noopener noreferrer"
+        tabIndex={0}
         target="_blank"
       >
         <div>

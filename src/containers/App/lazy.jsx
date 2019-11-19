@@ -24,6 +24,7 @@ import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
 import allKeywordsQuery from '../../queries/allKeywords';
 import companyNameById from '../../queries/companyNameById';
+import regionNameById from '../../queries/regionNameById';
 import { allCompaniesQuery, allRegionsQuery } from '../../queries/wheel';
 
 import * as browseByCreators from '../../actions/browseBy';
@@ -32,7 +33,7 @@ import * as selectedCreators from '../../actions/selected';
 import * as transitionStateCreators from '../../actions/transitionState';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 import createStore from '../../Store';
-import { addGeneralAnalytics, reportAnalytics, analyticsActions } from '../../utilities/analyticsReporting';
+import { addGeneralAnalytics, reportAnalytics } from '../../utilities/analyticsReporting';
 import analyticsFromState from './analyticsFromState';
 
 import {
@@ -165,7 +166,11 @@ class App extends React.PureComponent {
         from,
         variables,
         ((eager) ? null : staticSelection),
-      );
+      ).then((newSelection) => {
+        const id = (this.props.browseBy === 'company') ? newSelection.company : newSelection.region;
+
+        this.handleLoadAnalytics(id, this.props.browseBy);
+      });
 
       // Set the known values without having to wait for queries to return
       if (eager) {
@@ -205,6 +210,18 @@ class App extends React.PureComponent {
     searchVariables,
     filterVariables,
   );
+
+  // Just for analytics
+  handleLoadAnalytics = (id, type) => {
+    const [query, nameCb] = (type === 'company')
+      ? [companyNameById, ({ data }) => data.getCompanyById.name]
+      : [regionNameById, ({ data }) => `${data.getRegionById.name}, ${data.getRegionById.province}`];
+
+    client.query({
+      query,
+      variables: { id },
+    }).then(result => reportAnalytics('load', 'wheel', nameCb(result)));
+  };
 
   setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
 
@@ -323,6 +340,8 @@ class App extends React.PureComponent {
   jumpToAbout = () => {
     this.jumpToView2();
     this.setMainInfoBarPane('about');
+
+    reportAnalytics('info', 'about');
 
     // This timer needs to be long enough for React to do its thing and for the
     // CSS transitions to finish so the Footer content is there to scroll to.
@@ -475,7 +494,7 @@ class App extends React.PureComponent {
     this.incrementTransitionState();
     this.togglePlay(true);
 
-    reportAnalytics(analyticsActions.click, 'guide', 'begin tutorial');
+    reportAnalytics('click', 'guide', 'play');
 
     setTimeout(() => {
       this.incrementTransitionState();
@@ -546,7 +565,7 @@ class App extends React.PureComponent {
       const keyword = instance.keyword.value;
       const newIncluded = [keyword];
 
-      reportAnalytics(e.type, 'keyword', keyword);
+      reportAnalytics('select', 'condition - keyword', keyword);
 
       batch(() => {
         this.props.setSelectedMultiple({ keywordId });
@@ -595,7 +614,8 @@ class App extends React.PureComponent {
     this.setState({ isDownloadPopupOpen: false });
   }
 
-  openTotalConditionNumberPopup = () => {
+  openTotalConditionNumberPopup = (counts) => {
+    reportAnalytics('learn more', 'projects', 'project', counts);
     this.setState({ isTotalConditionNumberPopupOpen: true });
   }
 
@@ -856,6 +876,7 @@ class App extends React.PureComponent {
                         <RegDocsPopup
                           isOpen={this.state.isIntermediatePopupOpen}
                           closeModal={this.closeRegDocPopup}
+                          counts={counts}
                           document={documentNumber}
                         />
                       )}
