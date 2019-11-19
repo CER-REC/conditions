@@ -6938,7 +6938,6 @@ exports[`Storyshots Components|Icon default icon 1`] = `
       color=""
       data-icon="angle-right"
       data-prefix="fas"
-      focusable="false"
       role="img"
       style={Object {}}
       viewBox="0 0 256 512"
@@ -6967,7 +6966,6 @@ exports[`Storyshots Components|Icon with props: color 1`] = `
       color="blue"
       data-icon="angle-right"
       data-prefix="fas"
-      focusable="false"
       role="img"
       style={Object {}}
       viewBox="0 0 256 512"
@@ -6996,7 +6994,6 @@ exports[`Storyshots Components|Icon with props: prefix 1`] = `
       color=""
       data-icon="twitter"
       data-prefix="fab"
-      focusable="false"
       role="img"
       style={Object {}}
       viewBox="0 0 512 512"
@@ -7025,7 +7022,6 @@ exports[`Storyshots Components|Icon with props: size 1`] = `
       color=""
       data-icon="angle-right"
       data-prefix="fas"
-      focusable="false"
       role="img"
       style={Object {}}
       viewBox="0 0 256 512"
@@ -8363,7 +8359,6 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
                   color=""
                   data-icon="envelope"
                   data-prefix="fas"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 512 512"
@@ -8405,7 +8400,6 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
                   color=""
                   data-icon="twitter"
                   data-prefix="fab"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 512 512"
@@ -8443,18 +8437,17 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  className="svg-inline--fa fa-facebook fa-w-16 fa-1x "
+                  className="svg-inline--fa fa-facebook fa-w-14 fa-1x "
                   color=""
                   data-icon="facebook"
                   data-prefix="fab"
-                  focusable="false"
                   role="img"
                   style={Object {}}
-                  viewBox="0 0 512 512"
+                  viewBox="0 0 448 512"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+                    d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"
                     fill="currentColor"
                     style={Object {}}
                   />
@@ -8489,7 +8482,6 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
                   color=""
                   data-icon="linkedin"
                   data-prefix="fab"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 448 512"
@@ -8666,7 +8658,6 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
                   color=""
                   data-icon="envelope"
                   data-prefix="fas"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 512 512"
@@ -8708,7 +8699,6 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
                   color=""
                   data-icon="twitter"
                   data-prefix="fab"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 512 512"
@@ -8746,18 +8736,17 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  className="svg-inline--fa fa-facebook fa-w-16 fa-1x "
+                  className="svg-inline--fa fa-facebook fa-w-14 fa-1x "
                   color=""
                   data-icon="facebook"
                   data-prefix="fab"
-                  focusable="false"
                   role="img"
                   style={Object {}}
-                  viewBox="0 0 512 512"
+                  viewBox="0 0 448 512"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+                    d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"
                     fill="currentColor"
                     style={Object {}}
                   />
@@ -8792,7 +8781,6 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
                   color=""
                   data-icon="linkedin"
                   data-prefix="fab"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 448 512"
@@ -8969,7 +8957,6 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
                   color=""
                   data-icon="envelope"
                   data-prefix="fas"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 512 512"
@@ -9011,7 +8998,6 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
                   color=""
                   data-icon="twitter"
                   data-prefix="fab"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 512 512"
@@ -9049,18 +9035,17 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  className="svg-inline--fa fa-facebook fa-w-16 fa-1x "
+                  className="svg-inline--fa fa-facebook fa-w-14 fa-1x "
                   color=""
                   data-icon="facebook"
                   data-prefix="fab"
-                  focusable="false"
                   role="img"
                   style={Object {}}
-                  viewBox="0 0 512 512"
+                  viewBox="0 0 448 512"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+                    d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"
                     fill="currentColor"
                     style={Object {}}
                   />
@@ -9095,7 +9080,6 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
                   color=""
                   data-icon="linkedin"
                   data-prefix="fab"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 448 512"
@@ -9272,7 +9256,6 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
                   color=""
                   data-icon="envelope"
                   data-prefix="fas"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 512 512"
@@ -9314,7 +9297,6 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
                   color=""
                   data-icon="twitter"
                   data-prefix="fab"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 512 512"
@@ -9352,18 +9334,17 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  className="svg-inline--fa fa-facebook fa-w-16 fa-1x "
+                  className="svg-inline--fa fa-facebook fa-w-14 fa-1x "
                   color=""
                   data-icon="facebook"
                   data-prefix="fab"
-                  focusable="false"
                   role="img"
                   style={Object {}}
-                  viewBox="0 0 512 512"
+                  viewBox="0 0 448 512"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+                    d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"
                     fill="currentColor"
                     style={Object {}}
                   />
@@ -9398,7 +9379,6 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
                   color=""
                   data-icon="linkedin"
                   data-prefix="fab"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 448 512"
@@ -19255,7 +19235,6 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
                 color=""
                 data-icon="plus-circle"
                 data-prefix="fas"
-                focusable="false"
                 role="img"
                 style={Object {}}
                 viewBox="0 0 512 512"
@@ -19516,7 +19495,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                   color=""
                   data-icon="minus-circle"
                   data-prefix="fas"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 512 512"
@@ -19595,7 +19573,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                   color=""
                   data-icon="plus-circle"
                   data-prefix="fas"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 512 512"
@@ -19709,7 +19686,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                   color=""
                   data-icon="plus-circle"
                   data-prefix="fas"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 512 512"
@@ -19788,7 +19764,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                   color=""
                   data-icon="plus-circle"
                   data-prefix="fas"
-                  focusable="false"
                   role="img"
                   style={Object {}}
                   viewBox="0 0 512 512"
@@ -20029,7 +20004,6 @@ exports[`Storyshots Components|ShareIcon email 1`] = `
             color=""
             data-icon="envelope"
             data-prefix="fas"
-            focusable="false"
             role="img"
             style={Object {}}
             viewBox="0 0 512 512"
@@ -20074,18 +20048,17 @@ exports[`Storyshots Components|ShareIcon facebook 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="svg-inline--fa fa-facebook fa-w-16 fa-1x "
+            className="svg-inline--fa fa-facebook fa-w-14 fa-1x "
             color=""
             data-icon="facebook"
             data-prefix="fab"
-            focusable="false"
             role="img"
             style={Object {}}
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+              d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"
               fill="currentColor"
               style={Object {}}
             />
@@ -20127,7 +20100,6 @@ exports[`Storyshots Components|ShareIcon linkedin 1`] = `
             color=""
             data-icon="linkedin"
             data-prefix="fab"
-            focusable="false"
             role="img"
             style={Object {}}
             viewBox="0 0 448 512"
@@ -20176,7 +20148,6 @@ exports[`Storyshots Components|ShareIcon twitter 1`] = `
             color=""
             data-icon="twitter"
             data-prefix="fab"
-            focusable="false"
             role="img"
             style={Object {}}
             viewBox="0 0 512 512"
@@ -23327,6 +23298,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
       }
     >
       <svg
+        aria-labelledby="victory-container-80-title victory-container-80-desc"
         height={330}
         role="img"
         style={
@@ -25210,6 +25182,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
       }
     >
       <svg
+        aria-labelledby="victory-container-42-title victory-container-42-desc"
         height={330}
         role="img"
         style={
@@ -28473,6 +28446,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
       }
     >
       <svg
+        aria-labelledby="victory-container-118-title victory-container-118-desc"
         height={330}
         role="img"
         style={
