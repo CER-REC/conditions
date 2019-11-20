@@ -70,6 +70,8 @@ export default class PhysicsVariant extends React.PureComponent {
     this.selected = 0;
     this.lastDeltaTime = 0;
     this.lastMessageTime = 0;
+    this.keywordTouchInitial = null;
+    this.keywordTouchCurrent = null;
     this.state = {
       renderToggle: false,
       guideMessage: 'intro',
@@ -310,6 +312,44 @@ export default class PhysicsVariant extends React.PureComponent {
     this.props.onKeywordClick(e, instance);
   };
 
+  onKeywordTouchStart = (e) => {
+    // If the user is touching with more than one finger, forget the current keyword
+    if (e.touches.length > 1) {
+      this.keywordTouchInitial = null;
+      this.keywordTouchCurrent = null;
+      return;
+    }
+
+    const id = parseInt(e.currentTarget.dataset.id, 10);
+    if (!id) { return; }
+    this.keywordTouchInitial = {
+      id,
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+    };
+  }
+
+  onKeywordTouchMove = (e) => {
+    if (!this.keywordTouchInitial) { return; }
+    this.keywordTouchCurrent = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  };
+
+  onKeywordTouchEnd = (e) => {
+    if (!this.keywordTouchInitial) { return; }
+    const { x, y, id } = this.keywordTouchInitial;
+    // Ensure the user hasn't moved their finger too far, like a move motion.
+    // If the user hasn't moved their finger at all, use the initial position.
+    const touchEnd = this.keywordTouchCurrent || { x, y };
+    const distance = Math.sqrt((touchEnd.x - x) ** 2 + (touchEnd.y - y) ** 2);
+
+    this.keywordTouchInitial = null;
+    this.keywordTouchCurrent = null;
+    if (distance > 20) { return; }
+
+    const instance = this.keywords.find(keywordInstance => keywordInstance.body.id === id);
+    this.props.onKeywordClick(e, instance);
+  }
+
   updateGuideMessage = (currTime) => {
     const currMsg = this.state.guideMessage;
     let newMsg;
@@ -381,6 +421,9 @@ export default class PhysicsVariant extends React.PureComponent {
             )}
             data-id={instance.body.id}
             onClick={this.onKeywordClick}
+            onTouchStart={this.onKeywordTouchStart}
+            onTouchMove={this.onKeywordTouchMove}
+            onTouchEnd={this.onKeywordTouchEnd}
           >
             <g
               transform={`
