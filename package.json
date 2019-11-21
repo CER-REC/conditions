@@ -1,6 +1,6 @@
 {
   "name": "cer-conditions-visualization",
-  "version": "0.28.1",
+  "version": "0.29.0",
   "description": "A visualization of data collected since 2010 about conditions on energy projects that the CER creates as part of their regulatory process. ",
   "main": "src/index.jsx",
   "scripts": {

@@ -1,3 +1,121 @@
+# [0.29.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.29.0) (2019-11-21)
+
+
+### Analytics
+
+* **Features:** revises analytics event data (c521ad0)
+
+
+### App
+
+* **Features:** updates TotalConditions analytics event + helpers (c7b441b)
+* **Features:** remove beta text from title (7ef397d, NEBV-1830)
+* **Features:** updates analytics event labels (121b68b)
+* **Features:** adds on-load analytics event (1897c8e)
+* **Features:** removes analyticsAction constants (3f53c69)
+* **Features:** adds value and userId fields to analytics (59a26bd)
+* **Features:** updates view analytics events (c3f511d)
+* **Bug Fixes:** adds missing props to stories, updates snapshots (9315147)
+* **Bug Fixes:** uses full project name in Company popup (5836bea)
+* **Bug Fixes:** lifts memoized class methods as per linting changes (0a52de2)
+* **Bug Fixes:** places the app in its own stacking context to avoid WET conflicts (80a97b9)
+
+
+### ConditionDetails
+
+* **Features:** updates analytics events (32006e3)
+* **Features:** updates ProjectHeader analytics event (8005854)
+
+
+### ConditionExplorer
+
+* **Bug Fixes:** supports touch events for selecting keywords (3e76aec, NEBV-1822)
+
+
+### Dependencies
+
+* **Project Maintenance:** update babel monorepo to v7.7.0 (cbe5a70)
+* **Project Maintenance:** update dependency @vizworx/babel-preset to v1.1.0 (4078309)
+* **Project Maintenance:** update dependency @vizworx/eslint-config-react to v1.1.1 (4e023b8)
+* **Project Maintenance:** update dependency babel-plugin-react-docgen to v3.2.0 (d70d630)
+* **Project Maintenance:** update dependency enzyme-adapter-react-16 to v1.15.1 (61277b3)
+* **Project Maintenance:** update dependency eslint to v6.6.0 (89cc38c)
+* **Project Maintenance:** update dependency jest-junit to v9 (cdbec1f)
+* **Project Maintenance:** update dependency node-sass to v4.13.0 (d6ea614)
+* **Project Maintenance:** update dependency webpack-cli to v3.3.10 (8b79040)
+
+
+### FeaturesMenu
+
+* **Features:** updates analytics event (9d744ff)
+
+
+### List
+
+* **Features:** removes unnecessary property declaration (b59840b)
+
+
+### MainInfoBar
+
+* **Features:** updates analytics events (1d329c1)
+
+
+### PopupBtn
+
+* **Features:** allows links to also have click handlers (a626fcf)
+
+
+### ProjectMenu
+
+* **Features:** updates analytics event (df953a0)
+
+
+### RegDocsPopup
+
+* **Features:** adds count data to analytics event (d26ac02)
+* **Features:** updates RegDecos analytics event (4b09456)
+
+
+### RegionCompanies
+
+* **Features:** updates analytics event (abc42e6)
+
+
+### Search
+
+* **Features:** updates analytics events (7892063)
+* **Features:** updates filter analytics events (a81dd95)
+
+
+### ShareIcon
+
+* **Features:** updates analytics events (ff01077)
+
+
+### SmallMultiplesLegend
+
+* **Features:** updates analytics event (32a797d)
+
+
+### Storybook
+
+* **Tests:** updates snapshots after recent dependency updates (6825ef3)
+
+
+### SuggestedKeywordsPopout
+
+* **Features:** updates analytics events (2395ec6)
+
+
+### View 2
+
+* **Features:** removes unnecessary property, combines duplicate code in a method (627c3bb)
+
+
+### Wheel
+
+* **Features:** updates analytics events (d13cbb7)
+
 ## [0.28.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.28.1) (2019-10-02)
 
 
