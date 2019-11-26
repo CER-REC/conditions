@@ -1,3 +1,10 @@
+# [1.0.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.0.0) (2019-11-26)
+
+
+### Node
+
+* **Project Maintenance:** updates from Node 10.13.3 to 12.13.1 (eadddcd)
+
 # [0.29.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.29.0) (2019-11-21)
 
 
