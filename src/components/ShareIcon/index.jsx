@@ -33,10 +33,10 @@ class ShareIcon extends React.PureComponent {
 
     return fetchPolyfill(uri)
       .then((response) => {
-        if (response.body.status_code !== 200) {
+        if (response.status !== 200) {
           return document.location.href;
         }
-        return response.body.data.url;
+        return response.url;
       }).catch(() => document.location.href);
   };
 
