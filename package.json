@@ -127,7 +127,7 @@
     "storybook-addon-interaction": "1.0.1",
     "storybook-addon-intl": "2.4.1",
     "storybook-readme": "5.0.8",
-    "style-loader": "1.0.0",
+    "style-loader": "1.0.1",
     "topojson-server": "3.0.1",
     "topojson-simplify": "3.0.3",
     "url-loader": "2.2.0",
