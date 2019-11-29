@@ -402,8 +402,7 @@
     },
     "projectLegend": {
       "numberOfConditions": "Number of Conditions",
-      "totalConditions": "Total Number of Conditions for Project",
-      "associated": "Associated Companies"
+      "totalConditions": "Total Number of Conditions for Project"
     },
     "regionSummary": {
       "regionCompanies": {

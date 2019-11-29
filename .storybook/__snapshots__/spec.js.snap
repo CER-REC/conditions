@@ -6048,22 +6048,6 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
           </span>
         </div>
       </div>
-      <div
-        className="AssociatedComp"
-      >
-        <h3
-          className="Asterisk"
-        >
-          *
-        </h3>
-        <div
-          className="AssociatedDesc"
-        >
-          <span>
-            Associated Companies
-          </span>
-        </div>
-      </div>
     </div>
   </div>
 </div>
