@@ -36,6 +36,10 @@ class ConditionDetails extends React.PureComponent {
     updateSelectedCondition: PropTypes.func.isRequired,
     openIntermediatePopup: PropTypes.func.isRequired,
     openProjectDetails: PropTypes.func.isRequired,
+    companies: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+    })).isRequired,
   };
 
   static defaultProps = {
@@ -116,6 +120,7 @@ class ConditionDetails extends React.PureComponent {
             browseBy={this.props.browseBy}
             openProjectDetails={this.props.openProjectDetails}
             counts={this.props.counts}
+            companies={this.props.companies}
           />
           {!shouldRenderData ? null : (
             <>
