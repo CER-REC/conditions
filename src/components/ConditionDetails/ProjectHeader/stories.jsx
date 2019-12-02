@@ -6,28 +6,31 @@ import ReadMe from './README.md';
 
 const toggleExpanded = () => expand => ({ expanded: expand });
 
+const defaultProps = {
+  selectedProject: 'Keystone XL',
+  openProjectDetails: () => alert('Project details'),
+  companies: [{ id: 1, name: 'Company1' }, { id: 2, name: 'Company2' }],
+};
+
 storiesForComponent('Components|ConditionDetails/ProjectHeader', module, ReadMe)
   .addDecorator(withInteraction({ actions: ['toggleExpanded'] }))
   .add('expandable', () => (
     <ProjectHeader
       isExpandable
-      selectedProject="Keystone XL"
-      openProjectDetails={() => alert('Project details')}
       {...getInteractionProps()}
+      {...defaultProps}
     />
   ), { interaction: { state: { expanded: true }, actions: { toggleExpanded } } })
   .add('location mode', () => (
     <ProjectHeader
-      selectedProject="Keystone XL"
-      openProjectDetails={() => alert('Project details')}
       browseBy="location"
+      {...defaultProps}
       {...getInteractionProps()}
     />
   ))
   .add('not expandable', () => (
     <ProjectHeader
-      selectedProject="Keystone XL"
-      openProjectDetails={() => alert('Project details')}
+      {...defaultProps}
       {...getInteractionProps()}
     />
   ));

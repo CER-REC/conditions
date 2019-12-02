@@ -13,6 +13,7 @@ const defaultProps = {
   searchKeywords: {
     include: ['hello'],
   },
+  companies: [{ id: 1, name: 'Company1' }, { id: 2, name: 'Company2' }],
   selectedItem: { instrumentIndex: 1, itemIndex: -1 },
 };
 

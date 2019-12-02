@@ -7,6 +7,9 @@ import ProjectHeader from '.';
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
+const singleCompany = [{ id: 1, name: 'Company1' }];
+const multipleCompany = [{ id: 1, name: 'Company1' }, { id: 2, name: 'Company2' }];
+
 describe('Components|ConditionDetails/ProjectHeader', () => {
   let wrapper;
   let spy;
@@ -23,14 +26,42 @@ describe('Components|ConditionDetails/ProjectHeader', () => {
       wrapper = shallow(
         <ProjectHeader
           selectedProject="Keystone XL"
-          openProjectDetails={spy.openProjectDetails}
-          toggleExpanded={spy.toggleExpanded}
+          companies={singleCompany}
+          {...spy}
         />,
       );
     });
 
     shouldBehaveLikeAComponent(ProjectHeader, () => wrapper);
+  });
 
+  describe('single company', () => {
+    beforeEach(() => {
+      wrapper = shallow(
+        <ProjectHeader
+          selectedProject="Keystone XL"
+          companies={singleCompany}
+          {...spy}
+        />,
+      );
+    });
+    test('should not render the button', () => {
+      const updatedWrapper = wrapper.find('.ProjectHeader')
+        .find('.openProject');
+      expect(updatedWrapper.exists()).toBeFalsy();
+    });
+  });
+
+  describe('multiple', () => {
+    beforeEach(() => {
+      wrapper = shallow(
+        <ProjectHeader
+          selectedProject="Keystone XL"
+          companies={multipleCompany}
+          {...spy}
+        />,
+      );
+    });
     test('should call its openProjectDetails callback', () => {
       wrapper.find('.ProjectHeader')
         .find('.openProject')
@@ -44,10 +75,10 @@ describe('Components|ConditionDetails/ProjectHeader', () => {
     beforeEach(() => {
       wrapper = shallow(
         <ProjectHeader
-          selectedProject="Keystone XL"
-          openProjectDetails={spy.openProjectDetails}
-          toggleExpanded={spy.toggleExpanded}
+          {...spy}
           isExpandable
+          selectedProject="Keystone XL"
+          companies={singleCompany}
         />,
       );
     });
