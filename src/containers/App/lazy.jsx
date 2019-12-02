@@ -870,6 +870,9 @@ class App extends React.PureComponent {
                       counts={counts}
                       browseBy={this.props.browseBy}
                       {...conditionDetailsViewProps}
+                      companies={data.projectDetails
+                        ? data.projectDetails.companies
+                        : emptyArray}
                     />
                     {(!documentNumber) ? null
                       : (
