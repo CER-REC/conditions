@@ -27,7 +27,7 @@ class FeatureTypesDescription extends React.PureComponent {
     /** Display order by feature type */
     displayOrder: displayOrderPropType.isRequired,
   };
-  
+
   static defaultProps = {
     subFeature: '',
   };
@@ -49,7 +49,6 @@ class FeatureTypesDescription extends React.PureComponent {
 
   scrollTo = (type) => {
     if (!this.ref.current) { return; }
-    console.log(type)
     const elm = this.ref.current.querySelector(`[data-heading="${type}"]`);
     this.ref.current.scrollTop = (elm)
       ? (elm.offsetTop - this.ref.current.offsetTop)
@@ -73,7 +72,6 @@ class FeatureTypesDescription extends React.PureComponent {
 
   render() {
     const { feature, subFeature, displayOrder } = this.props;
-    console.log(this.props)
     let headerId;
     if (feature === 'theme' && subFeature === '') {
       headerId = 'allThemes';
@@ -90,11 +88,11 @@ class FeatureTypesDescription extends React.PureComponent {
     );
 
     let content = displayOrder[feature].map(type => this.renderEntry(feature, type));
-    // if (feature === 'instrument') {
-    //   content = content.concat(
-    //     displayOrder.instrumentOther.map(type => this.renderEntry(feature, type, 'other')),
-    //   );
-    // }
+    if (feature === 'instrument') {
+      content = content.concat(
+        displayOrder.instrumentOther.map(type => this.renderEntry(feature, type, 'other')),
+      );
+    }
 
     return (
       <div
