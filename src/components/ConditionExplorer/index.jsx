@@ -76,8 +76,8 @@ export default class ConditionExplorer extends React.PureComponent {
   });
 
   setGuideStep = (guideStep, e) => {
-    const { title } = english.components.conditionExplorer.guide.pages[this.state.guideStep];
-    reportAnalytics(e.type, 'guide', 'detail page', title);
+    const { title } = english.components.conditionExplorer.guide.pages[guideStep];
+    reportAnalytics(e.type, 'guide', title);
     this.setState({ guideStep });
   };
 

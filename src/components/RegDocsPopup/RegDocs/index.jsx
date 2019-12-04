@@ -54,14 +54,14 @@ const RegDocs = ({ document, closeModal, counts }) => {
         tag={PopupBtn}
         icon="plus"
         url={linkUrl}
-        action={handleLinkAnalytics(document, 'current tab', counts)}
+        action={handleLinkAnalytics(document, 'open in current tab', counts)}
       />
       <AdvancedFormattedMessage
         id="components.modal.regdocs.newTab"
         tag={PopupBtn}
         icon="plus"
         url={linkUrl}
-        action={handleLinkAnalytics(document, 'new tab', counts)}
+        action={handleLinkAnalytics(document, 'open in new tab', counts)}
         attributes={linkAttributes}
       />
       <AdvancedFormattedMessage
