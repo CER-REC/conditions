@@ -72,6 +72,12 @@
           position: absolute;
           line-height: 1.8em;
           right: calc(50% + 50px);
+          display: none;
+        }
+        @include breakpoint("small") {
+          .title {
+            display: inline-block;
+          }
         }
 
         .Dropdown {
