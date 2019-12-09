@@ -1,3 +1,10 @@
+# [1.1.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.1.0) (2019-12-09)
+
+
+### App
+
+* **Bug Fixes:** adds missing analytics events (0d0bab3)
+
 # [1.0.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.0.0) (2019-11-26)
 
 
