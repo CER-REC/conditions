@@ -6,7 +6,8 @@ const staticDetails = {
 };
 
 const getVisualizationMode = (state) => {
-  if (state.transitionState < transitionStates.tutorialStart) { return 'none'; }
+  if (state.transitionState < transitionStates.tutorialStart
+    || state.transitionState === transitionStates.view1Reset) { return 'none'; }
 
   return (state.browseBy === 'company')
     ? 'projects by company'

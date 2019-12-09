@@ -17,6 +17,8 @@ import Guide from './Guide';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import { reportAnalytics } from '../../../utilities/analyticsReporting';
 
+import english from '../../../languages/english';
+
 const messageIds = [
   '0',
   '1',
@@ -212,8 +214,8 @@ export default class PhysicsVariant extends React.PureComponent {
       if (!this.sentDragAnalytics) {
         const keyword = (
           this.keywords.find(instance => (instance.body.id === this.props.selectedKeywordId))
-        )?.keyword.value || 'none';
-        reportAnalytics('drag', 'condition - keyword', 'drag', keyword);
+        )?.keyword.value;
+        reportAnalytics('drag', 'condition - keyword', (keyword ? 'drag' : 'none'), keyword);
 
         this.sentDragAnalytics = true;
       }
@@ -248,7 +250,8 @@ export default class PhysicsVariant extends React.PureComponent {
   };
 
   openGuide = () => {
-    reportAnalytics('click', 'guide', 'open');
+    const { title } = english.components.conditionExplorer.guide.pages[0];
+    reportAnalytics('click', 'guide', title);
 
     this.guideShouldOpen = true;
     this.guide.open(this.getCenterCoordinates())

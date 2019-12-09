@@ -35,6 +35,17 @@ const handleLinkAnalytics = memoize((document, action, counts) => () => (
 const RegDocs = ({ document, closeModal, counts }) => {
   const linkUrl = `${regDocsUrl}${document}`;
 
+  const onCancel = (e) => {
+    reportAnalytics(
+      'cancel',
+      'projects',
+      'instrument',
+      { value: document, conditionCount: counts.conditions, instrumentCount: counts.instruments },
+    );
+
+    closeModal(e);
+  };
+
   return (
     <div className="RegDocs">
       <FormattedMessage
@@ -54,21 +65,21 @@ const RegDocs = ({ document, closeModal, counts }) => {
         tag={PopupBtn}
         icon="plus"
         url={linkUrl}
-        action={handleLinkAnalytics(document, 'current tab', counts)}
+        action={handleLinkAnalytics(document, 'open in current tab', counts)}
       />
       <AdvancedFormattedMessage
         id="components.modal.regdocs.newTab"
         tag={PopupBtn}
         icon="plus"
         url={linkUrl}
-        action={handleLinkAnalytics(document, 'new tab', counts)}
+        action={handleLinkAnalytics(document, 'open in new tab', counts)}
         attributes={linkAttributes}
       />
       <AdvancedFormattedMessage
         id="components.modal.regdocs.cancel"
         tag={PopupBtn}
         icon="x"
-        action={closeModal}
+        action={onCancel}
         className="large"
       />
       <FormattedMessage id="components.modal.regdocs.whatIsHeading" tagName="h4" />

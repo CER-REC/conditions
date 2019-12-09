@@ -167,8 +167,9 @@ class App extends React.PureComponent {
         variables,
         ((eager) ? null : staticSelection),
       ).then((newSelection) => {
-        const id = (this.props.browseBy === 'company') ? newSelection.company : newSelection.region;
+        if (from === 'condition' || from === 'instrument') { return; }
 
+        const id = (this.props.browseBy === 'company') ? newSelection.company : newSelection.region;
         this.handleLoadAnalytics(id, this.props.browseBy);
       });
 
@@ -220,7 +221,12 @@ class App extends React.PureComponent {
     client.query({
       query,
       variables: { id },
-    }).then(result => reportAnalytics('load', 'wheel', nameCb(result)));
+    }).then((result) => {
+      if (this.props.transitionState >= transitionStates.view2
+        || this.props.transitionState === transitionStates.view1Reset) {
+        reportAnalytics('load', 'wheel', nameCb(result));
+      }
+    });
   };
 
   setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
