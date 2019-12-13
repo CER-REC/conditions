@@ -47,14 +47,6 @@ const FeaturesLegend = (props) => {
             <span className="FlagDesc">&gt;10</span>
           </div>
         </div>
-        <div className="AssociatedComp">
-          <h3 className="Asterisk">*</h3>
-          <div className="AssociatedDesc">
-            <FormattedMessage
-              id="components.projectLegend.associated"
-            />
-          </div>
-        </div>
       </div>
     </>
   );

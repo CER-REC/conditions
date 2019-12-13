@@ -117,24 +117,5 @@
         }
       }
     }
-
-  }
-
-  .AssociatedComp {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    .Asterisk {
-      position: relative;
-      top: 5px;
-      margin-right: 4px;
-      display: inline-block;
-      font-size: 18px;
-    }
-
-    .AssociatedDesc {
-      display: inline-block;
-      position: relative;
-    }
   }
 }
