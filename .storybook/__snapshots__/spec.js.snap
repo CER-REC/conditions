@@ -5183,7 +5183,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </p>
     <div>
       <h4
-        date-heading="MO"
+        data-heading="MO"
       >
         MO
          - 
@@ -5197,7 +5197,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        date-heading="AO"
+        data-heading="AO"
       >
         AO
          - 
@@ -5211,7 +5211,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        date-heading="XG"
+        data-heading="XG"
       >
         XG
          - 
@@ -5225,7 +5225,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        date-heading="XO"
+        data-heading="XO"
       >
         XO
          - 
@@ -5239,7 +5239,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        date-heading="ZO"
+        data-heading="ZO"
       >
         ZO
          - 
@@ -5253,7 +5253,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        date-heading="OPL"
+        data-heading="OPL"
       >
         OPL
          - 
@@ -5267,7 +5267,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        date-heading="SG"
+        data-heading="SG"
       >
         SG
          - 
@@ -5281,7 +5281,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        date-heading="SO"
+        data-heading="SO"
       >
         SO
          - 
@@ -5295,7 +5295,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        date-heading="GC"
+        data-heading="GC"
       >
         GC
          - 
@@ -5318,7 +5318,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        date-heading="EC"
+        data-heading="EC"
       >
         EC
          - 
@@ -5334,7 +5334,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        date-heading="EP"
+        data-heading="EP"
       >
         EP
          - 
@@ -5350,7 +5350,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        date-heading="EPE"
+        data-heading="EPE"
       >
         EPE
          - 
@@ -5366,7 +5366,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        date-heading="FRO"
+        data-heading="FRO"
       >
         FRO
          - 
@@ -5382,7 +5382,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        date-heading="GPLO"
+        data-heading="GPLO"
       >
         GPLO
          - 
@@ -5398,7 +5398,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        date-heading="GPSO"
+        data-heading="GPSO"
       >
         GPSO
          - 
@@ -5414,7 +5414,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        date-heading="OC"
+        data-heading="OC"
       >
         OC
          - 
@@ -5430,7 +5430,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        date-heading="OPLO"
+        data-heading="OPLO"
       >
         OPLO
          - 
@@ -5446,7 +5446,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        date-heading="OPSO"
+        data-heading="OPSO"
       >
         OPSO
          - 
@@ -5462,7 +5462,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        date-heading="TG"
+        data-heading="TG"
       >
         TG
          - 
@@ -5478,7 +5478,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        date-heading="XC"
+        data-heading="XC"
       >
         XC
          - 

@@ -10,7 +10,7 @@ import './styles.scss';
 const FeatureTypeHeading = ({ feature, type }) => ((feature === 'instrument' && type !== 'OTHER')
   ? (
     <>
-      <h4 date-heading={type}>
+      <h4 data-heading={type}>
         {type} - <FormattedMessage id={`common.${feature}.${type}`} />
       </h4>
     </>
@@ -72,7 +72,6 @@ class FeatureTypesDescription extends React.PureComponent {
 
   render() {
     const { feature, subFeature, displayOrder } = this.props;
-
     let headerId;
     if (feature === 'theme' && subFeature === '') {
       headerId = 'allThemes';
@@ -89,7 +88,6 @@ class FeatureTypesDescription extends React.PureComponent {
     );
 
     let content = displayOrder[feature].map(type => this.renderEntry(feature, type));
-
     if (feature === 'instrument') {
       content = content.concat(
         displayOrder.instrumentOther.map(type => this.renderEntry(feature, type, 'other')),
