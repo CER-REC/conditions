@@ -227,7 +227,11 @@ const flagLayoutCalculation = (flagData) => {
   // eslint-disable-next-line no-cond-assign
   do {
     flagLayouts = buildFlagLayouts(flagData, maxFlagHeight, flagScale);
-  } while (!flagLayouts && ((flagScale -= 0.1) > 0.3)); // Reduce the scale try again
+
+    if (flagLayouts) { break; }
+
+    flagScale -= 0.1;
+  } while (flagScale > 0.3); // Reduce the scale try again
 
   return { flagLayouts, flagScale };
 };
