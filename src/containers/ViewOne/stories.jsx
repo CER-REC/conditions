@@ -4,7 +4,7 @@ import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
 import ViewOne from '.';
 
-import keywords from '../../components/ConditionExplorer/mockKeywords';
+import keywords from '../../components/ConditionExplorer/mockKeywords.json';
 
 const uniqueKeywords = keywords.filter((v, i) => keywords.indexOf(v) === i);
 

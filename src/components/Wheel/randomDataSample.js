@@ -1,4 +1,4 @@
-import randomProjects from './randomProjects';
+import randomProjects from './randomProjects.json';
 import { features } from '../../constants';
 
 const companyDataSample = [
