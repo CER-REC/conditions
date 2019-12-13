@@ -4,7 +4,7 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import ConditionExplorer from '.';
 import ReadMe from './README.md';
-import keywords from './mockKeywords';
+import keywords from './mockKeywords.json';
 
 const uniqueKeywords = keywords.filter((v, i) => keywords.indexOf(v) === i);
 

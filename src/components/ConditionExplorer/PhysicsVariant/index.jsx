@@ -17,7 +17,7 @@ import Guide from './Guide';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import { reportAnalytics } from '../../../utilities/analyticsReporting';
 
-import english from '../../../languages/english';
+import english from '../../../languages/english.json';
 
 const messageIds = [
   '0',

@@ -8,7 +8,7 @@ import GuideDetail from './GuideDetail';
 import './styles.scss';
 
 import { reportAnalytics } from '../../utilities/analyticsReporting';
-import english from '../../languages/english';
+import english from '../../languages/english.json';
 
 // This function memoizes based on the keyword, but doesn't use it in the result
 // function. It is only used in the (default) key generation function (2nd arg)

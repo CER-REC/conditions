@@ -5,7 +5,7 @@ import CircleContainer from '../../CircleContainer';
 import List from '../../List';
 import './styles.scss';
 
-import english from '../../../languages/english';
+import english from '../../../languages/english.json';
 
 const stepContent = step => (
   <>

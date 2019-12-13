@@ -195,6 +195,7 @@ class App extends React.PureComponent {
     };
   }
 
+  // eslint-disable-next-line class-methods-use-this
   componentDidMount() {
     // Dispatch an event to tell the LoadingGuide that we're mounted
     const event = new CustomEvent('LoadingGuide.enabled', { detail: false });
