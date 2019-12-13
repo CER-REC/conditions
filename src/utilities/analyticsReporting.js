@@ -58,7 +58,7 @@ export const reportAnalytics = (action, category, label, value) => {
     action,
     category,
     label,
-    event: 'visualization interaction',
+    event: 'Condition interaction',
     userId: readUserIdCookie(),
   };
 
