@@ -47,6 +47,10 @@ class ProjectHeader extends React.PureComponent {
       instruments: PropTypes.number,
       conditions: PropTypes.number,
     }),
+    companies: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+    })).isRequired,
   }
 
   static defaultProps = {
@@ -70,6 +74,28 @@ class ProjectHeader extends React.PureComponent {
     this.props.openProjectDetails();
   }
 
+  renderProjectName = () => {
+    if (this.props.selectedProject === '') {
+      return (<div className="openProject" />);
+    }
+    return (this.props.companies.length > 1 ? (
+      <button
+        type="button"
+        className="openProject"
+        {...handleInteraction(this.handleOpenProjectDetails)}
+      >
+        <h2 title={this.props.selectedProject}>
+          <span className="projectName">{this.props.selectedProject}</span>
+          <span className="asterisk">*</span>
+        </h2>
+      </button>
+    ) : (
+      <h2 title={this.props.selectedProject}>
+        <span className="projectName">{this.props.selectedProject}</span>
+      </h2>
+    ));
+  }
+
   render() {
     return (
       <div className="ProjectHeader">
@@ -81,20 +107,7 @@ class ProjectHeader extends React.PureComponent {
                   id="components.conditionDetails.selectedProject"
                   tag="h1"
                 />
-                {(this.props.selectedProject !== '')
-                  ? (
-                    <button
-                      type="button"
-                      className="openProject"
-                      {...handleInteraction(this.handleOpenProjectDetails)}
-                    >
-                      <h2 title={this.props.selectedProject}>
-                        <span className="projectName">{this.props.selectedProject}</span>
-                        <span className="asterisk">*</span>
-                      </h2>
-                    </button>
-                  )
-                  : <div className="openProject" />}
+                {this.renderProjectName()}
               </>
             )
             : (

@@ -12,6 +12,7 @@ const defaultProps = {
   searchKeywords: {
     include: ['hello'],
   },
+  companies: [{ id: 1, name: 'Company1' }, { id: 2, name: 'Company2' }],
   openProjectDetails: project => alert(`Project details for: ${project}`),
   openIntermediatePopup: instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`),
 };
@@ -61,6 +62,7 @@ storiesForComponent('Components|ConditionDetails', module, ReadMe)
         selectedProject=""
         searchKeywords={{ include: [], exclude: [] }}
         browseBy="location"
+        companies={[{ id: 1, name: 'Company1' }, { id: 2, name: 'Company2' }]}
         openProjectDetails={project => alert(`Project details for: ${project}`)}
         openIntermediatePopup={instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`)}
         {...getInteractionProps()}
