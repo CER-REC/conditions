@@ -1,3 +1,50 @@
+# [1.2.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.2.0) (2019-12-13)
+
+
+### Analytics
+
+* **Features:** updates analytics event name (3f1437d)
+
+
+### App
+
+* **Tests:** fixes new linting errors (33ddd6c)
+
+
+### Bitly
+
+* **Bug Fixes:** fix response endpoint (8528125, NEBV-1842)
+* **Bug Fixes:** change bitly response parse check (e9e2cfa, NEBV-1842)
+
+
+### FeaturesLegend
+
+* **Features:** remove AssociatedComp text in FeaturesLegend (34742a9, NEBV-1823)
+
+
+### FeatureTitle
+
+* **Bug Fixes:** increase breakpoint to large to avoid Feature cutoff (4d308ad)
+* **Bug Fixes:** remove feature title on ipad view (d36a787, NEBV-1821)
+
+
+### FeatureTypeHeading
+
+* **Bug Fixes:** update snapshots and fix lint issues (900914c, NEBV-1827)
+* **Bug Fixes:** fix scroll in instrument feature type description (2c76858, NEBV-1827)
+
+
+### ProjectHeader
+
+* **Bug Fixes:** pass in props for ConditionDetails (83b4064, NEBV-1824)
+* **Bug Fixes:** add conditional check for asterisk (8d99297, NEBV-1824)
+* **Tests:** add tests and update companies props (5cfa3ce, NEBV-1824)
+
+
+### Wheel
+
+* **Tests:** fixes linting error (320d0ce)
+
 # [1.1.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.1.0) (2019-12-09)
 
 
