@@ -18,7 +18,7 @@ const images = imageContext.keys().reduce((acc, cur) => {
         id={`components.mainInfoBar.content.keywords.${id}`}
         tag={Image}
         key={id}
-        src={imageContext(cur)}
+        src={imageContext(cur).default}
       />
     ));
   }
