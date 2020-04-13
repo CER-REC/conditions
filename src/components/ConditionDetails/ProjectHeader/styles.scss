@@ -69,7 +69,14 @@
         color: $Black77;
       }
 
-      &:before{
+      &:before {
+        content: '\00a0';
+        display: inline-block;
+      }
+    }
+
+    .projectName {
+      &:before {
         content: '\00a0';
         display: inline-block;
       }
