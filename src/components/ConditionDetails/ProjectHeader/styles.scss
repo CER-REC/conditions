@@ -67,9 +67,12 @@
         max-width: 97%;
 
         color: $Black77;
+        text-decoration: underline;
       }
+    }
 
-      &:before{
+    .projectName {
+      &:before {
         content: '\00a0';
         display: inline-block;
       }
