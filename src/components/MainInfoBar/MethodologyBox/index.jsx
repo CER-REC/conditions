@@ -8,7 +8,8 @@ import './styles.scss';
 
 const imageContext = require.context('./keywordMethodology/', true, /\.png$/);
 // eslint-disable-next-line react/prop-types
-const Image = ({ title, src }) => <img src={src.default || src} alt={title} title={title} />;
+const Image = ({ children, src }) =>
+  <img src={src.default || src} alt={children} title={children} />;
 const images = imageContext.keys().reduce((acc, cur) => {
   const [imageLang, id] = cur.match(/^\.\/(\w+)\/KeywordMethodology(\d+)_/).slice(1);
 
