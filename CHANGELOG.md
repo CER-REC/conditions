@@ -1,3 +1,20 @@
+## [1.2.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.2.1) (2020-05-25)
+
+
+### ConditionDetails
+
+* **Bug Fixes:** fixes the missing space before the project name (e594be0)
+* **Bug Fixes:** fixes the missing space before the project name (14e0d53)
+
+
+### MethodologyBox
+
+* **Bug Fixes:** mutes the lint max-len rule of the line instead (2b2d9a4)
+* **Bug Fixes:** fixes the missing image title issue introduced by the previous commit (8bd38ab)
+* **Bug Fixes:** shortens the line so that lint does not complain (1d81c6f)
+* **Bug Fixes:** applies a better approach to handle missing images (deb70b7)
+* **Bug Fixes:** fixes the issue that image links are broken (aed3c16)
+
 # [1.2.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.2.0) (2019-12-13)
 
 
