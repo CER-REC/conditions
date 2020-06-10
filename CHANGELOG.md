@@ -1,3 +1,10 @@
+## [1.2.2](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.2.2) (2020-06-10)
+
+
+### AnalyticsReporting
+
+* **Bug Fixes:** B-05987 updates analytics reporting event name (2224e6c)
+
 ## [1.2.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.2.1) (2020-05-25)
 
 
