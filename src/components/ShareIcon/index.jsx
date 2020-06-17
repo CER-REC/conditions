@@ -32,11 +32,12 @@ class ShareIcon extends React.PureComponent {
     const uri = `${bitlyEndpoint}?shortenUrl=${shortenUrl}`;
 
     return fetchPolyfill(uri)
-      .then((response) => {
-        if (response.status_code !== 200) {
+      .then(response => response.json())
+      .then((data) => {
+        if (data.status_code !== 200) {
           return document.location.href;
         }
-        return response.data.url;
+        return data.data.url;
       }).catch(() => document.location.href);
   };
 
