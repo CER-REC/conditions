@@ -35,6 +35,9 @@
   font-size: 13px;
   color: #808080;
 
+  // reset the line height in the new CER template
+  line-height: normal;
+
   * { box-sizing: border-box; }
 
   .buttonText { color: #D1057A; }
@@ -45,6 +48,7 @@
     font-size: inherit;
     color: inherit;
   }
+
   // Overwriting styles from theme
   h1, h2, h3, h4, h5, h6 {
     all: unset;
