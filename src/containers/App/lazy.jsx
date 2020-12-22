@@ -794,6 +794,7 @@ class App extends React.PureComponent {
                   allConditionsPerYear={this.props.allConditionsPerYear}
                   years={this.processedConditionCounts.years}
                   companyName={companyName}
+                  onClose={() => this.props.setTransitionState(transitionStates.view2)}
                 />
               );
             }}

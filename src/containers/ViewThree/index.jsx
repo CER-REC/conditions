@@ -8,6 +8,8 @@ import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
 import StreamGraph from '../../components/StreamGraph';
 import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
+import AdvancedFormattedMessage from '../../components/AdvancedFormattedMessage';
+import PopupBtn from '../../components/PopupBtn';
 import { displayOrder, allConditionsPerYearType } from '../../proptypes';
 import './styles.scss';
 import * as selectedCreators from '../../actions/selected';
@@ -55,6 +57,14 @@ const ViewThree = props => (
         <h2 className="companyName" title={props.companyName}>{props.companyName}</h2>
       </div>
     </section>
+
+    {/* close button */}
+    <AdvancedFormattedMessage
+      id="components.modal.company.back"
+      tag={PopupBtn}
+      icon="x"
+      action={props.onClose}
+    />
   </section>
 );
 
@@ -72,6 +82,7 @@ ViewThree.propTypes = {
   displayOrder: displayOrder.isRequired,
   companyName: PropTypes.string.isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 ViewThree.defaultProps = {
