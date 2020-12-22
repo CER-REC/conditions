@@ -121,7 +121,14 @@ class Content extends React.PureComponent {
                 />
                 <ContentBlock
                   id="components.conditionDetails.status"
-                  content={<FormattedMessage id={`common.status.${data.status}`} />}
+                  content={(
+                    <FormattedMessage id={
+                    `common.status.${data.status === 'ALL_CONDITIONSREQUIREMENTS_MET'
+                      ? 'ALL_CONDITIONS_MET'
+                      : data.status}`
+                    }
+                    />
+                    )}
                 />
                 <ContentBlock
                   id="components.conditionDetails.location"
