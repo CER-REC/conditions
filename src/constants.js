@@ -67,8 +67,8 @@ export const features = {
 
 export const noRegionColor = 'rgb(153,153,153)';
 export const pdfLink = (lang === 'en')
-  ? 'http://www.cer-rec.gc.ca/dv/conditions/conditions-data-methodology.pdf'
-  : 'http://www.cer-rec.gc.ca/dv/conditions/conditions-donnees-methodologie.pdf';
+  ? 'https://www.cer-rec.gc.ca/en/data-visualization/pdf/conditions-data-methodology.pdf'
+  : 'https://www.cer-rec.gc.ca/fr/visualisation-donnees/pdf/conditions-donnees-methodologie.pdf';
 export const nltkLink = 'http://www.nltk.org/';
 export const regDocsUrl = (lang === 'en')
   ? 'https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl='
