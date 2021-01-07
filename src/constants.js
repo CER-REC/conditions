@@ -88,9 +88,7 @@ export const localDataURL = (lang === 'en')
   ? 'http://www.cer-rec.gc.ca/open/conditions/conditions.csv'
   : 'http://www.cer-rec.gc.ca/ouvert/conditions/conditions.csv';
 
-export const contactEmail = (lang === 'en')
-  ? 'energyindesign@cer-rec.gc.ca'
-  : 'conceptionenergie@rec-cer.gc.ca';
+export const contactEmail = 'data.donnees@cer-rec.gc.ca';
 
 export const fileDownloadName = localDataURL.substring(localDataURL.lastIndexOf('/') + 1, localDataURL.length);
 export const guideSize = 128;
