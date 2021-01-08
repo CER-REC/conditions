@@ -8268,11 +8268,11 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
           <span>
             Email us with your comments and ideas: 
             <a
-              href="mailto:energyindesign@cer-rec.gc.ca"
+              href="mailto:data.donnees@cer-rec.gc.ca"
               rel="noopener noreferrer"
               target="_blank"
             >
-              energyindesign@cer-rec.gc.ca
+              data.donnees@cer-rec.gc.ca
             </a>
             . We look forward to hearing from you.
           </span>
@@ -8567,11 +8567,11 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
           <span>
             Email us with your comments and ideas: 
             <a
-              href="mailto:energyindesign@cer-rec.gc.ca"
+              href="mailto:data.donnees@cer-rec.gc.ca"
               rel="noopener noreferrer"
               target="_blank"
             >
-              energyindesign@cer-rec.gc.ca
+              data.donnees@cer-rec.gc.ca
             </a>
             . We look forward to hearing from you.
           </span>
@@ -8866,11 +8866,11 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
           <span>
             Email us with your comments and ideas: 
             <a
-              href="mailto:energyindesign@cer-rec.gc.ca"
+              href="mailto:data.donnees@cer-rec.gc.ca"
               rel="noopener noreferrer"
               target="_blank"
             >
-              energyindesign@cer-rec.gc.ca
+              data.donnees@cer-rec.gc.ca
             </a>
             . We look forward to hearing from you.
           </span>
@@ -9165,11 +9165,11 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
           <span>
             Email us with your comments and ideas: 
             <a
-              href="mailto:energyindesign@cer-rec.gc.ca"
+              href="mailto:data.donnees@cer-rec.gc.ca"
               rel="noopener noreferrer"
               target="_blank"
             >
-              energyindesign@cer-rec.gc.ca
+              data.donnees@cer-rec.gc.ca
             </a>
             . We look forward to hearing from you.
           </span>
