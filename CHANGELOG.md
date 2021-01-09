@@ -1,3 +1,35 @@
+# [1.3.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.3.0) (2021-01-09)
+
+
+### About
+
+* **Bug Fixes:** updates about email link (f0b75e8)
+
+
+### constants
+
+* **Bug Fixes:** replaces old methodology links with correct ones (205a690)
+
+
+### Content
+
+* **Bug Fixes:** adds a check to see if the status is wrong for ALL_CONDITIONS_MET (12478ac)
+
+
+### CSS
+
+* **Bug Fixes:** overrides the line-height value from the CER template theme (042e41b)
+
+
+### ShareIcon
+
+* **Bug Fixes:** D-06003 parsed response object (98e8fd8)
+
+
+### ViewThree
+
+* **Features:** adds a close button in view 3 to directly dismiss it (c24af12)
+
 ## [1.2.2](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.2.2) (2020-06-10)
 
 
