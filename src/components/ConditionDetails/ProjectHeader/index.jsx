@@ -78,6 +78,7 @@ class ProjectHeader extends React.PureComponent {
     if (this.props.selectedProject === '') {
       return (<div className="openProject" />);
     }
+
     return (this.props.companies.length > 1 ? (
       <button
         type="button"

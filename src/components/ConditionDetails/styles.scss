@@ -125,6 +125,10 @@ $popoutSize: 200px;
     font-size: 14px;
 
     color: $Black51;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   h3 {
