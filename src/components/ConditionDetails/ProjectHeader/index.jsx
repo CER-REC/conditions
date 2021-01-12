@@ -78,6 +78,11 @@ class ProjectHeader extends React.PureComponent {
     if (this.props.selectedProject === '') {
       return (<div className="openProject" />);
     }
+
+    const formattedProjectName = this.props.selectedProject.length > 68
+      ? `${this.props.selectedProject.substring(0, 68)}...`
+      : this.props.selectedProject;
+
     return (this.props.companies.length > 1 ? (
       <button
         type="button"
@@ -85,13 +90,13 @@ class ProjectHeader extends React.PureComponent {
         {...handleInteraction(this.handleOpenProjectDetails)}
       >
         <h2 title={this.props.selectedProject}>
-          <span className="projectName">{this.props.selectedProject}</span>
+          <span className="projectName">{formattedProjectName}</span>
           <span className="asterisk">*</span>
         </h2>
       </button>
     ) : (
       <h2 title={this.props.selectedProject}>
-        <span className="projectName">{this.props.selectedProject}</span>
+        <span className="projectName">{formattedProjectName}</span>
       </h2>
     ));
   }
