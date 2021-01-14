@@ -160,7 +160,7 @@ class FilterContent extends React.PureComponent {
       return (
         // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
         <li
-          {...handleInteraction(this.onYearSelect, { start: i, end: i })}
+          {...handleInteraction(this.onYearSelect, i)}
           key={i}
           value={i}
           onFocus={() => {}}
