@@ -15,6 +15,13 @@
         display: inline-block;
         width: 25px;
         vertical-align: middle;
+
+        // CER template overwrites certain .icon attributes
+        // which ruins the list layout; reset them here
+        min-height: 0;
+        min-width: 0;
+        padding-left: 0;
+
         .Icon {
           svg {
             width: 15px;
