@@ -1,3 +1,30 @@
+## [1.3.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.3.1) (2021-01-26)
+
+
+### conditionDetails
+
+* **Bug Fixes:** apllies less expensive solution (484d90d)
+
+
+### FilterContent
+
+* **Bug Fixes:** fixes the issue that selecting a single year in filter crashes the UI (5d3ba9d)
+
+
+### KeywordList
+
+* **Bug Fixes:** fixes the broken keyword list layout in the new CER template (51ddaca)
+
+
+### projectHeader
+
+* **Bug Fixes:** adds logic to truncate project name string (8017f5a)
+
+
+### ProjectHeader
+
+* **Bug Fixes:** updates logic to factor in screen size (29fa28e)
+
 # [1.3.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.3.0) (2021-01-09)
 
 
