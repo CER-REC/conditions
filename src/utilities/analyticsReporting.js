@@ -57,7 +57,7 @@ export const reportAnalytics = (action, category, label, value) => {
     ...getGeneralAnalytics(),
     action,
     category,
-    label,
+    label: label || category,
     event: 'visualization interaction',
     userId: readUserIdCookie(),
   };
