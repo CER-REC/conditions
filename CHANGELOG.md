@@ -1,3 +1,10 @@
+## [1.3.2](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.3.2) (2021-02-04)
+
+
+### DataAnalytics
+
+* **Bug Fixes:** adds missing event labels (8da4dd4)
+
 ## [1.3.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.3.1) (2021-01-26)
 
 
