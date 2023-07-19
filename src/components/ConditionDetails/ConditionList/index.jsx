@@ -95,14 +95,9 @@ class ConditionList extends React.PureComponent {
       this.props.updateSelectedCondition(conditionId);
     } else {
       reportAnalytics(
-        e.type,
-        'projects',
-        'instrument',
-        {
-          value: instrumentNumber,
-          conditionCount: this.props.counts.conditions,
-          instrumentCount: this.props.counts.instruments,
-        },
+        'condition_project_instrument',
+        instrumentNumber,
+        'read_more',
       );
 
       this.props.updateSelectedInstrument(instrumentId);

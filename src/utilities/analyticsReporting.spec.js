@@ -30,25 +30,13 @@ describe('utilities/analyticsReporting', () => {
     });
 
     test('should push an analytics object with the given details', () => {
-      reportAnalytics('drag', 'guide', 'expand');
+      reportAnalytics('guide', undefined, 'expand', 'drag');
       expect(window.dataLayer).toHaveLength(1);
       expect(window.dataLayer[0]).toMatchObject({
-        action: 'drag',
-        category: 'guide',
-        label: 'expand',
-      });
-    });
-
-    test('should push an analytics object with both the given and general details', () => {
-      store.setState(general);
-      reportAnalytics('click', 'guide', 'expand');
-      expect(window.dataLayer).toHaveLength(1);
-      expect(window.dataLayer[0]).toMatchObject({
-        action: 'click',
-        category: 'guide',
-        label: 'expand',
-        fieldA: 'testing',
-        fieldB: 'more testing',
+        event_category: 'guide',
+        event_label: undefined,
+        event_value: 'expand',
+        event_action: 'drag'
       });
     });
   });
@@ -58,7 +46,7 @@ describe('utilities/analyticsReporting', () => {
     let interactions;
     beforeEach(() => {
       spy = jest.fn();
-      interactions = handleAnalyticsInteraction('select project', 4, spy, 4);
+      interactions = handleAnalyticsInteraction('select project', undefined, 4, spy, 4);
     });
 
     test('should return onClick and onKeyPress events', () => {
@@ -69,7 +57,7 @@ describe('utilities/analyticsReporting', () => {
     test('onClick should trigger a report', () => {
       interactions.onClick({ ...eventFuncs, type: 'mouseUp' });
       expect(window.dataLayer).toHaveLength(1);
-      expect(window.dataLayer[0]).toMatchObject({ action: 'mouseUp', category: 'select project', label: 4 });
+      expect(window.dataLayer[0]).toMatchObject({ event_category: 'select project', event_value: 4 });
     });
 
     test('onClick should trigger its callback', () => {
@@ -82,7 +70,7 @@ describe('utilities/analyticsReporting', () => {
     test('onKeyPress should trigger a report', () => {
       interactions.onKeyPress({ ...eventFuncs, type: 'keyPress', key: 'Enter' });
       expect(window.dataLayer).toHaveLength(1);
-      expect(window.dataLayer[0]).toMatchObject({ action: 'keyPress', category: 'select project', label: 4 });
+      expect(window.dataLayer[0]).toMatchObject({ event_category: 'select project', event_value: 4 });
     });
 
     test('onKeyPress should trigger its callback', () => {

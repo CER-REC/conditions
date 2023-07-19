@@ -46,7 +46,7 @@ export const addGeneralAnalytics = (generalAnalytics) => {
  * @return {{}}                 An object of analytics information
  */
 
-export const reportAnalytics = (action, category, label, value) => {
+export const reportAnalytics = (category, label, value, action) => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
     if (env !== 'test') { console.warn('Google Tag Manager not found.'); }
@@ -55,18 +55,23 @@ export const reportAnalytics = (action, category, label, value) => {
 
   const dataObject = {
     ...getGeneralAnalytics(),
-    action,
-    category,
-    label: label || category,
-    event: 'visualization interaction',
-    userId: readUserIdCookie(),
+    event_category: category,
+    event_action: action || 'click',
+    event_value: undefined,
+    event_label: label,
+    event_path: undefined,
+    event_userID: readUserIdCookie(),
+    event_count: undefined,
+    event_doccount: undefined,
+    event_hittimestamp: undefined,
+    event_hitcount: undefined,
   };
 
   if (value) {
     if (typeof value === 'object' && value.constructor === Object) {
       Object.entries(value).forEach(([k, v]) => { dataObject[k] = v; });
     } else {
-      dataObject.value = value;
+      dataObject.event_value = value;
     }
   }
 
@@ -89,10 +94,11 @@ export const reportAnalytics = (action, category, label, value) => {
 export const handleAnalyticsInteraction = memoize((
   category,
   label,
+  value,
   callback,
   ...boundArgs
 ) => handleInteraction((e) => {
-  reportAnalytics(e.type, category, label);
+  reportAnalytics(category, label, value);
 
   return callback(...boundArgs, e);
 }), (category, label, callback, ...boundArgs) => {

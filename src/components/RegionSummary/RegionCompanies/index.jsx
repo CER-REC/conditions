@@ -21,6 +21,7 @@ const RegionCompanies = (props) => {
           type="button"
           {...handleAnalyticsInteraction(
             'region',
+            undefined,
             company.name,
             selectCompany,
             company.id,

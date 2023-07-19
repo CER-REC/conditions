@@ -106,6 +106,7 @@ class Wheel extends React.Component {
     const randomNum = Math.floor(Math.random() * items.length);
     this.setState(prevState => ({ wheelModifiers: { ...prevState.wheelModifiers, spin: true } }));
     this.props.selectRay(items[randomNum].id);
+    return items[randomNum].name;
   };
 
   onChangeRay = (index) => {

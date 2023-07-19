@@ -21,11 +21,11 @@ const createYearArray = yearObject => Array(yearObject.end - yearObject.start + 
   .map((_, index) => yearObject.start + index);
 
 const reportYearAnalytics = (start, end) => {
-  reportAnalytics('filter', 'search', 'year', `${start}-${end}`);
+  reportAnalytics('condition_filter', 'project year', `${start}-${end}`);
 };
 
 const reportStatusAnalytics = (statuses) => {
-  reportAnalytics('filter', 'search', 'status', statuses.map(s => s.toLowerCase()).join(', '));
+  reportAnalytics('condition_filter', 'project status', statuses.map(s => s.toLowerCase()).join(', '));
 };
 
 class FilterContent extends React.PureComponent {

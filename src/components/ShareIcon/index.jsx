@@ -46,7 +46,7 @@ class ShareIcon extends React.PureComponent {
   }).catch(noop);
 
   handleOnClick = () => {
-    reportAnalytics('share', 'menu', this.props.target);
+    reportAnalytics('condition_social', this.props.target);
 
     if (shareUrls[this.props.target]) {
       this.openShareWindow(shareUrls[this.props.target]);

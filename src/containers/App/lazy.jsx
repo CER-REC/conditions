@@ -225,7 +225,7 @@ class App extends React.PureComponent {
     }).then((result) => {
       if (this.props.transitionState >= transitionStates.view2
         || this.props.transitionState === transitionStates.view1Reset) {
-        reportAnalytics('load', 'wheel', nameCb(result));
+        reportAnalytics('condition_wheel', 'feature', nameCb(result), 'load');
       }
     });
   };
@@ -501,7 +501,7 @@ class App extends React.PureComponent {
     this.incrementTransitionState();
     this.togglePlay(true);
 
-    reportAnalytics('click', 'guide', 'play');
+    reportAnalytics('guide', 'play');
 
     setTimeout(() => {
       this.incrementTransitionState();
@@ -572,7 +572,7 @@ class App extends React.PureComponent {
       const keyword = instance.keyword.value;
       const newIncluded = [keyword];
 
-      reportAnalytics('select', 'condition - keyword', keyword);
+      reportAnalytics('condition keyword', undefined, keyword);
 
       batch(() => {
         this.props.setSelectedMultiple({ keywordId });
@@ -621,8 +621,8 @@ class App extends React.PureComponent {
     this.setState({ isDownloadPopupOpen: false });
   }
 
-  openTotalConditionNumberPopup = (counts) => {
-    reportAnalytics('learn more', 'projects', 'project', counts);
+  openTotalConditionNumberPopup = (projectName) => {
+    reportAnalytics('condition_project', projectName, 'learn_more');
     this.setState({ isTotalConditionNumberPopupOpen: true });
   }
 

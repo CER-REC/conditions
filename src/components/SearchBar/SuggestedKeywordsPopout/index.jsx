@@ -8,6 +8,7 @@ import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import handleInteraction from '../../../utilities/handleInteraction';
 import memoizeReference from '../../../utilities/memoizeReference';
 import KeywordList from './KeywordList';
+import { reportAnalytics } from '../../../utilities/analyticsReporting';
 
 const sortKeywords = memoize((sortByCount, desc, selectedCategories, keywords) => {
   let filteredKeywords = keywords;
@@ -94,6 +95,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
   )
 
   categoryOnClick = clicked => this.setState(({ selectedCategory }) => {
+    reportAnalytics('condition_searchsuggest', undefined, clicked);
     if (clicked === 'all') { return { selectedCategory: [] }; }
     return {
       selectedCategory: selectedCategory.includes(clicked)

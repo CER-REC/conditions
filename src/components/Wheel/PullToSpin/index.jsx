@@ -48,8 +48,8 @@ const PullToSpin = (props) => {
       transform: 'translate(56, -56) rotate(15)',
       onRest: () => {
         if (shouldTriggerSpin) {
-          reportAnalytics('spin', 'wheel');
-          props.onClickSpin();
+          const projectName = props.onClickSpin();
+          reportAnalytics('condition_wheel', 'feature', projectName, 'spin');
         }
         setZeroRest();
       },
@@ -70,8 +70,8 @@ const PullToSpin = (props) => {
         set({
           onRest: setZeroRest,
         });
-        reportAnalytics('spin', 'wheel');
-        props.onClickSpin();
+        const projectName = props.onClickSpin();
+        reportAnalytics('condition_wheel', 'feature', projectName, 'spin');
       }
     },
   });

@@ -29,16 +29,16 @@ class KeywordList extends React.PureComponent {
   keywordOnClick = (word) => {
     const { isExclude, includeKeywords, excludeKeywords } = this.props;
     if (excludeKeywords.includes(word)) {
-      reportAnalytics('delete', 'search', 'exclude', word);
+      reportAnalytics('condition_search', 'exclude', word);
       this.props.setExcluded(excludeKeywords.filter(v => v !== word));
     } else if (includeKeywords.includes(word)) {
-      reportAnalytics('delete', 'search', 'include', word);
+      reportAnalytics('condition_search', 'include', word);
       this.props.setIncluded(includeKeywords.filter(v => v !== word));
     } else if (isExclude) {
-      reportAnalytics('add', 'search', 'exclude', word);
+      reportAnalytics('condition_search', 'exclude', word);
       this.props.setExcluded(excludeKeywords.concat(word));
     } else {
-      reportAnalytics('add', 'search', 'include', word);
+      reportAnalytics('condition_search', 'include', word);
       this.props.setIncluded(includeKeywords.concat(word));
     }
   };

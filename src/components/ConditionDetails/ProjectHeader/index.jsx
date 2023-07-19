@@ -63,14 +63,14 @@ class ProjectHeader extends React.PureComponent {
     },
   }
 
-  handleOpenProjectDetails = (e) => {
+  handleOpenProjectDetails = () => {
     const valueObj = {
       conditionCount: this.props.counts.conditions,
       instrumentCount: this.props.counts.instruments,
       value: this.props.selectedProject,
     };
 
-    reportAnalytics(e.type, 'projects', 'project', valueObj);
+    reportAnalytics('projects', 'project', valueObj);
     this.props.openProjectDetails();
   }
 

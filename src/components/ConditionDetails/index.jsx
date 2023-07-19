@@ -137,6 +137,7 @@ class ConditionDetails extends React.PureComponent {
               </div>
               <div className="contentPane">
                 <Content
+                  selectedProject={this.props.selectedProject}
                   instrument={instrument}
                   itemIndex={index}
                   openIntermediatePopup={this.props.openIntermediatePopup}
