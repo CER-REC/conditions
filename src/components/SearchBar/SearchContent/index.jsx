@@ -64,7 +64,7 @@ class SearchContent extends React.PureComponent {
   }
 
   deleteWord = (word, type) => {
-    reportAnalytics('delete', 'search', type, word);
+    reportAnalytics('condition_search', type, word);
     const updatedKeywords = this.props[`${type}Keywords`].filter(v => v !== word);
     this.updateKeywords(type, updatedKeywords);
   }
@@ -76,7 +76,7 @@ class SearchContent extends React.PureComponent {
     const currentKeywords = this.props[`${type}Keywords`];
     if (currentKeywords.length >= 6) { return; }
 
-    reportAnalytics('add', 'search', type, word);
+    reportAnalytics('condition_search', type, word);
     this.updateKeywords(type, currentKeywords.concat(word));
   }
 
@@ -251,10 +251,10 @@ class SearchContent extends React.PureComponent {
     </>
   )
 
-  changeSearchType = (e) => {
+  changeSearchType = () => {
     // eslint-disable-next-line react/no-access-state-in-setstate
     const newMode = (this.state.mode === 'basic') ? 'advanced' : 'basic';
-    reportAnalytics(e.type, 'search', 'mode', newMode);
+    reportAnalytics('condition_search', newMode);
 
     this.setState({ mode: newMode });
 

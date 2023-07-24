@@ -20,7 +20,8 @@ const RegionCompanies = (props) => {
         <button
           type="button"
           {...handleAnalyticsInteraction(
-            'region',
+            'condition_selected_region',
+            'feature',
             company.name,
             selectCompany,
             company.id,

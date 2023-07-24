@@ -23,12 +23,11 @@ const linkAttributes = {
   rel: 'noopener noreferrer',
 };
 
-const handleLinkAnalytics = memoize((document, action, counts) => () => (
+const handleLinkAnalytics = memoize((document, action) => () => (
   reportAnalytics(
+    'condition_project_instrument',
+    'reg_docs',
     action,
-    'projects',
-    'instrument',
-    { value: document, conditionCount: counts.conditions, instrumentCount: counts.instruments },
   )
 ), (document, action) => `${document}${action}`);
 
@@ -37,10 +36,9 @@ const RegDocs = ({ document, closeModal, counts }) => {
 
   const onCancel = (e) => {
     reportAnalytics(
+      'condition_project_instrument',
+      'reg_docs',
       'cancel',
-      'projects',
-      'instrument',
-      { value: document, conditionCount: counts.conditions, instrumentCount: counts.instruments },
     );
 
     closeModal(e);

@@ -25,6 +25,7 @@ class ProjectMenu extends React.PureComponent {
     relevantProjectLookup: PropTypes.objectOf(PropTypes.bool),
     filteredProjectLookup: PropTypes.objectOf(PropTypes.bool),
     displayOrder: displayOrder.isRequired,
+    selectedCompany: PropTypes.string,
   }
 
   static defaultProps = {
@@ -33,6 +34,7 @@ class ProjectMenu extends React.PureComponent {
     selectedProjectID: null,
     relevantProjectLookup: {},
     filteredProjectLookup: {},
+    selectedCompany: null,
   }
 
   getListItems = (projectsData, selectedProjectID) => {
@@ -50,21 +52,12 @@ class ProjectMenu extends React.PureComponent {
       .slice(projectIndex - numBefore, projectIndex + numAfter + 1);
   }
 
-  handleProjectChange = (listItemIndex, e) => {
+  handleProjectChange = (listItemIndex) => {
     if (this.props.loading) { return; }
     const item = this.getListItems(this.props.projectsData,
       this.props.selectedProjectID)[listItemIndex];
 
-    reportAnalytics(
-      e.type,
-      'projects',
-      'project',
-      {
-        value: item.shortName,
-        conditionCount: item.numberOfConditions,
-        instrumentCount: item.numberOfInstruments,
-      },
-    );
+    reportAnalytics('condition_project_toggle', this.props.selectedCompany, item.shortName);
     this.props.onChange(item.id);
   }
 

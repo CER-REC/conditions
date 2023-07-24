@@ -108,7 +108,9 @@ class ViewTwo extends React.PureComponent {
   }
 
   openNumberDetails = () => {
-    this.props.openNumberDetails(this.getProjectCounts(this.props.selected.project));
+    const index = this.props.projectsData
+      .findIndex(project => project.id === this.props.selected.project);
+    this.props.openNumberDetails(this.props.projectsData[index].shortName);
   };
 
   render() {
@@ -124,6 +126,9 @@ class ViewTwo extends React.PureComponent {
 
       return acc;
     }, { projectCount: this.props.projectsData.length, instrumentCount: 0, conditionCount: 0 });
+
+    const companyNameIndex = this.props.wheelData
+      .findIndex(x => x.id === this.props.selected.company);
 
     return (
       <section className={classNames('ViewTwo', { layoutOnly: this.props.layoutOnly })}>
@@ -211,6 +216,7 @@ class ViewTwo extends React.PureComponent {
                   relevantProjectLookup={this.props.searchResults.projectIdLookup}
                   filteredProjectLookup={this.props.filteredProjectLookup}
                   displayOrder={this.props.displayOrder}
+                  selectedCompany={this.props.wheelData[companyNameIndex]?.name}
                 />
               </>
             )}

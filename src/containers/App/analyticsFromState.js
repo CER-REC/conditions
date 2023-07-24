@@ -1,8 +1,9 @@
 import { lang, transitionStates } from '../../constants';
 
 const staticDetails = {
-  visualization: 'conditions',
-  language: lang,
+  event: 'visualization event',
+  event_visualization: 'condition interaction',
+  event_language: lang,
 };
 
 const getVisualizationMode = (state) => {
@@ -19,6 +20,6 @@ export default store => () => {
 
   return {
     ...staticDetails,
-    visualizationMode: getVisualizationMode(state),
+    event_subvisualization: getVisualizationMode(state),
   };
 };

@@ -28,11 +28,10 @@ const messages = [['company', 'projectsBy'], ['location', 'conditionsBy']]
     return acc;
   }, {});
 
-const handleOnClick = (cb, mode, e) => {
+const handleOnClick = (cb, mode) => {
   reportAnalytics(
-    e.type,
-    'menu',
-    'mode',
+    'condition_mode',
+    undefined,
     (mode === 'company') ? 'projects by company' : 'conditions by location',
   );
 

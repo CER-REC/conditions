@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
-import handleInteraction from '../../../utilities/handleInteraction';
 import joinJsxArray from '../../../utilities/joinJsxArray';
 
 import './styles.scss';
 
 import ContentBlock from '../ContentBlock';
+import { handleAnalyticsInteraction } from '../../../utilities/analyticsReporting';
 
 // eslint-disable-next-line react/prop-types
 const DangerousContentText = React.memo(({ children, content }) => (
@@ -34,6 +34,7 @@ class Content extends React.PureComponent {
     itemIndex: PropTypes.number.isRequired,
     openIntermediatePopup: PropTypes.func.isRequired,
     includedKeywords: PropTypes.arrayOf(PropTypes.string),
+    selectedProject: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -49,7 +50,14 @@ class Content extends React.PureComponent {
       <button
         type="button"
         className="instrumentLink"
-        {...handleInteraction(this.props.openIntermediatePopup)}
+        {
+          ...handleAnalyticsInteraction(
+            'condition_project_instrument',
+            this.props.selectedProject,
+            data.instrumentNumber,
+            this.props.openIntermediatePopup,
+          )
+        }
       >
         {data.instrumentNumber}
       </button>

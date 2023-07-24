@@ -225,7 +225,7 @@ class App extends React.PureComponent {
     }).then((result) => {
       if (this.props.transitionState >= transitionStates.view2
         || this.props.transitionState === transitionStates.view1Reset) {
-        reportAnalytics('load', 'wheel', nameCb(result));
+        reportAnalytics('condition_wheel', 'feature', nameCb(result), 'load');
       }
     });
   };
@@ -348,7 +348,7 @@ class App extends React.PureComponent {
     this.jumpToView2();
     this.setMainInfoBarPane('about');
 
-    reportAnalytics('info', 'about');
+    reportAnalytics('condition_menu', undefined, 'about');
 
     // This timer needs to be long enough for React to do its thing and for the
     // CSS transitions to finish so the Footer content is there to scroll to.
@@ -501,7 +501,7 @@ class App extends React.PureComponent {
     this.incrementTransitionState();
     this.togglePlay(true);
 
-    reportAnalytics('click', 'guide', 'play');
+    reportAnalytics('condition card', 'play');
 
     setTimeout(() => {
       this.incrementTransitionState();
@@ -572,7 +572,7 @@ class App extends React.PureComponent {
       const keyword = instance.keyword.value;
       const newIncluded = [keyword];
 
-      reportAnalytics('select', 'condition - keyword', keyword);
+      reportAnalytics('condition keyword', keyword);
 
       batch(() => {
         this.props.setSelectedMultiple({ keywordId });
@@ -621,8 +621,8 @@ class App extends React.PureComponent {
     this.setState({ isDownloadPopupOpen: false });
   }
 
-  openTotalConditionNumberPopup = (counts) => {
-    reportAnalytics('learn more', 'projects', 'project', counts);
+  openTotalConditionNumberPopup = (projectName) => {
+    reportAnalytics('condition_project', projectName, 'learn_more');
     this.setState({ isTotalConditionNumberPopupOpen: true });
   }
 

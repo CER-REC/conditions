@@ -80,31 +80,17 @@ class ConditionList extends React.PureComponent {
 
   onChange = (i, e) => {
     const { conditionId, instrumentId, instrumentNumber } = this.props.items[i];
-    if (conditionId) {
-      reportAnalytics(
-        e.type,
-        'projects',
-        'condition',
-        {
-          value: conditionId,
-          conditionCount: this.props.counts.conditions,
-          instrumentCount: this.props.counts.instruments,
-        },
-      );
 
+    reportAnalytics(
+      'condition_project_instrument',
+      instrumentNumber,
+      'read_more',
+      e.type === 'wheel' ? 'scroll' : 'click',
+    );
+
+    if (conditionId) {
       this.props.updateSelectedCondition(conditionId);
     } else {
-      reportAnalytics(
-        e.type,
-        'projects',
-        'instrument',
-        {
-          value: instrumentNumber,
-          conditionCount: this.props.counts.conditions,
-          instrumentCount: this.props.counts.instruments,
-        },
-      );
-
       this.props.updateSelectedInstrument(instrumentId);
     }
   }

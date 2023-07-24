@@ -60,11 +60,7 @@ class WheelList extends React.PureComponent {
   }
 
   handleAnalytics = (item, e) => {
-    const name = (this.props.wheelType === 'company')
-      ? item.name
-      : `${item.name}, ${item.province}`;
-
-    reportAnalytics(e.type, 'wheel', name);
+    reportAnalytics('condition_wheel', 'feature', item.name, e.type === 'wheel' ? 'scroll' : 'click');
   }
 
   handleOnChange = (i, e) => {

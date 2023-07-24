@@ -32,8 +32,10 @@ class FeaturesMenu extends React.PureComponent {
     className: '',
   };
 
-  onChange = (feature, e) => {
-    reportAnalytics((e.type !== 'wheel') ? e.type : 'scroll', 'projects', 'feature', feature);
+  onChange = (feature) => {
+    const category = this.props.dropDown ? 'condition_timeline' : 'condition_trends';
+    const label = this.props.dropDown ? 'feature' : undefined;
+    reportAnalytics(category, label, feature);
     this.props.onChange(feature);
   }
 
