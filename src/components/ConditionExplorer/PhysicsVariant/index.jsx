@@ -212,7 +212,7 @@ export default class PhysicsVariant extends React.PureComponent {
       || Math.abs(mouse.absolute.y - this.guideDragOrigin.y) > dragThreshold
     ) {
       if (!this.sentDragAnalytics) {
-        reportAnalytics('condition_wordweb');
+        reportAnalytics('condition_wordweb_drag');
 
         this.sentDragAnalytics = true;
       }
@@ -230,7 +230,7 @@ export default class PhysicsVariant extends React.PureComponent {
 
   closeGuide = () => {
     if (!this.guide.isExpanded || !this.guideClickDetection || !this.guideShouldOpen) { return; }
-    reportAnalytics('guide', 'close');
+    reportAnalytics('condition card', 'close');
 
     this.guideShouldOpen = false;
     this.guideClickDetection = undefined;

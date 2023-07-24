@@ -32,7 +32,7 @@ images[3] = (
   </a>
 );
 
-const reportDownloadLink = e => reportAnalytics(e.type, 'download', 'methodology');
+const reportDownloadLink = () => reportAnalytics('condition_menu', undefined, 'methodology');
 
 const MethodologyBox = () => (
   <div className="MethodologyBox">

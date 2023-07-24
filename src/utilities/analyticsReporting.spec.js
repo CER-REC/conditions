@@ -36,7 +36,7 @@ describe('utilities/analyticsReporting', () => {
         event_category: 'guide',
         event_label: undefined,
         event_value: 'expand',
-        event_action: 'drag'
+        event_action: 'drag',
       });
     });
   });

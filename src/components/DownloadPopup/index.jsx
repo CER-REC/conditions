@@ -9,7 +9,7 @@ import Modal from '../Modal';
 
 import './styles.scss';
 
-const reportDownload = e => reportAnalytics(e.type, 'download', 'dataset');
+const reportDownload = () => reportAnalytics('condition_social', undefined, 'download');
 
 // TODO: Split this into a testable component. See the RegDocsPopup for an example.
 const DownloadPopup = (props) => {

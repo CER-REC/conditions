@@ -348,7 +348,7 @@ class App extends React.PureComponent {
     this.jumpToView2();
     this.setMainInfoBarPane('about');
 
-    reportAnalytics('info', 'about');
+    reportAnalytics('condition_menu', undefined, 'about');
 
     // This timer needs to be long enough for React to do its thing and for the
     // CSS transitions to finish so the Footer content is there to scroll to.
@@ -501,7 +501,7 @@ class App extends React.PureComponent {
     this.incrementTransitionState();
     this.togglePlay(true);
 
-    reportAnalytics('guide', 'play');
+    reportAnalytics('condition card', 'play');
 
     setTimeout(() => {
       this.incrementTransitionState();
@@ -572,7 +572,7 @@ class App extends React.PureComponent {
       const keyword = instance.keyword.value;
       const newIncluded = [keyword];
 
-      reportAnalytics('condition keyword', undefined, keyword);
+      reportAnalytics('condition keyword', keyword);
 
       batch(() => {
         this.props.setSelectedMultiple({ keywordId });

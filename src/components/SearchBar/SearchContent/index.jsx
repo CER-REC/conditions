@@ -251,10 +251,10 @@ class SearchContent extends React.PureComponent {
     </>
   )
 
-  changeSearchType = (e) => {
+  changeSearchType = () => {
     // eslint-disable-next-line react/no-access-state-in-setstate
     const newMode = (this.state.mode === 'basic') ? 'advanced' : 'basic';
-    reportAnalytics(e.type, 'search', 'mode', newMode);
+    reportAnalytics('condition_search', newMode);
 
     this.setState({ mode: newMode });
 
