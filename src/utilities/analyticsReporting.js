@@ -78,8 +78,24 @@ export const reportAnalytics = (category, label, value, action) => {
   // eslint-disable-next-line no-console
   if (env !== 'test' && env !== 'production') { console.log('Sending Google Analytics report:', dataObject); }
 
-  return window.dataLayer && window.dataLayer.push(dataObject);
+  window.dataLayer && window.dataLayer.push(dataObject)
+
+  if (category === 'condition_menu')
+    reportPageView(value);
 };
+
+export const reportPageView = (value) => {
+  const dataObject = {
+    event: 'virtualPageview',
+    pageURL: window.location.href,
+    pageTitle: value || window.document.title,
+  };
+
+  // eslint-disable-next-line no-console
+  if (env !== 'test' && env !== 'production') { console.log('Sending Google Analytics report:', dataObject); }
+
+  window.dataLayer && window.dataLayer.push(dataObject);
+}
 
 /**
  * Wraps the handleInteraction utility together with reportAnalytics.
