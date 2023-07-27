@@ -5,7 +5,7 @@ import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import './styles.scss';
 
 import handleInteraction from '../../../utilities/handleInteraction';
-import {reportAnalytics, reportPageView} from '../../../utilities/analyticsReporting';
+import { reportAnalytics, reportPageView } from '../../../utilities/analyticsReporting';
 
 // Predefine the messages to prevent wasted renders
 const messages = [['company', 'projectsBy'], ['location', 'conditionsBy']]
@@ -33,7 +33,7 @@ const handleOnClick = (cb, mode) => {
   reportAnalytics(
     'condition_mode',
     undefined,
-    pageTitle
+    pageTitle,
   );
 
   cb(mode);
