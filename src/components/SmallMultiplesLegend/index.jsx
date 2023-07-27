@@ -39,7 +39,7 @@ export default class SmallMultiplesLegend extends React.PureComponent {
       ? ''
       : this.props.displayOrder[this.props.feature][index - 1];
     reportAnalytics(
-      'graph_column_menu',
+      'condition_trends_drilldown',
       undefined,
       `${this.props.feature}: ${(item !== '') ? item.toLowerCase() : 'all'}`,
       e.type === 'wheel' ? 'scroll' : 'click',
