@@ -1,3 +1,11 @@
+## [1.3.4](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.3.4) (2023-07-28)
+
+
+### analytics
+
+* **Features:** fixed linting (0ec8650)
+* **Features:** added new page event (9a9c41f)
+
 ## [1.3.3](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.3.3) (2023-07-25)
 
 
