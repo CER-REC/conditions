@@ -85,8 +85,9 @@ const store = createStore();
 addGeneralAnalytics(analyticsFromState(store));
 
 const cache = new InMemoryCache();
+const apiHost = process.env.API_HOST || '';
 const link = new HttpLink({
-  uri: `/conditions/graphql?lang=${lang}`,
+  uri: `${apiHost}/conditions/graphql?lang=${lang}`,
   credentials: 'same-origin',
 });
 const client = new ApolloClient({ cache, link, fetch });

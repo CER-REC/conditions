@@ -12,6 +12,7 @@ LAST_MODIFIED
 VERSION
 storybook-static
 public/script/
+.env
 
 # System files
 .DS_Store

@@ -1,4 +1,4 @@
-## [1.3.4](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.3.4) (2023-07-28)
+## 1.3.4 (2023-07-28)
 
 
 ### analytics
@@ -6,7 +6,7 @@
 * **Features:** fixed linting (0ec8650)
 * **Features:** added new page event (9a9c41f)
 
-## [1.3.3](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.3.3) (2023-07-25)
+## 1.3.3 (2023-07-25)
 
 
 ### analyticsReporter
@@ -18,14 +18,14 @@
 
 * **Features:** updated all analytics (bee0fa1)
 
-## [1.3.2](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.3.2) (2021-02-04)
+## 1.3.2 (2021-02-04)
 
 
 ### DataAnalytics
 
 * **Bug Fixes:** adds missing event labels (8da4dd4)
 
-## [1.3.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.3.1) (2021-01-26)
+## 1.3.1 (2021-01-26)
 
 
 ### conditionDetails
@@ -52,7 +52,7 @@
 
 * **Bug Fixes:** updates logic to factor in screen size (29fa28e)
 
-# [1.3.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.3.0) (2021-01-09)
+# 1.3.0 (2021-01-09)
 
 
 ### About
@@ -84,14 +84,14 @@
 
 * **Features:** adds a close button in view 3 to directly dismiss it (c24af12)
 
-## [1.2.2](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.2.2) (2020-06-10)
+## 1.2.2 (2020-06-10)
 
 
 ### AnalyticsReporting
 
 * **Bug Fixes:** B-05987 updates analytics reporting event name (2224e6c)
 
-## [1.2.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.2.1) (2020-05-25)
+## 1.2.1 (2020-05-25)
 
 
 ### ConditionDetails
@@ -108,7 +108,7 @@
 * **Bug Fixes:** applies a better approach to handle missing images (deb70b7)
 * **Bug Fixes:** fixes the issue that image links are broken (aed3c16)
 
-# [1.2.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.2.0) (2019-12-13)
+# 1.2.0 (2019-12-13)
 
 
 ### Analytics
@@ -155,21 +155,21 @@
 
 * **Tests:** fixes linting error (320d0ce)
 
-# [1.1.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.1.0) (2019-12-09)
+# 1.1.0 (2019-12-09)
 
 
 ### App
 
 * **Bug Fixes:** adds missing analytics events (0d0bab3)
 
-# [1.0.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v1.0.0) (2019-11-26)
+# 1.0.0 (2019-11-26)
 
 
 ### Node
 
 * **Project Maintenance:** updates from Node 10.13.3 to 12.13.1 (eadddcd)
 
-# [0.29.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.29.0) (2019-11-21)
+# 0.29.0 (2019-11-21)
 
 
 ### Analytics
@@ -287,14 +287,14 @@
 
 * **Features:** updates analytics events (d13cbb7)
 
-## [0.28.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.28.1) (2019-10-02)
+## 0.28.1 (2019-10-02)
 
 
 ### Analytics
 
 * **Bug Fixes:** fix reporting of analytics events (efdc0b5)
 
-# [0.28.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.28.0) (2019-10-01)
+# 0.28.0 (2019-10-01)
 
 
 ### Analytics
@@ -333,7 +333,7 @@
 
 * **Bug Fixes:** updates PullToSpin to fix breaking changes to react-use-gesture (2fb1e5e)
 
-# [0.27.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.27.0) (2019-09-25)
+# 0.27.0 (2019-09-25)
 
 
 ### Analytics
@@ -512,7 +512,7 @@
 
 * **Bug Fixes:** adds border radius to avoid capturing mouse events for the ring (89583e6)
 
-# [0.26.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.26.0) (2019-09-11)
+# 0.26.0 (2019-09-11)
 
 
 ### App
@@ -609,7 +609,7 @@
 
 * **Bug Fixes:** keeps the list's corners from capturing click events in the wheel (50635a6)
 
-# [0.25.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.25.0) (2019-09-04)
+# 0.25.0 (2019-09-04)
 
 
 ### AdvancedFormattedMessage
@@ -694,7 +694,7 @@
 
 * **Features:** updates Webpack config to reflect the new Sass-Loader API (de10b30)
 
-# [0.24.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.24.0) (2019-08-26)
+# 0.24.0 (2019-08-26)
 
 
 ### app
@@ -935,7 +935,7 @@
 
 * **Bug Fixes:** fixes layout issues in the FeaturesMenu and SmallMultiplesLegend on tablet view (82743ca)
 
-# [0.23.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.23.0) (2019-08-06)
+# 0.23.0 (2019-08-06)
 
 
 ### App
@@ -1100,7 +1100,7 @@
 
 * **App:** Added Prop to view 2
 
-## [0.22.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.22.1) (2019-07-29)
+## 0.22.1 (2019-07-29)
 
 
 ### App
@@ -1128,7 +1128,7 @@
 
 * **Bug Fixes:** fixes company flag collision logic (55a8d18)
 
-# [0.22.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.22.0) (2019-07-29)
+# 0.22.0 (2019-07-29)
 
 
 ### App
@@ -1245,7 +1245,7 @@
 
 * **Bug Fixes:** makes ring stay in place (a125c77, NEBV-1669)
 
-## [0.21.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.21.1) (2019-07-17)
+## 0.21.1 (2019-07-17)
 
 
 ### ConditionDetails
@@ -1263,7 +1263,7 @@
 
 * **Bug Fixes:** fixes bug with flags not appearing when toggling modes (017a972)
 
-# [0.21.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.21.0) (2019-07-17)
+# 0.21.0 (2019-07-17)
 
 
 ### app
@@ -1669,7 +1669,7 @@
 * **App:** additional prop
 * **View2GraphQL:** Cycling imports between App and View2GQL
 
-## [0.20.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.20.1) (2019-06-27)
+## 0.20.1 (2019-06-27)
 
 
 ### App
@@ -1688,7 +1688,7 @@
 * **Bug Fixes:** fixes crash when non-apollo error is thrown (ab64298)
 * **Bug Fixes:** fixes incorrect variable name for handleQueryError (ad4ccc5)
 
-# [0.20.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.20.0) (2019-06-26)
+# 0.20.0 (2019-06-26)
 
 
 ### App
@@ -1865,14 +1865,14 @@
 * **App, View2, Wheel, WheelRay, CompanyFlag:** Added an extra prop to every component down from view 2 (inclusive)
 * **LocationWheelMinimap/Wheel:** Changes to the minimap props
 
-## [0.19.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.19.1) (2019-06-24)
+## 0.19.1 (2019-06-24)
 
 
 ### ConditionDetails
 
 * **Bug Fixes:** hides condition list during intro transitions (5294c58)
 
-# [0.19.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.19.0) (2019-06-21)
+# 0.19.0 (2019-06-21)
 
 
 ### App
@@ -2024,7 +2024,7 @@
 * **Project Maintenance:** removes dev-server specific changes (eda89ea)
 * **Project Maintenance:** reorganizes and removes unused files (5f37a37)
 
-# [0.18.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.18.0) (2019-06-13)
+# 0.18.0 (2019-06-13)
 
 
 ### App
@@ -2102,7 +2102,7 @@
 
 * **Bug Fixes:** fixes a crash switching from Location to Company mode (6f20843)
 
-# [0.17.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.17.0) (2019-06-06)
+# 0.17.0 (2019-06-06)
 
 
 ### App
@@ -2363,7 +2363,7 @@
 * **App:** View 2 is broken
 * **LocationWheel/MiniMap:** ViewTwo and related stories for wheel broken need to be fixed in future commits
 
-# [0.15.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.15.0) (2019-05-30)
+# 0.15.0 (2019-05-30)
 
 
 ### App
@@ -2473,7 +2473,7 @@
 
 * **App:** The grid is no longer in the app its in another container down
 
-# [0.14.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.14.0) (2019-05-23)
+# 0.14.0 (2019-05-23)
 
 
 ### conditions list
@@ -2521,7 +2521,7 @@
 * **Bug Fixes:** better way to insert space (bc814ae)
 * **Bug Fixes:** removed trailing spaces in text (f550d77, NEBV-1521)
 
-# [0.13.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.13.0) (2019-05-17)
+# 0.13.0 (2019-05-17)
 
 
 ### App
@@ -2765,7 +2765,7 @@
 * **ViewTwo, subcomponents:** ENGLISH.JSON, PROJECTSDATA.JS, VIEWTWOQUERIES, VIEWTWO AND SUBCOMPONENTS
 * **List/Wheel\:** none
 
-# [0.12.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.12.0) (2019-05-09)
+# 0.12.0 (2019-05-09)
 
 
 ### Dependencies
@@ -2829,7 +2829,7 @@
 
 * **SearchBar/FilterContent:** Keys changed for the state of the search bar
 
-# [0.11.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.11.0) (2019-05-01)
+# 0.11.0 (2019-05-01)
 
 
 ### App
@@ -2912,7 +2912,7 @@
 * **Code Formatting:** adds TODO tag to a to-do comment (bdeaec0)
 * **Code Formatting:** tidies up in preparation for PR (7ebc7b3)
 
-# [0.10.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.10.0) (2019-04-24)
+# 0.10.0 (2019-04-24)
 
 
 ### App
@@ -2958,7 +2958,7 @@
 
 * **Features:** syncs the Trend Button to current feature (30a921b)
 
-# [0.8.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.8.0) (2019-04-18)
+# 0.8.0 (2019-04-18)
 
 
 ### App
@@ -3125,7 +3125,7 @@
 * **GraphQL:** change of randomdatasample and removal of object from it to return an array instead
 * **Wheel:** Location Wheel, props changed
 
-# [0.7.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.7.0) (2019-04-15)
+# 0.7.0 (2019-04-15)
 
 
 ### ConditionExplorer
@@ -3160,7 +3160,7 @@
 
 * **Features:** adds prop for arrows on outside of list (4aa8722)
 
-# [0.6.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.6.0) (2019-04-09)
+# 0.6.0 (2019-04-09)
 
 
 ### App
@@ -3302,21 +3302,21 @@
 * **Code Formatting:** adjust for wet template width positioning, centered (bc7264e)
 * **Code Formatting:** tweaks implementing suggestions from PRs (9337cc6)
 
-## [0.5.2](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.5.2) (2019-04-02)
+## 0.5.2 (2019-04-02)
 
 
 ### Build
 
 * **Project Maintenance:** don't use hash in css filename (2a13b95)
 
-## [0.5.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.5.1) (2019-04-02)
+## 0.5.1 (2019-04-02)
 
 
 ### Build
 
 * **Project Maintenance:** fix build env variables in Windows (0e56257)
 
-# [0.5.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.5.0) (2019-04-02)
+# 0.5.0 (2019-04-02)
 
 
 ### babelrc
@@ -3616,7 +3616,7 @@
 
 * **ProjectMenu Change Requests:** n
 
-# [0.4.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.4.0) (2019-03-13)
+# 0.4.0 (2019-03-13)
 
 
 ### AdditionalDescription
@@ -3651,7 +3651,7 @@
 
 * **Bug Fixes:** tweaks styles to support WET template (e4a0a8d)
 
-# [0.3.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.3.0) (2019-03-12)
+# 0.3.0 (2019-03-12)
 
 
 ### Changelog
@@ -3861,7 +3861,7 @@
 * **Documentation:** adds prop documentation (02ea76c)
 
 
-## [0.2.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.2.1) (2019-03-01)
+## 0.2.1 (2019-03-01)
 
 
 ### App/view2 and 3
@@ -3898,7 +3898,7 @@
 * **Code Refactoring:** removed background color for buttons (a922861)
 * **Code Refactoring:** Reset h tags in visualization (a84d2c9)
 
-# [0.2.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.2.0) (2019-03-01)
+# 0.2.0 (2019-03-01)
 
 
 ### App
@@ -4533,7 +4533,7 @@
 
 * **Wheel PullToSpin WheeRay:** deleted WheelRayLegend
 
-# [0.1.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.1.0) (2019-02-13)
+# 0.1.0 (2019-02-13)
 
 
 ### 1263 Grid & Scroll plus  View containers
@@ -5554,7 +5554,7 @@ pulling from
 * **CompanyWheel, PullToSpin components:** Renaming of files
 * **Stream Graph:** Tests
 
-## [0.0.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.0.1) (2019-01-04)
+## 0.0.1 (2019-01-04)
 
 
 ### (TrendButton)
